@@ -18,7 +18,6 @@ const navigation = [
 
 export default function Navigation() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [isScrolled, setIsScrolled] = useState(false);
 	const menuRef = useRef<HTMLDivElement>(null);
 
 	const toggleMenu = () => {
@@ -41,21 +40,9 @@ export default function Navigation() {
 		};
 	}, []);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 25);
-		};
-		window.addEventListener('scroll', handleScroll);
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
-
 	return (
 		<header
-			className={`fixed top-0 left-0 right-0 z-50 transition-all ${
-				isScrolled ? 'bg-white bg-opacity-90 backdrop-blur-md shadow-md' : ''
-			}`}
+			className="fixed top-0 left-0 right-0 z-50 transition-all bg-white"
 		>
 			<nav className="container mx-auto px-4 py-4 lg:py-6" ref={menuRef}>
 				<div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
