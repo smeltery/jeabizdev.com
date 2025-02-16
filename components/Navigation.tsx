@@ -10,9 +10,10 @@ const navigation = [
 	{ name: 'Core Values', href: 'core-values' },
 	{ name: 'Results', href: 'results' },
 	{ name: 'Engagement Options', href: 'engagement-options' },
+	{ name: 'Client Showcase', href : 'client-showcase' },
 	{ name: "Let's Partner", href: 'contact' },
-	{ name: 'Cross-Border Deal Summaries', href: 'https://drive.google.com/drive/folders/1n7YOErEy11-qqUBqUxIMlVOWmJBH7w6f?usp=drive_link', external: true },
-	{ name: 'My Cross-Border Deals', href: 'https://drive.google.com/drive/folders/1YYCHF8NhnArF9wspYlkFO7pCKVO9MZ2n?usp=drive_link', external: true }
+	{ name: 'My Cross-Border Deals', href: 'https://drive.google.com/drive/folders/1YYCHF8NhnArF9wspYlkFO7pCKVO9MZ2n?usp=drive_link', external: true },
+	{ name: 'Cross-Border Deal Summaries', href: 'https://drive.google.com/drive/folders/1n7YOErEy11-qqUBqUxIMlVOWmJBH7w6f?usp=drive_link', external: true }
 ];
 
 export default function Navigation() {
