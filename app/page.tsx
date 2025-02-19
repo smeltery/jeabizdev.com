@@ -9,6 +9,7 @@ import {Contact} from "@/components/Contact";
 import {EngagementOptions} from "@/components/EngagementOptions";
 import Footer from "@/components/Footer";
 import ScrollToTopButton from "@/components/ui/ScrollToTopButton";
+import ClientShowcase from "@/components/ClientShowcase";
 
 export default function Page() {
 
@@ -21,6 +22,7 @@ export default function Page() {
 				<CoreValues/>
 				<Results/>
 				<EngagementOptions/>
+				<ClientShowcase/>
 				<Contact/>
 			</main>
 			<Footer />

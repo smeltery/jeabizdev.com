@@ -96,7 +96,9 @@ export function Contact() {
 	};
 
 	return (
-		<Element name="contact" className="bg-white w-full mx-auto py-12 md:py-24 lg:py-32 text-black">
+		<Element name="contact"
+				 className="w-full py-12 bg-gradient-to-br from-blue-50 via-white to-blue-100"
+		>
 			<Toaster />
 			<motion.div
 				className="container mx-auto px-4 md:px-6"
@@ -146,7 +148,7 @@ export function Contact() {
                             </Link>
                         </div>
 					</div>
-					<div className="flex flex-col gap-4 sm:flex-row lg:flex-col lg:gap-6">
+					<div className="flex flex-col gap-4 sm:flex-row lg:flex-col lg:gap-6 text-black">
 						<form onSubmit={handleSubmit(onSubmit)} className="space-y-4 flex-1">
 							<div className="grid grid-cols-2 gap-4">
 								<div className="space-y-2">

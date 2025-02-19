@@ -10,14 +10,14 @@ const navigation = [
 	{ name: 'Core Values', href: 'core-values' },
 	{ name: 'Results', href: 'results' },
 	{ name: 'Engagement Options', href: 'engagement-options' },
+	{ name: 'Client Showcase', href : 'client-showcase' },
 	{ name: "Let's Partner", href: 'contact' },
-	{ name: 'Cross-Border Deal Summaries', href: 'https://drive.google.com/drive/folders/1n7YOErEy11-qqUBqUxIMlVOWmJBH7w6f?usp=drive_link', external: true },
-	{ name: 'My Cross-Border Deals', href: 'https://drive.google.com/drive/folders/1YYCHF8NhnArF9wspYlkFO7pCKVO9MZ2n?usp=drive_link', external: true }
+	{ name: 'My Cross-Border Deals', href: 'https://drive.google.com/drive/folders/1YYCHF8NhnArF9wspYlkFO7pCKVO9MZ2n?usp=drive_link', external: true },
+	{ name: 'Cross-Border Deal Summaries', href: 'https://drive.google.com/drive/folders/1n7YOErEy11-qqUBqUxIMlVOWmJBH7w6f?usp=drive_link', external: true }
 ];
 
 export default function Navigation() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [isScrolled, setIsScrolled] = useState(false);
 	const menuRef = useRef<HTMLDivElement>(null);
 
 	const toggleMenu = () => {
@@ -40,21 +40,9 @@ export default function Navigation() {
 		};
 	}, []);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 25);
-		};
-		window.addEventListener('scroll', handleScroll);
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
-
 	return (
 		<header
-			className={`fixed top-0 left-0 right-0 z-50 transition-all ${
-				isScrolled ? 'bg-white bg-opacity-90 backdrop-blur-md shadow-md' : ''
-			}`}
+			className="fixed top-0 left-0 right-0 z-50 transition-all bg-white"
 		>
 			<nav className="container mx-auto px-4 py-4 lg:py-6" ref={menuRef}>
 				<div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">

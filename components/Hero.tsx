@@ -219,17 +219,20 @@ export function Hero() {
 											Expertise in cross-border transactions, including deals involving China
 											(examples
 											include:{' '}
-											<a href="/deal-summaries/Elevation and CSPC June 2022.pdf"
-											   className="text-blue-500 underline">1</a>,
+											<a href="/deal-summaries/Radiance and CSPC Feb 18 2025.pdf"
+											   className="text-blue-500 underline">5</a>,
 											{' '}
 											<a href="/deal-summaries/Corbus and CSPC Feb 14 2023.pdf"
-											   className="text-blue-500 underline">2</a>,
+											   className="text-blue-500 underline">4</a>,
+											{' '}
+											<a href="/deal-summaries/Elevation and CSPC June 2022.pdf"
+											   className="text-blue-500 underline">3</a>,
 											{' '}
 											<a href="/deal-summaries/Assembly and BeiGene Jul 20 2020.pdf"
-											   className="text-blue-500 underline">3</a>,
+											   className="text-blue-500 underline">2</a>,
 											{' and '}
 											<a href="/deal-summaries/Leap TX and BeiGene Jan 2020.pdf"
-											   className="text-blue-500 underline">4</a>).
+											   className="text-blue-500 underline">1</a>).
 										</p>
 									</div>
 									<div className="bg-blue-50 p-4 rounded-lg">

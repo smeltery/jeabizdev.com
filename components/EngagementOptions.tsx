@@ -53,7 +53,7 @@ export function EngagementOptions() {
 							Choose the model that best suits your consulting needs.
 						</p>
 					</motion.div>
-					<div className="">
+					<div>
 						<motion.div
 							className="grid lg:grid-cols-4 md:grid-cols-1 gap-8"
 							variants={containerVariants}
