@@ -8,7 +8,7 @@ export interface Asset {
 export const assets: Asset[] = [
 	{
 		id: "dll3-adc",
-		name: "DLL3-ADC",
+		name: "DLL3 ADC",
 		focus: "Oncology",
 		description: `Best-in-Class Potential for SCLC & NET:
 High affinity, selectivity, and internalization for superior tumor targeting.

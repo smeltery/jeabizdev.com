@@ -21,7 +21,7 @@ export const getStageColor = (description: string) => {
 export const getStageText = (description: string) => {
 	if (description.includes("Phase 3")) return "Phase 3"
 	if (description.includes("Phase 1")) return "Phase 1"
-	if (description.includes("IND Filing submitted")) return "IND Filing"
+	if (description.includes("IND")) return "IND Filing"
 	if (description.includes("IND approved")) return "IND Approved"
 	return "Preclinical"
 }
