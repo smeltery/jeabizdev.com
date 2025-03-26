@@ -56,12 +56,12 @@ const DealCard: FC<Deal> = ({ company, subtitle, description, year, pdfUrl }) =>
 			variants={itemVariants}
 		>
 			<div className="flex flex-col h-full">
-				<div className="bg-blue-600 p-3">
+				<div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-3">
 					<h3 className="text-xl font-semibold text-white">{company}</h3>
 					<p className="text-sm text-white">{subtitle}</p>
 				</div>
 				<div className="p-6 flex-grow text-black">{description}</div>
-				<div className="flex justify-between items-center text-sm text-white bg-blue-600 p-3">
+				<div className="flex justify-between items-center text-sm text-white bg-gradient-to-r from-blue-500 to-blue-600 p-3">
 					<span>{year}</span>
 					<ExternalLink className="w-4 h-4" />
 				</div>
@@ -83,7 +83,7 @@ export function ClientShowcase() {
 	const isSingleDeal = deals.length === 1
 
 	return (
-		<Element name="client-showcase" className="w-full py-20 bg-white relative overflow-hidden">
+		<Element name="client-showcase" className="w-full py-12 bg-gradient-to-br from-blue-50 via-white to-blue-100">
 			<motion.div
 				className="container px-4 md:px-6 mx-auto relative z-10"
 				initial="hidden"
