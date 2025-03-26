@@ -47,7 +47,7 @@ export function Assets() {
 				<motion.div className="mt-8 text-center" variants={itemVariants}>
 					<em className="text-gray-500 text-md font-bold dark:text-zinc-400">
 						Overview Deck Available for Review Upon Request. Please email us at{" "}
-						<a href="mailto:info@jeabizdev.com" className="text-blue-500 underline">
+						<a href="mailto:jeabizdev@gmail.com" className="text-blue-500 underline">
 							jeabizdev@gmail.com
 						</a>.
 					</em>
