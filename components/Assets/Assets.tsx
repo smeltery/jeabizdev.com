@@ -24,7 +24,7 @@ const AvailableAssetsHeader: FC = () => (
 	<motion.div className="space-y-4 max-w-3xl" variants={itemVariants}>
 		<h2 className="text-4xl font-bold tracking-tight md:text-5xl text-blue-600 mb-4">Available Assets for Partnering</h2>
 		<p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-zinc-400">
-			Strategic partnering opportunities for best-in-class potential assets.
+			Strategic partnering opportunities for best-in-class or first-in-class potential assets.
 		</p>
 	</motion.div>
 )
