@@ -51,5 +51,50 @@ Phase 3 Clinical Trials Ongoing in China:
 Expansive Development Pipeline:
 Targeting HER2-positive & HER2-low breast, gastric, ovarian, and other solid tumors.`,
 	},
+	{
+		id: "b7h3xpsma-adc",
+		name: "B7H3xPSMA ADC",
+		focus: "Oncology",
+		description: `First-in-Class BsADC for mCRPC:
+Targets B7-H3 & PSMA to maximize tumor coverage and overcome heterogeneous expression. TOPO-1 inhibitor payload.
+Addresses High Unmet Need:
+Designed for metastatic castration-resistant prostate cancer (mCRPC) after prior therapy failure.
+Superior to Single-Target ADCs:
+Outperforms PSMA and B7-H3 ADCs in tumor binding, internalization, and bystander effect.
+Broad Potential in Solid Tumors:
+Therapeutic relevance in SCLC, NSCLC, HNSCC, and esophageal cancers.
+Development Stage:
+IND-enabling studies; IND filing in October 2025.`,
+	},
+	{
+		id: "egfrxher2-adc",
+		name: "EGFRxHER2 ADC",
+		focus: "Oncology",
+		description: `Next-Generation BsADC:
+Targets EGFR & HER2 for enhanced tumor inhibition and overcomes resistance seen in HER2-low cancers.
+Optimized ADC Design:
+Stable cleavable linker, potent TOPO-1 payload, and strong bystander effect improve efficacy and safety.
+Broad Solid Tumor Applications:
+Urothelial, gastric, colorectal, lung, ovarian, breast, and head & neck cancers.
+Outperforms Standard ADCs:
+More potent than Enhertu (DS-8201) with better tumor cell binding, internalization, and bystander killing.
+Development Stage:
+IND-enabling studies; IND filing in October 2025.`,
+	},
+	{
+		id: "fra-biparatopic-adc",
+		name: "FRα Biparatopic ADC",
+		focus: "Oncology",
+		description: `Designed for Platinum-Resistant Ovarian Cancer (PROC):
+Targets FRα+ tumors, overcoming resistance in low & medium expressors.
+Biparatopic ADC Advantage:
+Dual-epitope binding enhances internalization and tumor targeting vs. conventional FRα ADCs.
+Stronger Than ELAHERE (IMGN853):
+Improved tumor cell binding, internalization, and broader efficacy across ovarian, endometrial, breast, and lung cancers.
+Superior Payload & Stability:
+Potent TOPO-1 inhibitor, stable linker, and strong bystander effect for maximum impact.
+Development Stage:
+IND-enabling studies; IND filing in November 2025.`,
+	},
 ]
 
