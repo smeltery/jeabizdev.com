@@ -13,9 +13,7 @@ export function AssetList() {
 
 	const filteredAssets = assets.filter(
 		(asset) =>
-			asset.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-			asset.focus.toLowerCase().includes(searchQuery.toLowerCase()) ||
-			asset.description.toLowerCase().includes(searchQuery.toLowerCase()),
+			asset.name.toLowerCase().includes(searchQuery.toLowerCase()),
 	)
 
 	return (
