@@ -70,7 +70,7 @@ IND-enabling studies; IND filing in October 2025.`,
 		id: "egfrxher2-adc",
 		name: "EGFRxHER2 ADC",
 		focus: "Oncology",
-		description: `Next-Generation BsADC:
+		description: `Best-in-Class Potential BsADC:
 Targets EGFR & HER2 for enhanced tumor inhibition and overcomes resistance seen in HER2-low cancers.
 Optimized ADC Design:
 Stable cleavable linker, potent TOPO-1 payload, and strong bystander effect improve efficacy and safety.
@@ -85,7 +85,7 @@ IND-enabling studies; IND filing in October 2025.`,
 		id: "fra-biparatopic-adc",
 		name: "FRα Biparatopic ADC",
 		focus: "Oncology",
-		description: `Designed for Platinum-Resistant Ovarian Cancer (PROC):
+		description: `Best-in-Class Potential Biparatopic ADC:
 Targets FRα+ tumors, overcoming resistance in low & medium expressors.
 Biparatopic ADC Advantage:
 Dual-epitope binding enhances internalization and tumor targeting vs. conventional FRα ADCs.
