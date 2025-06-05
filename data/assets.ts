@@ -4,6 +4,7 @@ export interface Asset {
 	focus: string
 	description: string
 	stage: "Preclinical" | "IND Filing" | "IND Approved" | "Phase 1" | "Phase 3"
+	type: "Antibody-Drug Conjugate" | "Small Molecule" | "Biologic" | "Antibody"
 }
 
 export const assets: Asset[] = [
@@ -12,6 +13,7 @@ export const assets: Asset[] = [
 		name: "DLL3 ADC",
 		focus: "Oncology",
 		stage: "IND Filing",
+		type: "Antibody-Drug Conjugate",
 		description: `Best-in-Class Potential for SCLC & NET:
 High affinity, selectivity, and internalization for superior tumor targeting.
 Next-Gen Molecular Design:
@@ -28,6 +30,7 @@ Addressing a $16.3B+ growing market with high unmet need in SCLC and neuroendocr
 		name: "KIF18A Inhibitor",
 		focus: "Oncology",
 		stage: "Phase 1",
+		type: "Small Molecule",
 		description: `Best-in-Class Potential:
 Highly potent KIF18A inhibitor targeting CIN+ solid tumors, with strong efficacy and safety.
 Oral, Once-Daily Convenience:
@@ -44,6 +47,7 @@ Addressing high unmet needs in CIN+ tumors, TNBC, and ovarian cancers.`,
 		name: "HER2 Biparatopic ADC",
 		focus: "Oncology",
 		stage: "Phase 3",
+		type: "Antibody-Drug Conjugate",
 		description: `Next-Generation HER2 ADC:
 Biparatopic design for enhanced binding, internalization, and bystander effect.
 Proven Stability & Potency:
@@ -60,6 +64,7 @@ Targeting HER2-positive & HER2-low breast, gastric, ovarian, and other solid tum
 		name: "B7H3xPSMA ADC",
 		focus: "Oncology",
 		stage: "IND Filing",
+		type: "Antibody-Drug Conjugate",
 		description: `First-in-Class BsADC for mCRPC:
 Targets B7-H3 & PSMA to maximize tumor coverage and overcome heterogeneous expression. TOPO-1 inhibitor payload.
 Addresses High Unmet Need:
@@ -76,6 +81,7 @@ IND-enabling studies; IND filing in October 2025.`,
 		name: "EGFRxHER2 ADC",
 		focus: "Oncology",
 		stage: "IND Filing",
+		type: "Antibody-Drug Conjugate",
 		description: `Best-in-Class Potential BsADC:
 Targets EGFR & HER2 for enhanced tumor inhibition and overcomes resistance seen in HER2-low cancers.
 Optimized ADC Design:
@@ -92,6 +98,7 @@ IND-enabling studies; IND filing in October 2025.`,
 		name: "FRα Biparatopic ADC",
 		focus: "Oncology",
 		stage: "IND Filing",
+		type: "Antibody-Drug Conjugate",
 		description: `Best-in-Class Potential Biparatopic ADC:
 Targets FRα+ tumors, overcoming resistance in low & medium expressors.
 Biparatopic ADC Advantage:
@@ -108,7 +115,8 @@ IND-enabling studies; IND filing in November 2025.`,
 		name: "PD-1 Agonist mAb",
 		focus: "Immunology",
 		stage: "Phase 1",
-		description: `Best-in-Class Potential:
+		type: "Antibody",
+		description: `Best-in-Class Potential Antibody:
 Highly potent PD-1 agonist antibody designed to inhibit and deplete pathogenic T cells in autoimmune diseases.
 Multi-Mechanism of Action:
 Selective depletion of PD-1^high^ T cells + functional agonism of PD-1+ pathogenic T cells.
@@ -123,7 +131,8 @@ Efficacy in RA, SLE, UC, pSS mouse models with no Treg depletion or serious toxi
 		id: "cyp11b2-inhibitor",
 		name: "CYP11B2 Inhibitor",
 		focus: "Cardiovascular",
-		stage: "IND Approved",
+		stage: "IND Filing",
+		type: "Small Molecule",
 		description: `Best-in-Class Potential Inhibitor:
 Highly potent and selective CYP11B2 inhibitor with superior efficacy and safety over Baxdrostat in resistant hypertension.
 Superior Selectivity Profile:
@@ -142,6 +151,7 @@ Addresses a $51.6B antihypertensive market with ~10M rHTN patients globally.`,
 		name: "ENPP1 Inhibitor",
 		focus: "Cardiovascular",
 		stage: "IND Approved",
+		type: "Small Molecule",
 		description: `First-in-Class Inhibitor:
 Novel ENPP1 inhibitor that enhances cardiac repair post-MI through purinergic signaling modulation.
 Strong Preclinical Efficacy:

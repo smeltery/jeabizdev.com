@@ -73,13 +73,7 @@ export function AssetDetailDialog({ asset, open, onOpenChange }: AssetDetailDial
 							<Beaker className="h-5 w-5 text-blue-600 mr-2" />
 							<div>
 								<p className="text-xs text-slate-700">Modality</p>
-								<p className="font-bold text-black">
-									{asset.name.includes("ADC")
-										? "Antibody-Drug Conjugate"
-										: asset.name.includes("Inhibitor")
-											? "Small Molecule"
-											: "Biologic"}
-								</p>
+								<p className="font-bold text-black">{asset.type}</p>
 							</div>
 						</div>
 					</div>
