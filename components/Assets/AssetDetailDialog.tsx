@@ -52,7 +52,7 @@ export function AssetDetailDialog({ asset, open, onOpenChange }: AssetDetailDial
 				<DialogHeader>
 					<div className="flex items-center justify-between">
 						<DialogTitle className="text-xl text-black">{asset.name}</DialogTitle>
-						<Badge className={`${getStageColor(asset.description)}`}>{getStageText(asset.description)}</Badge>
+						<Badge className={`${getStageColor(asset.stage)}`}>{getStageText(asset.stage)}</Badge>
 					</div>
 					<DialogDescription className="flex items-center mt-1">
 						{getIconByFocus(asset.focus)}

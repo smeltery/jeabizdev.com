@@ -11,20 +11,22 @@ interface AssetCardProps {
 	onClick: () => void
 }
 
-export const getStageColor = (description: string) => {
-	if (description.includes("Phase 3")) return "bg-sky-100 text-sky-800"
-	if (description.includes("Phase 1")) return "bg-blue-100 text-blue-800"
-	if (description.includes("IND")) return "bg-indigo-100 text-indigo-800"
-	return "bg-slate-100 text-slate-800"
+export const getStageColor = (stage: Asset["stage"]) => {
+	switch (stage) {
+		case "Phase 3":
+			return "bg-sky-100 text-sky-800"
+		case "Phase 1":
+			return "bg-blue-100 text-blue-800"
+		case "IND Approved":
+			return "bg-green-100 text-green-800"
+		case "IND Filing":
+			return "bg-indigo-100 text-indigo-800"
+		default:
+			return "bg-slate-100 text-slate-800"
+	}
 }
 
-export const getStageText = (description: string) => {
-	if (description.includes("Phase 3")) return "Phase 3"
-	if (description.includes("Phase 1")) return "Phase 1"
-	if (description.includes("IND")) return "IND Filing"
-	if (description.includes("IND approved")) return "IND Approved"
-	return "Preclinical"
-}
+export const getStageText = (stage: Asset["stage"]) => stage
 
 export function AssetCard({ asset, onClick }: AssetCardProps) {
 	const getIconByFocus = (focus: string) => {
@@ -49,7 +51,7 @@ export function AssetCard({ asset, onClick }: AssetCardProps) {
 							<span className="ml-1 text-sm">{asset.focus}</span>
 						</div>
 					</div>
-					<Badge className={`${getStageColor(asset.description)}`}>{getStageText(asset.description)}</Badge>
+					<Badge className={getStageColor(asset.stage)}>{getStageText(asset.stage)}</Badge>
 				</div>
 			</CardHeader>
 			<CardContent className="p-4 flex-grow flex flex-col justify-start items-start">
