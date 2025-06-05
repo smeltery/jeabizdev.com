@@ -96,5 +96,39 @@ Potent TOPO-1 inhibitor, stable linker, and strong bystander effect for maximum 
 Development Stage:
 IND-enabling studies; IND filing in November 2025.`,
 	},
+	{
+		id: "cyp11b2-inhibitor",
+		name: "CYP11B2 Inhibitor",
+		focus: "Cardiovascular / Renal",
+		description: `Best-in-Class Potential:
+Highly potent and selective CYP11B2 inhibitor with superior efficacy and safety over Baxdrostat in resistant hypertension.
+Superior Selectivity Profile:
+16x more potent CYP11B2 inhibition and ~2.5x selectivity over CYP11B1 compared to Baxdrostat.
+Favorable PK & Safety:
+Excellent oral exposure, long half-life, and no off-target effects or hERG liability in preclinical studies.
+Rapid IND Timeline:
+FDA and NMPA IND filing planned for Q4 2025, with Phase 1 expected to begin in early 2026.
+Clear Differentiation:
+Targets aldosterone synthesis upstream vs mineralocorticoid receptor blockade, offering fewer hormonal side effects
+Large Market Opportunity:
+Addresses a $51.6B antihypertensive market with ~10M rHTN patients globally.`,
+	},
+	{
+		id: "enpp1-inhibitor",
+		name: "ENPP1 Inhibitor",
+		focus: "Cardiovascular",
+		description: `First-in-Class Opportunity:
+Novel ENPP1 inhibitor that enhances cardiac repair post-MI through purinergic signaling modulation.
+Strong Preclinical Efficacy:
+Significant improvements in EF, LVFS, and NT-proBNP in MI-induced heart failure models (rat/mouse).
+High Selectivity & Safety:
+Clean safety profile in >250 pharmacology targets, no CNS/cardiovascular toxicities observed.
+IND-Ready in 2024:
+IND submission Q4 2024, supported by robust preclinical pharmacology and GLP tox studies..
+Cardiac Tissue Repair Mechanism:
+Differentiated approach vs. neurohormonal antagonists—targets cardiac fibrosis and scar remodeling.
+Large Market Opportunity >$24.9B HF Market:
+Targets underserved post-MI HF population with high unmet need and poor survival outcomes.`,
+	}
 ]
 
