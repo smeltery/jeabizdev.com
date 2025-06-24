@@ -165,34 +165,13 @@ Differentiated approach vs. neurohormonal antagonists—targets cardiac fibrosis
 Large Market Opportunity >$24.9B HF Market:
 Targets underserved post-MI HF population with high unmet need and poor survival outcomes.`,
 	},
-// 	{
-// 		id: "b7h3-adc",
-// 		name: "B7-H3 ADC",
-// 		focus: "Oncology",
-// 		stage: "Phase 1",
-// 		type: "Antibody-Drug Conjugate",
-// 		description: `Best-in-Class Potential:
-// B7-H3 is overexpressed in various solid tumors, including SCLC, NSCLC, prostate cancer, HNSCC, esophageal cancer, and sarcoma.
-// Differentiated Design:
-// DAR (6) to balance efficacy and safety, proprietary drug linker with a strong bystander effect for tumor heterogeneity, site-specific conjugation, and Fc-silenced design to enhance exposure and reduce off-target toxicity.
-// Next-Gen Molecular Design:
-// Novel TOPO-1 inhibitor payload (JS-1) with higher potency than DXd; linker connected to free sulfhydryls of reduced interchain disulfide bonds.
-// Strong Preclinical Data:
-// Superior in vitro growth inhibition vs. DS-7300a; in LUAD and LUSC CDX models, showed dose-dependent and long-lasting antitumor activity with superior efficacy; strong activity in EC models with equal efficacy to DS-7300a.
-// Favorable Safety Profile:
-// Well tolerated in tox studies; target/payload-related toxicity only, no weight loss in animal models.
-// Development Stage:
-// IND approved by China NMPA (Dec 2024) and US FDA (Jan 2025); Phase 1 study ongoing in China in advanced solid tumors.`
-// 	}
 	{
 		id: "b7h3-adc",
 		name: "B7-H3 ADC",
 		focus: "Oncology",
 		stage: "Phase 1",
 		type: "Antibody-Drug Conjugate",
-		description: `B7-H3 ADC (SYS6043 ongoing Phase 1 Clinical Study)
-
-Best-in-Class Potential:
+		description: `Best-in-Class Potential:
 B7-H3 overexpressed in multiple solid tumors (SCLC, NSCLC, prostate, HNSCC, esophagus, sarcoma).
 
 Differentiated Design:
