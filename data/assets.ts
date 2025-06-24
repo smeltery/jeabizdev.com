@@ -171,7 +171,13 @@ Targets underserved post-MI HF population with high unmet need and poor survival
 		focus: "Oncology",
 		stage: "Phase 1",
 		type: "Antibody-Drug Conjugate",
-		description: `Best-in-Class Potential:
+		description: `Promising Clinical Efficacy:
+50% ORR in SCLC, including 1 CR; 10/24 patients with >30% tumor shrinkage; PRs observed at 4 & 6 mg/kg dose groups.
+
+Favorable Safety Profile:
+Most treatment-related adverse events (TRAE) were Grade 1 or 2, per CTCAE v5.0; No unexpected toxicities observed.
+
+Best-in-Class Potential:
 B7-H3 overexpressed in multiple solid tumors (SCLC, NSCLC, prostate, HNSCC, esophagus, sarcoma).
 
 Differentiated Design:
@@ -181,13 +187,7 @@ Next-Gen Molecular Design:
 Novel TOPO-1 inhibitor payload (JS-1) with higher potency than DXd. Linker is connected to the free sulfhydryls of reduced interchain disulfide bonds.
 
 Preclinical Advantages:
-Outperforms DS-7300a in vitro & in vivo (LUAD, LUSC, EC). Strong dose-dependent tumor regression across CDX models.
-
-Favorable Safety Profile:
-Most treatment-related adverse events (TRAE) were Grade 1 or 2, per CTCAE v5.0; No unexpected toxicities observed.
-
-Promising Clinical Efficacy:
-50% ORR in SCLC, including 1 CR; 10/24 patients with >30% tumor shrinkage; PRs observed at 4 & 6 mg/kg dose groups.`
+Outperforms DS-7300a in vitro & in vivo (LUAD, LUSC, EC). Strong dose-dependent tumor regression across CDX models.`
 	}
 ]
 
