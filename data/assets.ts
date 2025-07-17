@@ -188,6 +188,24 @@ Novel TOPO-1 inhibitor payload (JS-1) with higher potency than DXd. Linker is co
 
 Preclinical Advantages:
 Outperforms DS-7300a in vitro & in vivo (LUAD, LUSC, EC). Strong dose-dependent tumor regression across CDX models.`
-	}
+	},
+	{
+		id: "atm-inhibitor",
+		name: "ATM Inhibitor",
+		focus: "Oncology",
+		stage: "Phase 1",
+		type: "Small Molecule",
+		description: `First-in-Class Opportunity:
+Oral, potent, and selective ATM kinase inhibitor (IC₅₀ = 0.42 nM) with >1,000-fold selectivity over other PIKK family members.
+Synergistic Radiosensitizer & Chemosensitizer:
+Enhances efficacy of (1) Radiotherapy in NSCLC, glioma, and colon models;
+(2) Chemotherapy (irinotecan) and PARP inhibitors; (3) EGFR-ADC (SYS6010) in NSCLC xenograft.
+Robust PK, Safety & ADME:
+Favorable oral bioavailability and brain penetration; No hERG liability (IC₅₀ = 2.86 µM); Clean safety in rats and dogs (MTD ≥60–100 mg/kg); No abnormal CNS, cardiovascular, or respiratory findings.
+Development Status:
+Ongoing Phase 1 clinical studies in China and US.
+Strategic Fit:
+Strategic Fit for DDR, Radiotherapy, ADC & Solid Tumor Developers.`
+	},
 ]
 
