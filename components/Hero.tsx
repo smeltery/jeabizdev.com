@@ -46,7 +46,7 @@ export function Hero() {
 						</h1>
 						<p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-2xl">
 							Strategic advisory services for groundbreaking partnerships across North America, Europe,
-							and Asia with focus on global cross-border transactions.
+							and Asia with focus on cross-border transactions.
 						</p>
 						<div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
 							<Link
@@ -216,8 +216,7 @@ export function Hero() {
 											<h3 className="font-semibold text-gray-800">Global Reach</h3>
 										</div>
 										<p className="text-sm text-gray-600">
-											Expertise in cross-border transactions, including global deal structures
-											(examples
+											Expertise in cross-border transactions (examples
 											include:{' '}
 											<a href="/deal-summaries/Radiance and CSPC Feb 18 2025.pdf"
 											   className="text-blue-500 underline">5</a>,
