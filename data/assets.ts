@@ -36,7 +36,7 @@ Highly potent KIF18A inhibitor targeting CIN+ solid tumors, with strong efficacy
 Oral, Once-Daily Convenience:
 A small molecule inhibitor with a favorable PK profile and broad combinability with PARP inhibitors.
 First-in-Human Study Underway:
-IND approved (FDA), Phase 1 ongoing in China, first patient dosed in January 2025.
+IND approved (FDA), Phase 1 ongoing globally, first patient dosed in January 2025.
 Strong Preclinical Data:
 Outperforms AMG650 in tumor inhibition, selectivity, and safety, with no accumulation in repeat dosing.
 Large Market Potential:
@@ -54,7 +54,7 @@ Proven Stability & Potency:
 Utilizes the same TOPO-1 inhibitor DXd payload as Enhertu, but with superior serum stability.
 Strong Preclinical & Clinical Data:
 Demonstrates efficacy even in trastuzumab-insensitive tumors with lower free payload exposure vs. T-DXd.
-Phase 3 Clinical Trials Ongoing in China:
+Phase 3 Clinical Trials Ongoing Globally:
 2L+ HER2 low breast cancer, 2L+ HER2-positive breast cancer, Platinum-resistant ovarian cancer (PROC)
 Expansive Development Pipeline:
 Targeting HER2-positive & HER2-low breast, gastric, ovarian, and other solid tumors.`,
@@ -121,7 +121,7 @@ Highly potent PD-1 agonist antibody designed to inhibit and deplete pathogenic T
 Multi-Mechanism of Action:
 Selective depletion of PD-1^high^ T cells + functional agonism of PD-1+ pathogenic T cells.
 Early Human Validation:
-Phase 1 in progress (China); favorable safety, tolerability, and full PD-1^high^ cell engagement confirmed.
+Phase 1 in progress (Global); favorable safety, tolerability, and full PD-1^high^ cell engagement confirmed.
 Broad Indication Potential:
 RA, SLE, UC, pSS, AD—multiple autoimmune diseases with large unmet needs.
 Robust Preclinical Data:
@@ -203,7 +203,7 @@ Enhances efficacy of (1) Radiotherapy in NSCLC, glioma, and colon models;
 Robust PK, Safety & ADME:
 Favorable oral bioavailability and brain penetration; No hERG liability (IC₅₀ = 2.86 µM); Clean safety in rats and dogs (MTD ≥60–100 mg/kg); No abnormal CNS, cardiovascular, or respiratory findings.
 Development Status:
-Ongoing Phase 1 clinical studies in China and US.
+Ongoing Phase 1 clinical studies in multiple regions globally.
 Strategic Fit:
 Strategic Fit for DDR, Radiotherapy, ADC & Solid Tumor Developers.`
 	},
