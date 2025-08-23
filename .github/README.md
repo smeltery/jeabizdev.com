@@ -1,4 +1,4 @@
-# JEA BizDev Consulting Website
+# JEA BizDev Consulting – Website
 
 ![Next.js](https://img.shields.io/badge/-Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
@@ -7,45 +7,148 @@
 
 ![JEA BizDev Consulting](assets/preview.png)
 
-The JEA BizDev Consulting Website is the front-facing website for JEA BizDev Consulting, a consulting firm that specializes in business development and strategic outreach for in- and -out licensing in the biotech industry.
+A modern, fast, and testable marketing site for JEA BizDev Consulting built with Next.js 15, TypeScript, Tailwind CSS, and Vitest. It showcases services, client deals, and available assets for partnering, and includes a contact form with validation.
 
-## Getting Started
+## Features
+- Next.js 15 App with React 18
+- TypeScript with strict mode
+- Tailwind CSS for styling
+- Framer Motion animations
+- Componentized Assets section with detail dialog
+- Client Showcase fed by data module
+- Contact form with zod + react-hook-form validation and toast feedback
+- Vitest + React Testing Library for unit tests
+- ESLint (Next.js core-web-vitals) for code quality
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Tech stack
+- Framework: Next.js 15 (React 18)
+- Language: TypeScript (5.4.x)
+- Styling: Tailwind CSS
+- Animations: Framer Motion
+- Forms: react-hook-form + zod
+- Testing: Vitest, React Testing Library, JSDOM
+- Linting: ESLint with eslint-config-next
 
-First, run the development server:
+## Getting started
+
+Prerequisites:
+- Node.js 18.18+ or 20+
+- pnpm 9+
+
+Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the dev server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Build for production:
 
-## Learn More
+```bash
+pnpm build
+```
 
-To learn more about Next.js, take a look at the following resources:
+Start the production server (after build):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Scripts
+- dev: start Next.js in development mode
+- build: build the Next.js production bundle
+- start: run the Next.js production server
+- lint: run ESLint
+- test: run the Vitest test suite once (no watch)
+- test:watch: run tests in watch mode
+- test:coverage: run tests with coverage report
 
-## Deploy on Vercel
+Example:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+pnpm lint
+pnpm test
+pnpm run test:coverage
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Testing
+This project uses Vitest with JSDOM and React Testing Library. Path aliases ("@/*") are supported in tests via the Vitest config.
+
+- Test environment: jsdom
+- Setup file: vitest.setup.ts (extends jest-dom matchers)
+
+You can run tests in single-run mode to avoid interactive watch:
+
+```bash
+pnpm test
+```
+
+Or in watch mode when iterating locally:
+
+```bash
+pnpm run test:watch
+```
+
+## Linting
+ESLint is configured with Next.js core web vitals rules.
+
+```bash
+pnpm lint
+```
+
+## Project structure (high level)
+```
+app/                  # Next.js app directory
+components/           # UI components
+  Assets/             # Assets list, card, dialog, and utils
+  ui/                 # Reusable UI primitives (buttons, cards, inputs, etc.)
+data/                 # Data modules (e.g., assets, deals)
+lib/                  # Library helpers (if any)
+public/               # Static assets (images, PDFs)
+vitest.config.ts      # Vitest configuration
+vitest.setup.ts       # Vitest setup (jest-dom)
+```
+
+Path aliases are set in tsconfig.json and vitest.config.ts:
+- Import with `@/...` (e.g., `@/components/Assets/AssetList`).
+
+## Environment variables
+If the contact form posts to an API route (e.g., `/api/send-email`), you may need environment variables for email or API credentials.
+
+Create a `.env` file in the project root and add any required secrets for your email service provider or infrastructure. Example (placeholder names):
+
+```
+# example placeholders — replace with your actual keys/provider
+SMTP_HOST=smtp.example.com
+SMTP_PORT=465
+SMTP_USER=your-user
+SMTP_PASS=your-password
+CONTACT_TO=recipient@example.com
+```
+
+Note: Do not commit secrets. Use environment-specific `.env` files or your hosting provider’s secrets manager.
+
+## Development notes
+- Components under `components/Assets` share utility logic in `utils.tsx` (e.g., icon selection, stage color/text, description formatting, and client-side filtering), improving maintainability and testability.
+- The Assets list supports client-side search.
+- The Client Showcase data is separated in `data/deals.tsx` for Single Responsibility and easier updates.
+
+## Deployment
+This is a standard Next.js app and can be deployed to any Node.js-compatible environment (e.g., Vercel, Netlify, Render, or custom infra). Follow your platform’s Next.js deployment guide. Ensure required environment variables are configured in the hosting environment.
+
+## Contributing
+Contributions to improve code quality, tests, or docs are welcome. Please:
+- Run `pnpm lint` and `pnpm test` before submitting a PR
+- Keep changes focused and include tests where appropriate
 
 ## License
+Proprietary — all rights reserved unless otherwise agreed by the repository owner. If you need a different license, please update this section accordingly.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
+## Contact
+- Email: jeabizdev@gmail.com
+- LinkedIn: https://www.linkedin.com/company/jea-bizdev-consulting-llc
