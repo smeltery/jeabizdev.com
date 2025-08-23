@@ -3,6 +3,7 @@
 import { Menu, X, Dna, ExternalLink, ChevronDown } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-scroll';
+import NextLink from 'next/link';
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -71,9 +72,9 @@ export default function Navigation() {
 					<div className="flex items-center justify-between">
 						<div className="flex items-center">
 							<Dna className={`${scrolled ? "h-7 w-7" : "h-8 w-8"} text-blue-600 mr-3 transition-all duration-300`} />
-							<a href="/" className={`text-xl font-bold text-gray-800 transition-all duration-300 whitespace-nowrap`}>
+							<NextLink href="/" className={`text-xl font-bold text-gray-800 transition-all duration-300 whitespace-nowrap`}>
 								JEA BizDev Consulting
-							</a>
+							</NextLink>
 						</div>
 						<div className="flex lg:hidden">
 							<button

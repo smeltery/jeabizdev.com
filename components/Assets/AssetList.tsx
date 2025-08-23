@@ -1,20 +1,24 @@
 "use client"
 
+import React from "react"
 import { useState } from "react"
 import { AssetCard } from "@/components/Assets/AssetCard"
 import { Input } from "@/components/ui/input"
 import { Search } from "lucide-react"
 import { AssetDetailDialog } from "@/components/Assets/AssetDetailDialog"
-import { assets } from "@/data/assets"
+import { assets as defaultAssets } from "@/data/assets"
+import type { Asset } from "@/data/assets"
+import { filterAssets } from "@/components/Assets/utils"
 
-export function AssetList() {
+interface AssetListProps {
+  assets?: Asset[]
+}
+
+export function AssetList({ assets = defaultAssets }: AssetListProps) {
 	const [searchQuery, setSearchQuery] = useState("")
-	const [selectedAsset, setSelectedAsset] = useState<(typeof assets)[0] | null>(null)
+	const [selectedAsset, setSelectedAsset] = useState<Asset | null>(null)
 
-	const filteredAssets = assets.filter(
-		(asset) =>
-			asset.name.toLowerCase().includes(searchQuery.toLowerCase()),
-	)
+	const filteredAssets = filterAssets(assets, searchQuery)
 
 	return (
 		<div>

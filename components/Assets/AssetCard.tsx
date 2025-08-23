@@ -1,45 +1,19 @@
 "use client"
 
+import React from "react"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ChevronRight, FlaskRoundIcon as Flask, Microscope, Pill } from "lucide-react"
+import { ChevronRight } from "lucide-react"
 import type { Asset } from "@/data/assets"
+import { getIconByFocus, getStageColor, getStageText } from "@/components/Assets/utils"
 
 interface AssetCardProps {
 	asset: Asset
 	onClick: () => void
 }
 
-export const getStageColor = (stage: Asset["stage"]) => {
-	switch (stage) {
-		case "Phase 3":
-			return "bg-sky-100 text-sky-800"
-		case "Phase 1":
-			return "bg-blue-100 text-blue-800"
-		case "IND Approved":
-			return "bg-green-100 text-green-800"
-		case "IND Filing":
-			return "bg-indigo-100 text-indigo-800"
-		default:
-			return "bg-slate-100 text-slate-800"
-	}
-}
-
-export const getStageText = (stage: Asset["stage"]) => stage
-
 export function AssetCard({ asset, onClick }: AssetCardProps) {
-	const getIconByFocus = (focus: string) => {
-		switch (focus.toLowerCase()) {
-			case "oncology":
-				return <Microscope className="h-5 w-5" />
-			case "immunology":
-				return <Flask className="h-5 w-5" />
-			default:
-				return <Pill className="h-5 w-5" />
-		}
-	}
-
 	return (
 		<Card className="overflow-hidden hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
 			<CardHeader className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4">

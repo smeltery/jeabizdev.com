@@ -1,8 +1,9 @@
+import React from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
 import type { Asset } from "@/data/assets"
-import { FlaskRoundIcon as Flask, Microscope, Pill, Target, Beaker } from "lucide-react"
-import {getStageColor, getStageText} from "@/components/Assets/AssetCard";
+import { Target, Beaker } from "lucide-react"
+import { getIconByFocus, getStageColor, getStageText, formatDescription } from "@/components/Assets/utils"
 
 interface AssetDetailDialogProps {
 	asset: Asset | null
@@ -12,39 +13,6 @@ interface AssetDetailDialogProps {
 
 export function AssetDetailDialog({ asset, open, onOpenChange }: AssetDetailDialogProps) {
 	if (!asset) return null
-
-	const getIconByFocus = (focus: string) => {
-		switch (focus.toLowerCase()) {
-			case "oncology":
-				return <Microscope className="h-5 w-5" />
-			case "immunology":
-				return <Flask className="h-5 w-5" />
-			default:
-				return <Pill className="h-5 w-5" />
-		}
-	}
-
-	const formatDescription = (description: string) => {
-		const sections = description.split("\n").filter(Boolean)
-
-		return sections.map((section, index) => {
-			const [title, ...content] = section.split(":")
-
-			if (content.length === 0)
-				return (
-					<p key={index} className="mb-3">
-						{section}
-					</p>
-				)
-
-			return (
-				<div key={index} className="mb-4">
-					<h4 className="font-semibold text-slate-900 mb-1">{title}:</h4>
-					<p className="text-slate-700">{content.join(":")}</p>
-				</div>
-			)
-		})
-	}
 
 	return (
 		<Dialog open={open} onOpenChange={onOpenChange}>
