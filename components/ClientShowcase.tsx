@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react"
 import type { ReactNode, FC } from "react"
 import { motion, Variants } from "framer-motion"
 import { Element } from "react-scroll"
