@@ -1,18 +1,13 @@
 "use client"
 
 import React from "react"
-import type { ReactNode, FC } from "react"
+import type { FC } from "react"
 import { motion, Variants } from "framer-motion"
 import { Element } from "react-scroll"
 import { ExternalLink } from "lucide-react"
-import Image from "next/image"
 
 import type { Deal } from "@/data/deals"
 import { deals } from "@/data/deals"
-
-const DealDescription: FC<{ children: ReactNode }> = ({ children }) => (
-	<div className="flex flex-col items-center space-y-5">{children}</div>
-)
 
 const containerVariants: Variants = {
 	hidden: { opacity: 0 },
