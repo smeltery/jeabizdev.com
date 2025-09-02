@@ -145,7 +145,7 @@ export function Hero() {
 									<div>
 										<h3 className="text-xl font-semibold text-gray-800">John Adamou, MS, MBA</h3>
 										<p className="text-gray-600">President and Managing Director</p>
-										<a href="https://www.linkedin.com/in/john-adamou-6182668" target="_blank"
+										<a href="https://www.linkedin.com/in/john-adamou-ms-mba-6182668" target="_blank"
 										   rel="noopener noreferrer" className="hover:text-blue-600 hover:underline">
 											<p className="flex items-center flex-row gap-1">
 												<LinkedInLogoIcon className="block"/>

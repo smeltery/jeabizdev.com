@@ -27,16 +27,16 @@ const itemVariants: Variants = {
 const DealCard: FC<Deal> = ({ company, subtitle, description, year, pdfUrl }) => (
 	<a href={pdfUrl} target="_blank" rel="noopener noreferrer" className="no-underline">
 		<motion.div
-			className="w-[24em] md:w-[28em] bg-white rounded-lg overflow-hidden border border-blue-100 shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+			className="w-[24em] md:w-[28em] h-[24em] bg-white rounded-lg overflow-hidden border border-blue-100 shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer"
 			variants={itemVariants}
 		>
 			<div className="flex flex-col h-full">
-				<div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-3">
+				<div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-3 flex-shrink-0">
 					<h3 className="text-xl font-semibold text-white">{company}</h3>
 					<p className="text-sm text-white">{subtitle}</p>
 				</div>
-				<div className="p-6 flex-grow text-black">{description}</div>
-				<div className="flex justify-between items-center text-sm text-white bg-gradient-to-r from-blue-500 to-blue-600 p-3">
+				<div className="p-6 flex-grow text-black overflow-y-auto">{description}</div>
+				<div className="flex justify-between items-center text-sm text-white bg-gradient-to-r from-blue-500 to-blue-600 p-3 flex-shrink-0">
 					<span>{year}</span>
 					<ExternalLink className="w-4 h-4" />
 				</div>
