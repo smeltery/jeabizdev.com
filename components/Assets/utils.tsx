@@ -32,6 +32,39 @@ export const getStageColor = (stage: Asset["stage"]) => {
 
 export const getStageText = (stage: Asset["stage"]) => stage
 
+// Sort assets with Oncology first, then by stage in declining order (Phase 3 first)
+export const sortAssets = (assets: Asset[]) => {
+  const focusPriority = {
+    "Oncology": 1,
+    "Immunology": 2,
+    "Cardiovascular": 3,
+  } as const
+
+  const stagePriority = {
+    "Phase 3": 1,
+    "Phase 1": 2,
+    "IND Approved": 3,
+    "IND Filing": 4,
+    "Preclinical": 5,
+  } as const
+
+  return [...assets].sort((a, b) => {
+    // First sort by focus (Oncology first)
+    const focusA = focusPriority[a.focus as keyof typeof focusPriority] || 99
+    const focusB = focusPriority[b.focus as keyof typeof focusPriority] || 99
+    
+    if (focusA !== focusB) {
+      return focusA - focusB
+    }
+    
+    // Then sort by stage (Phase 3 first, declining order)
+    const stageA = stagePriority[a.stage] || 99
+    const stageB = stagePriority[b.stage] || 99
+    
+    return stageA - stageB
+  })
+}
+
 // Pure function to filter assets by a search query (SRP + testable)
 export const filterAssets = (items: Asset[], query: string) => {
   const q = query.trim().toLowerCase()

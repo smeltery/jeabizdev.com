@@ -1,6 +1,6 @@
 import React from "react"
 import { render, screen } from "@testing-library/react"
-import { filterAssets, formatDescription, getStageColor } from "@/components/Assets/utils"
+import { filterAssets, formatDescription, getStageColor, sortAssets } from "@/components/Assets/utils"
 import type { Asset } from "@/data/assets"
 
 const items: Asset[] = [
@@ -54,6 +54,37 @@ describe("Assets utils", () => {
       expect(getStageColor("IND Filing")).toContain("indigo-100")
       // @ts-expect-error testing fallback for stage not in union at runtime
       expect(getStageColor("Unknown stage")).toContain("slate-100")
+    })
+  })
+
+  describe("sortAssets", () => {
+    const testAssets: Asset[] = [
+      { id: "1", name: "Cardio Asset 1", focus: "Cardiovascular", stage: "IND Filing", type: "Small Molecule", description: "A" },
+      { id: "2", name: "Onco Asset 1", focus: "Oncology", stage: "Phase 1", type: "Antibody-Drug Conjugate", description: "B" },
+      { id: "3", name: "Immuno Asset 1", focus: "Immunology", stage: "Phase 1", type: "Antibody", description: "C" },
+      { id: "4", name: "Onco Asset 2", focus: "Oncology", stage: "Phase 3", type: "Antibody-Drug Conjugate", description: "D" },
+      { id: "5", name: "Cardio Asset 2", focus: "Cardiovascular", stage: "IND Approved", type: "Small Molecule", description: "E" },
+    ]
+
+    it("sorts assets with Oncology first, then by stage (Phase 3 first)", () => {
+      const sorted = sortAssets(testAssets)
+      
+      // Should be: Onco Phase 3, Onco Phase 1, Immuno Phase 1, Cardio IND Approved, Cardio IND Filing
+      expect(sorted[0].focus).toBe("Oncology")
+      expect(sorted[0].stage).toBe("Phase 3")
+      expect(sorted[1].focus).toBe("Oncology")
+      expect(sorted[1].stage).toBe("Phase 1")
+      expect(sorted[2].focus).toBe("Immunology")
+      expect(sorted[3].focus).toBe("Cardiovascular")
+      expect(sorted[3].stage).toBe("IND Approved")
+      expect(sorted[4].focus).toBe("Cardiovascular")
+      expect(sorted[4].stage).toBe("IND Filing")
+    })
+
+    it("does not mutate the original array", () => {
+      const original = [...testAssets]
+      sortAssets(testAssets)
+      expect(testAssets).toEqual(original)
     })
   })
 })

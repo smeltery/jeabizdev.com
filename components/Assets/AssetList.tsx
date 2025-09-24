@@ -8,7 +8,7 @@ import { Search } from "lucide-react"
 import { AssetDetailDialog } from "@/components/Assets/AssetDetailDialog"
 import { assets as defaultAssets } from "@/data/assets"
 import type { Asset } from "@/data/assets"
-import { filterAssets } from "@/components/Assets/utils"
+import { filterAssets, sortAssets } from "@/components/Assets/utils"
 
 interface AssetListProps {
   assets?: Asset[]
@@ -18,7 +18,9 @@ export function AssetList({ assets = defaultAssets }: AssetListProps) {
 	const [searchQuery, setSearchQuery] = useState("")
 	const [selectedAsset, setSelectedAsset] = useState<Asset | null>(null)
 
-	const filteredAssets = filterAssets(assets, searchQuery)
+	// Sort assets dynamically: Oncology first, then by stage (Phase 3 first)
+	const sortedAssets = sortAssets(assets)
+	const filteredAssets = filterAssets(sortedAssets, searchQuery)
 
 	return (
 		<div>
