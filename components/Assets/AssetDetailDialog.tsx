@@ -34,7 +34,7 @@ export function AssetDetailDialog({ asset, open, onOpenChange }: AssetDetailDial
 							<Target className="h-5 w-5 text-blue-600 mr-2" />
 							<div>
 								<p className="text-xs text-slate-700">Target</p>
-								<p className="font-bold text-black">{asset.name.split(' ')[0]}</p>
+								<p className="font-bold text-black">{asset.name.split(/[ -]/)[0]}</p>
 							</div>
 						</div>
 						<div className="bg-slate-100 p-3 rounded-lg flex items-center">
