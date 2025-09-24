@@ -207,5 +207,24 @@ Ongoing Phase 1 clinical studies in multiple regions globally.
 Strategic Fit:
 Strategic Fit for DDR, Radiotherapy, ADC & Solid Tumor Developers.`
 	},
+	{
+		id: "egfr-adc",
+		name: "EGFR-ADC",
+		focus: "Oncology",
+		stage: "Phase 3",
+		type: "Antibody-Drug Conjugate",
+		description: `Best-in-Class Opportunity:
+EGFR widely expressed in NSCLC and multiple solid tumors (EGFRwt, EGFRmut, ESCC, NPC, breast, SCLC).
+Differentiated Design:
+Optimized DAR4 ADC with potent topoisomerase I inhibitor payload; favorable PK and therapeutic index.
+Favorable Safety Profile:
+No ≥G3 ILD events; lower stomatitis, hematologic AEs vs competitor ADCs (Dato-Dxd, BL-B01D1).
+Next-Gen Clinical Profile:
+Superior efficacy vs other EGFR ADCs; ORR >55% in EGFRwt NSCLC with 100% DCR; durable responses across tumors.
+Regulatory Momentum:
+3 FDA Fast Track & 1 Breakthrough (CDE) designation; FDA-endorsed accelerated approval in NSCLC (2L EGFRwt, 3L EGFRmut).
+Promising Clinical Development:
+Two pivotal global MRCTs starting Q4 2025; >1000 patients enrolled; launch expected 2027 (China) / 2028 (US/EU).`
+	},
 ]
 
