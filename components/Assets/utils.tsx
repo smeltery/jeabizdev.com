@@ -14,6 +14,20 @@ export const getIconByFocus = (focus: string) => {
   }
 }
 
+// Returns gradient colors based on the asset focus area that match the site's color scheme
+export const getFocusColor = (focus: string) => {
+  switch (focus?.toLowerCase()) {
+    case "oncology":
+      return "bg-gradient-to-r from-blue-500 to-blue-600"
+    case "immunology":
+      return "bg-gradient-to-r from-indigo-500 to-indigo-600"
+    case "cardiovascular":
+      return "bg-gradient-to-r from-sky-500 to-sky-600"
+    default:
+      return "bg-gradient-to-r from-blue-500 to-blue-600"
+  }
+}
+
 // Stable mapping of stage to Tailwind color classes
 export const getStageColor = (stage: Asset["stage"]) => {
   switch (stage) {

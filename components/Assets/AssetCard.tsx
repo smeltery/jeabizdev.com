@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ChevronRight } from "lucide-react"
 import type { Asset } from "@/data/assets"
-import { getIconByFocus, getStageColor, getStageText } from "@/components/Assets/utils"
+import { getIconByFocus, getFocusColor, getStageColor, getStageText } from "@/components/Assets/utils"
 
 interface AssetCardProps {
 	asset: Asset
@@ -16,7 +16,7 @@ interface AssetCardProps {
 export function AssetCard({ asset, onClick }: AssetCardProps) {
 	return (
 		<Card className="overflow-hidden hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
-			<CardHeader className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4">
+		<CardHeader className={`${getFocusColor(asset.focus)} text-white p-4`}>
 				<div className="flex justify-between items-start">
 					<div>
 						<h3 className="font-bold text-lg">{asset.name}</h3>
