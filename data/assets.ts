@@ -25,23 +25,23 @@ IND Filing submitted, and Phase I study is expected in 2025Q1.
 Large Market Opportunity:
 Addressing a $16.3B+ growing market with high unmet need in SCLC and neuroendocrine tumors (NET).`,
 	},
-	{
-		id: "kif18a-inhibitor",
-		name: "KIF18A Inhibitor",
-		focus: "Oncology",
-		stage: "Phase 1",
-		type: "Small Molecule",
-		description: `Best-in-Class Potential:
-Highly potent KIF18A inhibitor targeting CIN+ solid tumors, with strong efficacy and safety.
-Oral, Once-Daily Convenience:
-A small molecule inhibitor with a favorable PK profile and broad combinability with PARP inhibitors.
-First-in-Human Study Underway:
-IND approved (FDA), Phase 1 ongoing globally, first patient dosed in January 2025.
-Strong Preclinical Data:
-Outperforms AMG650 in tumor inhibition, selectivity, and safety, with no accumulation in repeat dosing.
-Large Market Potential:
-Addressing high unmet needs in CIN+ tumors, TNBC, and ovarian cancers.`,
-	},
+	// {
+	// 	id: "kif18a-inhibitor",
+	// 	name: "KIF18A Inhibitor",
+	// 	focus: "Oncology",
+	// 	stage: "Phase 1",
+	// 	type: "Small Molecule",
+	// 	description: `Best-in-Class Potential:
+// Highly potent KIF18A inhibitor targeting CIN+ solid tumors, with strong efficacy and safety.
+// Oral, Once-Daily Convenience:
+// A small molecule inhibitor with a favorable PK profile and broad combinability with PARP inhibitors.
+// First-in-Human Study Underway:
+// IND approved (FDA), Phase 1 ongoing globally, first patient dosed in January 2025.
+// Strong Preclinical Data:
+// Outperforms AMG650 in tumor inhibition, selectivity, and safety, with no accumulation in repeat dosing.
+// Large Market Potential:
+// Addressing high unmet needs in CIN+ tumors, TNBC, and ovarian cancers.`,
+	// },
 	{
 		id: "her2-biparatopic-adc",
 		name: "HER2 Biparatopic ADC",
@@ -59,40 +59,40 @@ Phase 3 Clinical Trials Ongoing Globally:
 Expansive Development Pipeline:
 Targeting HER2-positive & HER2-low breast, gastric, ovarian, and other solid tumors.`,
 	},
-	{
-		id: "b7h3xpsma-adc",
-		name: "B7H3xPSMA ADC",
-		focus: "Oncology",
-		stage: "IND Filing",
-		type: "Antibody-Drug Conjugate",
-		description: `First-in-Class BsADC for mCRPC:
-Targets B7-H3 & PSMA to maximize tumor coverage and overcome heterogeneous expression. TOPO-1 inhibitor payload.
-Addresses High Unmet Need:
-Designed for metastatic castration-resistant prostate cancer (mCRPC) after prior therapy failure.
-Superior to Single-Target ADCs:
-Outperforms PSMA and B7-H3 ADCs in tumor binding, internalization, and bystander effect.
-Broad Potential in Solid Tumors:
-Therapeutic relevance in SCLC, NSCLC, HNSCC, and esophageal cancers.
-Development Stage:
-IND-enabling studies; IND filing in October 2025.`,
-	},
-	{
-		id: "egfrxher2-adc",
-		name: "EGFRxHER2 ADC",
-		focus: "Oncology",
-		stage: "IND Filing",
-		type: "Antibody-Drug Conjugate",
-		description: `Best-in-Class Potential BsADC:
-Targets EGFR & HER2 for enhanced tumor inhibition and overcomes resistance seen in HER2-low cancers.
-Optimized ADC Design:
-Stable cleavable linker, potent TOPO-1 payload, and strong bystander effect improve efficacy and safety.
-Broad Solid Tumor Applications:
-Urothelial, gastric, colorectal, lung, ovarian, breast, and head & neck cancers.
-Outperforms Standard ADCs:
-More potent than Enhertu (DS-8201) with better tumor cell binding, internalization, and bystander killing.
-Development Stage:
-IND-enabling studies; IND filing in October 2025.`,
-	},
+	// {
+	// 	id: "b7h3xpsma-adc",
+	// 	name: "B7H3xPSMA ADC",
+	// 	focus: "Oncology",
+	// 	stage: "IND Filing",
+	// 	type: "Antibody-Drug Conjugate",
+	// 	description: `First-in-Class BsADC for mCRPC:
+// Targets B7-H3 & PSMA to maximize tumor coverage and overcome heterogeneous expression. TOPO-1 inhibitor payload.
+// Addresses High Unmet Need:
+// Designed for metastatic castration-resistant prostate cancer (mCRPC) after prior therapy failure.
+// Superior to Single-Target ADCs:
+// Outperforms PSMA and B7-H3 ADCs in tumor binding, internalization, and bystander effect.
+// Broad Potential in Solid Tumors:
+// Therapeutic relevance in SCLC, NSCLC, HNSCC, and esophageal cancers.
+// Development Stage:
+// IND-enabling studies; IND filing in October 2025.`,
+	// },
+	// {
+	// 	id: "egfrxher2-adc",
+	// 	name: "EGFRxHER2 ADC",
+	// 	focus: "Oncology",
+	// 	stage: "IND Filing",
+	// 	type: "Antibody-Drug Conjugate",
+	// 	description: `Best-in-Class Potential BsADC:
+// Targets EGFR & HER2 for enhanced tumor inhibition and overcomes resistance seen in HER2-low cancers.
+// Optimized ADC Design:
+// Stable cleavable linker, potent TOPO-1 payload, and strong bystander effect improve efficacy and safety.
+// Broad Solid Tumor Applications:
+// Urothelial, gastric, colorectal, lung, ovarian, breast, and head & neck cancers.
+// Outperforms Standard ADCs:
+// More potent than Enhertu (DS-8201) with better tumor cell binding, internalization, and bystander killing.
+// Development Stage:
+// IND-enabling studies; IND filing in October 2025.`,
+	// },
 	{
 		id: "fra-biparatopic-adc",
 		name: "FRα Biparatopic ADC",
@@ -110,23 +110,23 @@ Potent TOPO-1 inhibitor, stable linker, and strong bystander effect for maximum 
 Development Stage:
 IND-enabling studies; IND filing in November 2025.`,
 	},
-	{
-		id: "pd1-agonist-mab",
-		name: "PD-1 Agonist mAb",
-		focus: "Immunology",
-		stage: "Phase 1",
-		type: "Antibody",
-		description: `Best-in-Class Potential Antibody:
-Highly potent PD-1 agonist antibody designed to inhibit and deplete pathogenic T cells in autoimmune diseases.
-Multi-Mechanism of Action:
-Selective depletion of PD-1^high^ T cells + functional agonism of PD-1+ pathogenic T cells.
-Early Human Validation:
-Phase 1 in progress (Global); favorable safety, tolerability, and full PD-1^high^ cell engagement confirmed.
-Broad Indication Potential:
-RA, SLE, UC, pSS, AD—multiple autoimmune diseases with large unmet needs.
-Robust Preclinical Data:
-Efficacy in RA, SLE, UC, pSS mouse models with no Treg depletion or serious toxicity.`,
-	},
+	// {
+	// 	id: "pd1-agonist-mab",
+	// 	name: "PD-1 Agonist mAb",
+	// 	focus: "Immunology",
+	// 	stage: "Phase 1",
+	// 	type: "Antibody",
+	// 	description: `Best-in-Class Potential Antibody:
+// Highly potent PD-1 agonist antibody designed to inhibit and deplete pathogenic T cells in autoimmune diseases.
+// Multi-Mechanism of Action:
+// Selective depletion of PD-1^high^ T cells + functional agonism of PD-1+ pathogenic T cells.
+// Early Human Validation:
+// Phase 1 in progress (Global); favorable safety, tolerability, and full PD-1^high^ cell engagement confirmed.
+// Broad Indication Potential:
+// RA, SLE, UC, pSS, AD—multiple autoimmune diseases with large unmet needs.
+// Robust Preclinical Data:
+// Efficacy in RA, SLE, UC, pSS mouse models with no Treg depletion or serious toxicity.`,
+	// },
 	{
 		id: "cyp11b2-inhibitor",
 		name: "CYP11B2 Inhibitor",
