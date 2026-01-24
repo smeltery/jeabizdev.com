@@ -11,8 +11,8 @@ export function Results() {
 
 	const stats = [
 		{ icon: BarChart2, value: '25+', label: 'Years in Healthcare Leadership' },
-		{ icon: Handshake, value: '80+', label: 'Partnerships Executed' },
-		{ icon: Globe, value: '$20B+', label: 'Total Partnership Value' }
+		{ icon: Handshake, value: '85', label: 'Partnerships Executed' },
+		{ icon: Globe, value: '$25B+', label: 'Total Partnership Value' }
 	]
 
 	return (
