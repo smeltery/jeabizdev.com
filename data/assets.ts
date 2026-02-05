@@ -1,6 +1,7 @@
 export interface Asset {
 	id: string
 	name: string
+	target: string
 	focus: string
 	description: string
 	stage: "Preclinical" | "IND Filing" | "IND Approved" | "Phase 1" | "Phase 3"
@@ -11,6 +12,7 @@ export const assets: Asset[] = [
 	{
 		id: "dll3-adc",
 		name: "DLL3 ADC",
+		target: "DLL3",
 		focus: "Oncology",
 		stage: "IND Filing",
 		type: "Antibody-Drug Conjugate",
@@ -45,6 +47,7 @@ Addressing a $16.3B+ growing market with high unmet need in SCLC and neuroendocr
 	{
 		id: "her2-biparatopic-adc",
 		name: "HER2 Biparatopic ADC",
+		target: "HER2",
 		focus: "Oncology",
 		stage: "Phase 3",
 		type: "Antibody-Drug Conjugate",
@@ -96,6 +99,7 @@ Targeting HER2-positive & HER2-low breast, gastric, ovarian, and other solid tum
 	{
 		id: "fra-biparatopic-adc",
 		name: "FRα Biparatopic ADC",
+		target: "FRα",
 		focus: "Oncology",
 		stage: "IND Filing",
 		type: "Antibody-Drug Conjugate",
@@ -130,6 +134,7 @@ IND-enabling studies; IND filing in November 2025.`,
 	{
 		id: "cyp11b2-inhibitor",
 		name: "CYP11B2 Inhibitor",
+		target: "CYP11B2",
 		focus: "Cardiovascular",
 		stage: "IND Filing",
 		type: "Small Molecule",
@@ -149,6 +154,7 @@ Addresses a $51.6B antihypertensive market with ~10M rHTN patients globally.`,
 	{
 		id: "enpp1-inhibitor",
 		name: "ENPP1 Inhibitor",
+		target: "ENPP1",
 		focus: "Cardiovascular",
 		stage: "IND Approved",
 		type: "Small Molecule",
@@ -168,6 +174,7 @@ Targets underserved post-MI HF population with high unmet need and poor survival
 	{
 		id: "b7h3-adc",
 		name: "B7-H3 ADC",
+		target: "B7-H3",
 		focus: "Oncology",
 		stage: "Phase 1",
 		type: "Antibody-Drug Conjugate",
@@ -192,6 +199,7 @@ Outperforms DS-7300a in vitro & in vivo (LUAD, LUSC, EC). Strong dose-dependent 
 	{
 		id: "atm-inhibitor",
 		name: "ATM Inhibitor",
+		target: "ATM",
 		focus: "Oncology",
 		stage: "Phase 1",
 		type: "Small Molecule",
@@ -210,6 +218,7 @@ Strategic Fit for DDR, Radiotherapy, ADC & Solid Tumor Developers.`
 	{
 		id: "egfr-adc",
 		name: "EGFR-ADC",
+		target: "EGFR",
 		focus: "Oncology",
 		stage: "Phase 3",
 		type: "Antibody-Drug Conjugate",

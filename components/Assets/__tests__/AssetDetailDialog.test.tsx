@@ -6,6 +6,7 @@ import type { Asset } from "@/data/assets"
 const asset: Asset = {
   id: "dll3-adc",
   name: "DLL3 ADC",
+  target: "DLL3",
   focus: "Oncology",
   stage: "IND Filing",
   type: "Antibody-Drug Conjugate",

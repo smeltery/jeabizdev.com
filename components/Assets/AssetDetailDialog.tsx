@@ -30,13 +30,13 @@ export function AssetDetailDialog({ asset, open, onOpenChange }: AssetDetailDial
 
 				<div className="mt-4 space-y-4">
 					<div className="grid grid-cols-2 gap-4 mb-6">
-						<div className="bg-slate-100 p-3 rounded-lg flex items-center">
-							<Target className="h-5 w-5 text-blue-600 mr-2" />
-							<div>
-								<p className="text-xs text-slate-700">Target</p>
-								<p className="font-bold text-black">{asset.name.split(/[ -]/)[0]}</p>
-							</div>
+					<div className="bg-slate-100 p-3 rounded-lg flex items-center">
+						<Target className="h-5 w-5 text-blue-600 mr-2" />
+						<div>
+							<p className="text-xs text-slate-700">Target</p>
+							<p className="font-bold text-black">{asset.target}</p>
 						</div>
+					</div>
 						<div className="bg-slate-100 p-3 rounded-lg flex items-center">
 							<Beaker className="h-5 w-5 text-blue-600 mr-2" />
 							<div>
