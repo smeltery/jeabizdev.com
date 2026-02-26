@@ -13,7 +13,7 @@ export interface Deal {
 export const deals: Deal[] = [
   {
     company: "JEA BizDev Consulting, LLC",
-    subtitle: "Served as Transaction Advisor",
+    subtitle: "Served as Lead Business Development and Transaction Advisor",
     description: (
       <div className="flex flex-col items-center gap-4">
         <Image
@@ -89,7 +89,7 @@ export const deals: Deal[] = [
   },
   {
     company: "JEA BizDev Consulting, LLC",
-    subtitle: "Served as Transaction Advisor",
+    subtitle: "Served as Lead Business Development and Transaction Advisor",
     description: (
       <div className="flex flex-col items-center gap-4">
         <Image
