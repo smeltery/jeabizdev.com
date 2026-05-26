@@ -216,6 +216,24 @@ Strategic Fit:
 Strategic Fit for DDR, Radiotherapy, ADC & Solid Tumor Developers.`
 	},
 	{
+		id: "kat6-inhibitor",
+		name: "KAT6 Inhibitor",
+		target: "KAT6A / KAT6B",
+		focus: "Oncology",
+		stage: "Phase 1",
+		type: "Small Molecule",
+		description: `Best-in-Class Potential Inhibitor:
+Highly selective oral KAT6A/6B inhibitor with superior preclinical anti-tumor activity and broader therapeutic window compared with Pfizer's PF-07248144.
+Superior Selectivity & Potency:
+Stronger inhibitory activity, longer target residence time, and excellent selectivity profile with no meaningful off-target activity across 44 safety targets and 400 kinases.
+Rapid Clinical Development Timeline:
+FDA IND cleared in April 2026 and China IND approved in May 2026, with Phase 1 monotherapy and combination studies initiating in 2026.
+Clear Differentiation:
+Potential to overcome endocrine and fulvestrant resistance in HR+/HER2− breast cancer with strong rationale for combination use with SERDs and CDK4/6 inhibitors.
+Large Market Opportunity:
+Targets the rapidly growing HR+/HER2− metastatic breast cancer market, including patients progressing after endocrine therapy and CDK4/6 inhibitors, representing a significant unmet need in precision oncology.`
+	},
+	{
 		id: "egfr-adc",
 		name: "EGFR-ADC",
 		target: "EGFR",
