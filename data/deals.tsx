@@ -23,6 +23,33 @@ export const deals: Deal[] = [
           height={200}
         />
         <p className="text-center px-4">
+          on an exclusive license agreement for NBL-023, a novel anti&ndash;IL-25
+          monoclonal antibody, granting worldwide rights outside Greater China to
+        </p>
+        <Image
+          src="/logos/bionyra.png"
+          alt="Bionyra Pharma"
+          width={150}
+          height={150}
+        />
+      </div>
+    ),
+    year: 2026,
+    pdfUrl:
+      "/client-showcase/jea-bizdev-consulting-advices-novarock-on-partnership-with-bionyra.pdf",
+  },
+  {
+    company: "JEA BizDev Consulting, LLC",
+    subtitle: "Served as Lead Business Development and Transaction Advisor",
+    description: (
+      <div className="flex flex-col items-center gap-4">
+        <Image
+          src="/logos/novarock-biotherapeutics.png"
+          alt="NovaRock Biotherapeutics"
+          width={200}
+          height={200}
+        />
+        <p className="text-center px-4">
           on a global out-licensing agreement for an ADC candidate targeting a
           novel oncology antigen with
         </p>
