@@ -16,7 +16,7 @@ interactive features. The original blue DNA identity and source documents remain
 
 [Visit JEA](https://www.jeabizdev.com) · [User guides](docs/README.md) · [Development](docs/development/setup.md)
 
-![JEA — Connecting science. Creating value.](public/brand/social.png)
+![JEA — Cross-border deals. Lasting value.](public/brand/social.png)
 
 ```sh
 flox activate
