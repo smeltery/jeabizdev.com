@@ -1,0 +1,88 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Intro from "../components/Intro.astro";
+import Closing from "../components/Closing.astro";
+import Faq from "../components/Faq.astro";
+import { steps } from "../content/site";
+---
+
+<Layout title="A clear path to partnership">
+  <Intro
+    eyebrow="OUR APPROACH"
+    title="Shared ambition. Deliberate progress."
+    description="Every successful partnership starts with understanding what matters. We bring structure, perspective, and momentum to the decisions ahead."
+  />
+  <section class="wrap section">
+    <div class="steps">
+      {steps.map(([title, description], index) => (
+        <article class="step">
+          <span class="step-number">0{index + 1}</span>
+          <h2 style="font-size:30px">{title}</h2>
+          <p>{description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+  <section class="about-section">
+    <div class="wrap section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">WHAT GUIDES THE WORK</p>
+          <h2>
+            Principles with
+            <br />
+            <em>practical purpose.</em>
+          </h2>
+        </div>
+      </div>
+      <div class="values-grid">
+        <article>
+          <h3>Strategic collaboration</h3>
+          <p>
+            Meaningful connections and shared priorities are the foundations of
+            productive, lasting partnerships.
+          </p>
+        </article>
+        <article>
+          <h3>Innovative solutions</h3>
+          <p>
+            Thoughtful, creative deal structures open new paths to value for
+            both sides of the table.
+          </p>
+        </article>
+        <article>
+          <h3>A focus on results</h3>
+          <p>
+            Clear objectives and tangible outcomes keep the work connected to
+            your company’s success.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="wrap section split">
+    <div>
+      <p class="eyebrow">WORKING TOGETHER</p>
+      <h2>
+        Built around
+        <br />
+        <em>your priorities.</em>
+      </h2>
+    </div>
+    <div>
+      <p class="lead">
+        A targeted assignment or an extension of your business development team.
+        We shape the engagement around the support you need.
+      </p>
+      <p>
+        Hourly, retainer, project-based, and blended models allow us to align
+        scope, deliverables, and incentives from the start.
+      </p>
+      <a class="text-link" href="/services#engagements">
+        Explore engagement options
+      </a>
+    </div>
+  </section>
+  <Faq />
+  <Closing />
+</Layout>

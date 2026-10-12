@@ -1,0 +1,132 @@
+#mobile-menu nav > a > span:nth-child(2) {
+  flex: 1;
+}
+#mobile-menu nav small {
+  display: block;
+  font: 11px var(--sans);
+  color: var(--muted);
+}
+.menu-statement {
+  font: 42px/1.1 var(--serif);
+  margin: 35px 0 20px;
+}
+#mobile-menu > .micro {
+  margin-top: 25px;
+}
+@media (min-width: 1600px) {
+  .wrap {
+    width: min(1400px, calc(100% - 160px));
+  }
+  .hero {
+    gap: 100px;
+  }
+  .world-panel {
+    min-height: 580px;
+  }
+  .hero h1 {
+    font-size: 6.2rem;
+  }
+}
+@media (max-width: 1200px) {
+  .header-inner {
+    padding-inline: 28px;
+    gap: 20px;
+  }
+  .site-header nav {
+    gap: 20px;
+  }
+  .header-actions {
+    gap: 17px;
+  }
+  .search-label,
+  .search-trigger kbd {
+    display: none;
+  }
+  .wrap {
+    width: calc(100% - 80px);
+  }
+  .hero {
+    gap: 35px;
+  }
+  .hero h1 {
+    font-size: 4.25rem;
+  }
+  .world-panel {
+    min-height: 490px;
+  }
+  .footer-top {
+    gap: 25px;
+  }
+  .footer-invitation h2 {
+    font-size: 23px;
+  }
+  .about-grid,
+  .split,
+  .faq-grid {
+    gap: 50px;
+  }
+}
+@media (max-width: 1100px) {
+  .site-header nav,
+  .desktop-cta {
+    display: none !important;
+  }
+  .menu-trigger {
+    display: flex;
+  }
+  .header-inner {
+    padding-block: 18px;
+  }
+  .header-actions {
+    margin-left: auto;
+  }
+  .hero h1 {
+    font-size: 3.8rem;
+  }
+  .world-panel {
+    min-height: 470px;
+    padding: 25px;
+  }
+  .hero {
+    padding-block: 55px;
+  }
+  .section {
+    padding-block: 75px;
+  }
+  .engagement-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-top {
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+  }
+  .footer-invitation {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 1px solid #ffffff20;
+  }
+  .footer-invitation h2 {
+    font-size: 28px;
+    margin: 0;
+  }
+  .contact-grid {
+    gap: 35px;
+  }
+  .form-panel {
+    padding: 25px;
+  }
+  .steps {
+    gap: 23px;
+  }
+  .step h3 {
+    font-size: 23px;
+  }
+  .transaction-grid {
+    gap: 15px;
+  }
+  .transaction-card {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,143 @@
+@media (max-width: 800px) {
+  .wrap {
+    width: calc(100% - 44px);
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 50px 0 35px;
+  }
+  .hero h1 {
+    font-size: clamp(3.5rem, 9vw, 5rem);
+    max-width: 630px;
+  }
+  .hero .lead {
+    max-width: 550px;
+  }
+  .world-panel {
+    min-height: 440px;
+    max-height: 500px;
+  }
+  .world-art {
+    width: 85%;
+    margin: -75px auto -55px;
+  }
+  .world-panel .eyebrow {
+    z-index: 1;
+  }
+  .territory-strip .wrap {
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  }
+  .territories {
+    font-size: 17px;
+    gap: 20px;
+  }
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .service-card {
+    padding: 23px;
+  }
+  .service-card h3 {
+    font-size: 25px;
+  }
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-grid {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 30px;
+  }
+  .portrait img {
+    height: 360px;
+  }
+  .about-copy .stats {
+    display: none;
+  }
+  .about-copy h2 {
+    font-size: 2.5rem;
+  }
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  .split,
+  .faq-grid,
+  .closing-inner,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .closing-inner > div:last-child {
+    justify-self: start;
+  }
+  .transaction-grid,
+  .library-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .transaction-grid > .transaction-card:last-child:nth-child(odd) {
+    grid-column: 1/-1;
+  }
+  .faq-grid h2 br {
+    display: none;
+  }
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+  .footer-identity {
+    grid-column: 1/-1;
+  }
+  .footer-identity p {
+    margin: 18px 0;
+  }
+  .footer-top .micro {
+    margin-top: 15px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .footer-bottom > div {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .page-intro {
+    padding-block: 50px 40px;
+  }
+  .page-intro h1 {
+    font-size: 3.4rem;
+  }
+  .asset-details {
+    gap: 30px;
+    grid-template-columns: 1.3fr 1fr;
+  }
+  .asset-meta {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .asset-aside {
+    padding: 22px;
+  }
+  .tool-workspace {
+    grid-template-columns: 1fr;
+  }
+  .tool-guide {
+    gap: 35px;
+  }
+  .swatches {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .content-grid {
+    gap: 30px;
+  }
+  .values-grid {
+    gap: 25px;
+  }
+  .values-grid h3 {
+    font-size: 24px;
+  }
+}

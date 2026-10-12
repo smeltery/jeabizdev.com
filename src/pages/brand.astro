@@ -1,0 +1,90 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Intro from "../components/Intro.astro";
+---
+
+<Layout title="Brand resources">
+  <Intro
+    eyebrow="THE JEA IDENTITY"
+    title="The JEA identity."
+    description="A visual identity built around scientific ambition, international perspective, and the relationships that create lasting value."
+  />
+  <section class="wrap section">
+    <div class="split">
+      <div>
+        <p class="eyebrow">THE MARK</p>
+        <h2>
+          Science at
+          <br />
+          <em>the center.</em>
+        </h2>
+        <p class="lead">
+          The DNA mark and JEA BizDev Consulting name come directly from the
+          existing JEA website. They keep the business grounded in the science
+          behind every partnership.
+        </p>
+      </div>
+      <div>
+        <div class="brand-download">
+          <img
+            src="/brand/mark.svg"
+            alt="JEA DNA logo"
+            width="80"
+            height="80"
+          />
+          <div>
+            <h3>JEA DNA mark</h3>
+            <a class="text-link" href="/brand/mark.svg" download>
+              Download SVG ↓
+            </a>
+          </div>
+        </div>
+        <a class="text-link" href="/brand/wordmark.svg" download>
+          Download full wordmark ↓
+        </a>
+      </div>
+    </div>
+    <div class="section-heading" style="margin-top:70px">
+      <div>
+        <p class="eyebrow">COLOR PALETTE</p>
+        <h2>
+          Grounded. <em>Distinctive.</em>
+        </h2>
+      </div>
+    </div>
+    <div class="swatches">
+      {[
+        ["JEA blue", "#2563EB"],
+        ["White", "#FFFFFF"],
+        ["Charcoal", "#1F2937"],
+        ["Light blue", "#EFF6FF"],
+      ].map(([name, color]) => (
+        <div class="swatch">
+          <div style={`background:${color}`}></div>
+          <strong>{name}</strong>
+          <p class="micro">{color}</p>
+        </div>
+      ))}
+    </div>
+    <div class="tool-guide">
+      <div>
+        <h2>Typography</h2>
+        <p>
+          Georgia lends an editorial voice to headlines. Geist provides clarity
+          in navigation, supporting copy, forms, and tools.
+        </p>
+      </div>
+      <div>
+        <h2>Using the identity</h2>
+        <p>
+          Keep the mark’s proportions intact, allow clear space around it, and
+          use the provided palette. Contact JEA for questions about use in
+          partnership announcements.
+        </p>
+        <a class="text-link" href="/contact">
+          Contact JEA
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

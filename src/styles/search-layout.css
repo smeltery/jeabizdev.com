@@ -1,0 +1,33 @@
+@media (max-width: 540px) {
+  .faq-grid summary {
+    padding: 18px;
+    font-size: 13px;
+    gap: 12px;
+  }
+  .faq-answer {
+    padding: 0 18px 20px;
+  }
+  #site-search {
+    inset: 0;
+    height: 100dvh;
+    padding: 23px 20px max(20px, env(safe-area-inset-bottom));
+    border: 0;
+  }
+  #site-search .dialog-heading {
+    gap: 14px;
+  }
+  #site-search .dialog-heading h2 {
+    font-size: 29px;
+  }
+  #site-search .filter-chips {
+    gap: 6px;
+  }
+  #site-search .filter-chips button {
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+  #site-search .search-results a {
+    padding: 14px 8px;
+    gap: 10px;
+  }
+}

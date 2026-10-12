@@ -1,0 +1,261 @@
+@media (max-width: 540px) {
+  body {
+    font-size: 14px;
+  }
+  .header-inner {
+    padding: 16px 20px;
+    gap: 12px;
+  }
+  .brand strong {
+    font-size: 20px;
+  }
+  .brand svg {
+    width: 33px;
+    height: 33px;
+  }
+  .brand small {
+    font-size: 7px;
+  }
+  .brand-divider {
+    padding: 0 5px;
+  }
+  .header-actions {
+    gap: 15px;
+  }
+  .menu-trigger {
+    font-size: 11px;
+    padding: 8px 10px;
+    gap: 8px;
+  }
+  .search-trigger {
+    padding: 6px;
+  }
+  .hero h1 {
+    font-size: 3.35rem;
+  }
+  .hero .eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.13em;
+  }
+  .hero .lead {
+    font-size: 15px;
+  }
+  .hero .actions {
+    gap: 20px;
+  }
+  .hero .button {
+    padding: 14px 17px;
+    gap: 20px;
+  }
+  .hero-note {
+    font-size: 10px;
+  }
+  .world-panel {
+    min-height: 360px;
+    padding: 25px 22px;
+  }
+  .world-art {
+    width: 115%;
+    margin: -30px -7.5% -15px;
+  }
+  .world-caption strong {
+    font-size: 25px;
+  }
+  .world-caption p {
+    font-size: 10px;
+  }
+  .territory-strip p {
+    font-size: 8px;
+  }
+  .territories {
+    gap: 15px;
+    font-size: 16px;
+  }
+  .section {
+    padding-block: 60px;
+  }
+  .service-grid,
+  .library-grid,
+  .transaction-grid,
+  .about-grid,
+  .values-grid,
+  .content-grid,
+  .asset-details,
+  .tool-guide {
+    grid-template-columns: 1fr;
+  }
+  .service-card .card-number {
+    margin-bottom: 23px;
+  }
+  .service-card h3 {
+    max-width: none;
+    font-size: 28px;
+  }
+  .section-tail {
+    align-items: start;
+    flex-direction: column;
+  }
+  .stats {
+    gap: 15px;
+    padding-block: 25px;
+  }
+  .stats > div + div {
+    padding-left: 15px;
+  }
+  .stats strong {
+    font-size: 37px;
+  }
+  .stats p {
+    font-size: 9px;
+  }
+  .portrait img {
+    height: 360px;
+    object-position: 50% 20%;
+  }
+  .about-copy {
+    padding-top: 10px;
+  }
+  .about-copy h2 {
+    font-size: 2.8rem;
+  }
+  .about-copy .stats {
+    display: grid;
+  }
+  .step h3 {
+    font-size: 25px;
+  }
+  .step p {
+    font-size: 12px;
+  }
+  .steps {
+    gap: 25px;
+  }
+  .transaction-grid > .transaction-card:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+  .transaction-card {
+    padding: 25px;
+  }
+  .transaction-logos {
+    height: 100px;
+    justify-content: center;
+  }
+  .transaction-logos img {
+    max-width: 135px;
+  }
+  .closing {
+    padding-block: 55px;
+  }
+  .closing h2 {
+    font-size: 2.8rem;
+  }
+  .closing .eyebrow {
+    font-size: 9px;
+  }
+  .closing-inner {
+    gap: 30px;
+  }
+  .footer-top {
+    gap: 28px;
+  }
+  .footer-top > div > a:not(.brand):not(.button) {
+    font-size: 11px;
+    overflow-wrap: anywhere;
+  }
+  .footer-top .eyebrow {
+    font-size: 9px;
+  }
+  .footer-invitation {
+    display: block;
+  }
+  .footer-invitation h2 {
+    margin-bottom: 20px;
+  }
+  .footer-bottom {
+    font-size: 9px;
+  }
+  .footer-bottom > div {
+    gap: 17px;
+  }
+  .footer-bottom button {
+    font-size: 9px;
+  }
+  .page-intro h1 {
+    font-size: 3rem;
+  }
+  .lead {
+    font-size: 16px;
+  }
+  .engagement-grid {
+    grid-template-columns: 1fr;
+  }
+  .asset-aside {
+    position: static;
+  }
+  .asset-meta dd {
+    font-size: 13px;
+  }
+  .form-panel {
+    padding: 23px 18px;
+  }
+  .fields {
+    grid-template-columns: 1fr;
+  }
+  .fields .full {
+    grid-column: auto;
+  }
+  legend {
+    font-size: 24px;
+  }
+  .tool-inputs,
+  .tool-results {
+    padding: 25px;
+  }
+  .filters {
+    gap: 12px;
+  }
+  .filters > label {
+    min-width: 130px;
+  }
+  .filters > label:first-child {
+    flex-basis: 100%;
+  }
+  .filter-chips button {
+    font-size: 11px;
+    padding: 7px 12px;
+  }
+  .empty {
+    padding: 30px 20px;
+  }
+  .search-footer > span:last-child {
+    display: none;
+  }
+  dialog {
+    padding: 22px;
+  }
+  .dialog-heading h2 {
+    font-size: 27px;
+  }
+  #mobile-menu {
+    padding: 25px;
+  }
+  .brand-download {
+    padding: 25px;
+    gap: 20px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .button:hover,
+  .library-card:hover {
+    transform: none;
+  }
+}

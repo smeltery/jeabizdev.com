@@ -1,0 +1,87 @@
+---
+import { assets } from "../../../data/assets";
+import Layout from "../../layouts/Layout.astro";
+import { site } from "../../content/site";
+export function getStaticPaths() {
+  return assets.map((asset) => ({
+    params: { id: asset.id },
+    props: { asset },
+  }));
+}
+const { asset } = Astro.props;
+const paragraphs = asset.description.split("\n").filter(Boolean);
+---
+
+<Layout
+  title={`${asset.name} | Partnering opportunity`}
+  description={`Explore ${asset.name}, a ${asset.type.toLowerCase()} targeting ${asset.target} in ${asset.focus.toLowerCase()}. Request an overview deck from JEA.`}
+>
+  <section class="wrap page-intro">
+    <div class="breadcrumbs">
+      <a href="/assets">Opportunities</a> / {asset.name}
+    </div>
+    <p class="eyebrow">{asset.focus} · PARTNERING OPPORTUNITY</p>
+    <h1>{asset.name}</h1>
+    <dl class="asset-meta">
+      <div>
+        <dt>Target</dt>
+        <dd>{asset.target}</dd>
+      </div>
+      <div>
+        <dt>Therapeutic area</dt>
+        <dd>{asset.focus}</dd>
+      </div>
+      <div>
+        <dt>Modality</dt>
+        <dd>{asset.type}</dd>
+      </div>
+      <div>
+        <dt>Listed stage</dt>
+        <dd>{asset.stage}</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="wrap section asset-details">
+    <article>
+      <p class="eyebrow">ASSET OVERVIEW</p>
+      <h2>A closer look at the opportunity.</h2>
+      {paragraphs.map((text) =>
+        text.endsWith(":") ? <h3>{text.slice(0, -1)}</h3> : <p>{text}</p>,
+      )}
+      <p class="note">
+        Source: existing JEA asset materials. These descriptions include
+        historical development plans and sponsor-reported data; contact JEA for
+        current status and supporting materials.
+      </p>
+      <a class="text-link" href="/assets">
+        ← Back to all opportunities
+      </a>
+    </article>
+    <aside class="asset-aside">
+      <p class="eyebrow">TAKE THE NEXT STEP</p>
+      <h2>
+        Explore the
+        <br />
+        partnership potential.
+      </h2>
+      <p>
+        Request an overview deck and discuss how this asset could fit your
+        portfolio.
+      </p>
+      <a
+        class="button"
+        href={`/contact?asset=${encodeURIComponent(asset.name)}`}
+      >
+        Request overview deck
+      </a>
+      <p class="micro" style="margin-top:20px">
+        Or email{" "}
+        <a
+          href={`mailto:${site.email}?subject=${encodeURIComponent(`Asset inquiry: ${asset.name}`)}`}
+        >
+          {site.email}
+        </a>
+      </p>
+    </aside>
+  </section>
+</Layout>

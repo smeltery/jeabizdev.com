@@ -1,0 +1,169 @@
+---
+import Mark from "./Mark.astro";
+import Icon, { type IconName } from "./Icon";
+import { navigation, resources, site } from "../content/site";
+const current = (href: string) =>
+  Astro.url.pathname.replace(/\/$/, "") === href;
+const menuIcons: IconName[] = [
+  "briefcase",
+  "user",
+  "route",
+  "science",
+  "calculator",
+];
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <Mark />
+    <nav aria-label="Main navigation">
+      {navigation.map((link) => (
+        <a
+          href={link.href}
+          aria-current={current(link.href) ? "page" : undefined}
+        >
+          {link.label}
+        </a>
+      ))}
+      <details class="resource-menu">
+        <summary>
+          Resources <Icon name="chevron" size={14} />
+        </summary>
+        <div class="resource-panel">
+          <p class="eyebrow">EXPLORE OUR EXPERIENCE</p>
+          <a href="/transactions">
+            <span class="resource-icon">
+              <Icon name="chart" />
+            </span>
+            <span>
+              <strong>Track record</strong>
+              <small>Client partnerships & announcements</small>
+            </span>
+          </a>
+          <a href="/transactions#deal-summaries">
+            <span class="resource-icon">
+              <Icon name="file" />
+            </span>
+            <span>
+              <strong>Deal summaries</strong>
+              <small>Download transaction precedents</small>
+            </span>
+          </a>
+          <p class="eyebrow resource-divider">REFERENCE LIBRARIES</p>
+          {resources.map((resource) => (
+            <a href={resource.href} target="_blank" rel="noreferrer">
+              <span class="resource-icon">
+                <Icon name="folder" />
+              </span>
+              <span>
+                <strong>{resource.label}</strong>
+                <small>Open in Google Drive</small>
+              </span>
+              <Icon name="external" size={14} />
+            </a>
+          ))}
+        </div>
+      </details>
+    </nav>
+    <div class="header-actions">
+      <button
+        class="search-trigger"
+        data-search-open
+        aria-label="Search site"
+        aria-keyshortcuts="Meta+K Control+K"
+      >
+        <Icon name="search" />
+        <span class="search-label">Search</span>
+        <kbd>⌘ K</kbd>
+      </button>
+      <a class="button small desktop-cta" href="/contact">
+        Let’s connect
+      </a>
+      <button
+        class="menu-trigger"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        aria-haspopup="dialog"
+      >
+        Menu <Icon name="menu" />
+      </button>
+    </div>
+  </div>
+</header>
+<dialog id="mobile-menu" aria-label="Main menu">
+  <div class="dialog-heading">
+    <Mark />
+    <button data-menu-close aria-label="Close menu" autofocus>
+      <Icon name="close" size={20} />
+    </button>
+  </div>
+  <div class="menu-body">
+    <button class="mobile-search" data-search-open>
+      <Icon name="search" />
+      <span>Search pages, assets & tools</span>
+      <kbd>⌘ K</kbd>
+    </button>
+    <p class="menu-intro">
+      Science. Strategy. <em>Partnership.</em>
+    </p>
+    <nav aria-label="Mobile navigation">
+      {navigation.map((link, index) => (
+        <a
+          href={link.href}
+          aria-current={current(link.href) ? "page" : undefined}
+        >
+          <span class="menu-icon">
+            <Icon name={menuIcons[index]} size={20} />
+          </span>
+          <span>
+            {link.label}
+            <small>{link.detail}</small>
+          </span>
+        </a>
+      ))}
+      <a
+        href="/transactions"
+        aria-current={current("/transactions") ? "page" : undefined}
+      >
+        <span class="menu-icon">
+          <Icon name="chart" size={20} />
+        </span>
+        <span>
+          Track record<small>Partnerships & deal summaries</small>
+        </span>
+      </a>
+    </nav>
+    <details class="mobile-resource-disclosure">
+      <summary>
+        <Icon name="folder" size={17} />
+        <span>Reference libraries</span>
+        <Icon name="chevron" size={15} />
+      </summary>
+      <div class="mobile-resources">
+        {resources.map((resource) => (
+          <a href={resource.href} target="_blank" rel="noreferrer">
+            {resource.label}
+            <Icon name="external" size={14} />
+          </a>
+        ))}
+      </div>
+    </details>
+  </div>
+  <div class="menu-contact">
+    <a class="button" href="/contact">
+      <Icon name="mail" />
+      Start a conversation
+    </a>
+    <div>
+      <span>North America · Europe · Asia</span>
+      <a
+        href={site.linkedin}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="JEA on LinkedIn"
+      >
+        <Icon name="linkedin" size={18} />
+      </a>
+    </div>
+  </div>
+</dialog>

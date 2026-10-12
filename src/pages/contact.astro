@@ -1,0 +1,71 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Intro from "../components/Intro.astro";
+import InquiryForm from "../components/InquiryForm";
+import { site } from "../content/site";
+---
+
+<Layout title="Start a conversation">
+  <Intro
+    eyebrow="LET’S CONNECT"
+    title="Every partnership starts somewhere."
+    description="Tell us what you are working toward. We’ll start with your priorities and explore the right next step together."
+  />
+  <section class="wrap section contact-grid">
+    <aside class="contact-aside">
+      <p class="eyebrow">A THOUGHTFUL FIRST STEP</p>
+      <h2>
+        Your science.
+        <br />
+        Your priorities.
+        <br />
+        <em>Let’s talk.</em>
+      </h2>
+      <p>
+        Share a non-confidential introduction to your company, your goals, and
+        the support you need.
+      </p>
+      <div class="editorial-list">
+        <div>
+          <span class="number">01</span>
+          <p>Tell us about your company and the opportunity.</p>
+        </div>
+        <div>
+          <span class="number">02</span>
+          <p>Review your introduction before sending.</p>
+        </div>
+        <div>
+          <span class="number">03</span>
+          <p>Discuss scope, timing, and the right way to work together.</p>
+        </div>
+      </div>
+      <p class="eyebrow">PREFER TO REACH OUT DIRECTLY?</p>
+      <a class="text-link" href={`mailto:${site.email}`}>
+        {site.email}
+      </a>
+      <p class="micro" style="margin-top:25px">
+        John Adamou, MS, MBA
+        <br />
+        President & Managing Director
+      </p>
+      <a
+        class="text-link"
+        href={site.linkedin}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Connect on LinkedIn
+      </a>
+    </aside>
+    <div>
+      <InquiryForm client:load />
+      <noscript>
+        <p>
+          To send an introduction, email{" "}
+          <a href={`mailto:${site.email}`}>{site.email}</a> with your name,
+          company, and a non-confidential description of your goals.
+        </p>
+      </noscript>
+    </div>
+  </section>
+</Layout>

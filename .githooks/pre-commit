@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+# Check exactly the commit contents; unstaged tracked changes could hide failures.
+if ! git diff --quiet; then
+  echo 'Stage or stash unstaged tracked changes before running the full CI gate.' >&2
+  exit 1
+fi
+exec flox activate -- bash scripts/check.sh

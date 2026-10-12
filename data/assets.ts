@@ -1,22 +1,22 @@
 export interface Asset {
-	id: string
-	name: string
-	target: string
-	focus: string
-	description: string
-	stage: "Preclinical" | "IND Filing" | "IND Approved" | "Phase 1" | "Phase 3"
-	type: "Antibody-Drug Conjugate" | "Small Molecule" | "Biologic" | "Antibody"
+  id: string;
+  name: string;
+  target: string;
+  focus: string;
+  description: string;
+  stage: "Preclinical" | "IND Filing" | "IND Approved" | "Phase 1" | "Phase 3";
+  type: "Antibody-Drug Conjugate" | "Small Molecule" | "Biologic" | "Antibody";
 }
 
 export const assets: Asset[] = [
-	{
-		id: "dll3-adc",
-		name: "DLL3 ADC",
-		target: "DLL3",
-		focus: "Oncology",
-		stage: "IND Filing",
-		type: "Antibody-Drug Conjugate",
-		description: `Best-in-Class Potential for SCLC & NET:
+  {
+    id: "dll3-adc",
+    name: "DLL3 ADC",
+    target: "DLL3",
+    focus: "Oncology",
+    stage: "IND Filing",
+    type: "Antibody-Drug Conjugate",
+    description: `Best-in-Class Potential for SCLC & NET:
 High affinity, selectivity, and internalization for superior tumor targeting.
 Next-Gen Molecular Design:
 Novel TOPO-1 inhibitor payload, stable cysteine conjugation, and hydrophilic cleavable linker for enhanced efficacy & safety.
@@ -26,32 +26,32 @@ Development Stage:
 IND Filing submitted, and Phase I study is expected in 2025Q1.
 Large Market Opportunity:
 Addressing a $16.3B+ growing market with high unmet need in SCLC and neuroendocrine tumors (NET).`,
-	},
-	// {
-	// 	id: "kif18a-inhibitor",
-	// 	name: "KIF18A Inhibitor",
-	// 	focus: "Oncology",
-	// 	stage: "Phase 1",
-	// 	type: "Small Molecule",
-	// 	description: `Best-in-Class Potential:
-// Highly potent KIF18A inhibitor targeting CIN+ solid tumors, with strong efficacy and safety.
-// Oral, Once-Daily Convenience:
-// A small molecule inhibitor with a favorable PK profile and broad combinability with PARP inhibitors.
-// First-in-Human Study Underway:
-// IND approved (FDA), Phase 1 ongoing globally, first patient dosed in January 2025.
-// Strong Preclinical Data:
-// Outperforms AMG650 in tumor inhibition, selectivity, and safety, with no accumulation in repeat dosing.
-// Large Market Potential:
-// Addressing high unmet needs in CIN+ tumors, TNBC, and ovarian cancers.`,
-	// },
-	{
-		id: "her2-biparatopic-adc",
-		name: "HER2 Biparatopic ADC",
-		target: "HER2",
-		focus: "Oncology",
-		stage: "Phase 3",
-		type: "Antibody-Drug Conjugate",
-		description: `Next-Generation HER2 ADC:
+  },
+  // {
+  // 	id: "kif18a-inhibitor",
+  // 	name: "KIF18A Inhibitor",
+  // 	focus: "Oncology",
+  // 	stage: "Phase 1",
+  // 	type: "Small Molecule",
+  // 	description: `Best-in-Class Potential:
+  // Highly potent KIF18A inhibitor targeting CIN+ solid tumors, with strong efficacy and safety.
+  // Oral, Once-Daily Convenience:
+  // A small molecule inhibitor with a favorable PK profile and broad combinability with PARP inhibitors.
+  // First-in-Human Study Underway:
+  // IND approved (FDA), Phase 1 ongoing globally, first patient dosed in January 2025.
+  // Strong Preclinical Data:
+  // Outperforms AMG650 in tumor inhibition, selectivity, and safety, with no accumulation in repeat dosing.
+  // Large Market Potential:
+  // Addressing high unmet needs in CIN+ tumors, TNBC, and ovarian cancers.`,
+  // },
+  {
+    id: "her2-biparatopic-adc",
+    name: "HER2 Biparatopic ADC",
+    target: "HER2",
+    focus: "Oncology",
+    stage: "Phase 3",
+    type: "Antibody-Drug Conjugate",
+    description: `Next-Generation HER2 ADC:
 Biparatopic design for enhanced binding, internalization, and bystander effect.
 Proven Stability & Potency:
 Utilizes the same TOPO-1 inhibitor DXd payload as Enhertu, but with superior serum stability.
@@ -61,49 +61,49 @@ Phase 3 Clinical Trials Ongoing Globally:
 2L+ HER2 low breast cancer, 2L+ HER2-positive breast cancer, Platinum-resistant ovarian cancer (PROC)
 Expansive Development Pipeline:
 Targeting HER2-positive & HER2-low breast, gastric, ovarian, and other solid tumors.`,
-	},
-	// {
-	// 	id: "b7h3xpsma-adc",
-	// 	name: "B7H3xPSMA ADC",
-	// 	focus: "Oncology",
-	// 	stage: "IND Filing",
-	// 	type: "Antibody-Drug Conjugate",
-	// 	description: `First-in-Class BsADC for mCRPC:
-// Targets B7-H3 & PSMA to maximize tumor coverage and overcome heterogeneous expression. TOPO-1 inhibitor payload.
-// Addresses High Unmet Need:
-// Designed for metastatic castration-resistant prostate cancer (mCRPC) after prior therapy failure.
-// Superior to Single-Target ADCs:
-// Outperforms PSMA and B7-H3 ADCs in tumor binding, internalization, and bystander effect.
-// Broad Potential in Solid Tumors:
-// Therapeutic relevance in SCLC, NSCLC, HNSCC, and esophageal cancers.
-// Development Stage:
-// IND-enabling studies; IND filing in October 2025.`,
-	// },
-	// {
-	// 	id: "egfrxher2-adc",
-	// 	name: "EGFRxHER2 ADC",
-	// 	focus: "Oncology",
-	// 	stage: "IND Filing",
-	// 	type: "Antibody-Drug Conjugate",
-	// 	description: `Best-in-Class Potential BsADC:
-// Targets EGFR & HER2 for enhanced tumor inhibition and overcomes resistance seen in HER2-low cancers.
-// Optimized ADC Design:
-// Stable cleavable linker, potent TOPO-1 payload, and strong bystander effect improve efficacy and safety.
-// Broad Solid Tumor Applications:
-// Urothelial, gastric, colorectal, lung, ovarian, breast, and head & neck cancers.
-// Outperforms Standard ADCs:
-// More potent than Enhertu (DS-8201) with better tumor cell binding, internalization, and bystander killing.
-// Development Stage:
-// IND-enabling studies; IND filing in October 2025.`,
-	// },
-	{
-		id: "fra-biparatopic-adc",
-		name: "FRα Biparatopic ADC",
-		target: "FRα",
-		focus: "Oncology",
-		stage: "IND Filing",
-		type: "Antibody-Drug Conjugate",
-		description: `Best-in-Class Potential Biparatopic ADC:
+  },
+  // {
+  // 	id: "b7h3xpsma-adc",
+  // 	name: "B7H3xPSMA ADC",
+  // 	focus: "Oncology",
+  // 	stage: "IND Filing",
+  // 	type: "Antibody-Drug Conjugate",
+  // 	description: `First-in-Class BsADC for mCRPC:
+  // Targets B7-H3 & PSMA to maximize tumor coverage and overcome heterogeneous expression. TOPO-1 inhibitor payload.
+  // Addresses High Unmet Need:
+  // Designed for metastatic castration-resistant prostate cancer (mCRPC) after prior therapy failure.
+  // Superior to Single-Target ADCs:
+  // Outperforms PSMA and B7-H3 ADCs in tumor binding, internalization, and bystander effect.
+  // Broad Potential in Solid Tumors:
+  // Therapeutic relevance in SCLC, NSCLC, HNSCC, and esophageal cancers.
+  // Development Stage:
+  // IND-enabling studies; IND filing in October 2025.`,
+  // },
+  // {
+  // 	id: "egfrxher2-adc",
+  // 	name: "EGFRxHER2 ADC",
+  // 	focus: "Oncology",
+  // 	stage: "IND Filing",
+  // 	type: "Antibody-Drug Conjugate",
+  // 	description: `Best-in-Class Potential BsADC:
+  // Targets EGFR & HER2 for enhanced tumor inhibition and overcomes resistance seen in HER2-low cancers.
+  // Optimized ADC Design:
+  // Stable cleavable linker, potent TOPO-1 payload, and strong bystander effect improve efficacy and safety.
+  // Broad Solid Tumor Applications:
+  // Urothelial, gastric, colorectal, lung, ovarian, breast, and head & neck cancers.
+  // Outperforms Standard ADCs:
+  // More potent than Enhertu (DS-8201) with better tumor cell binding, internalization, and bystander killing.
+  // Development Stage:
+  // IND-enabling studies; IND filing in October 2025.`,
+  // },
+  {
+    id: "fra-biparatopic-adc",
+    name: "FRα Biparatopic ADC",
+    target: "FRα",
+    focus: "Oncology",
+    stage: "IND Filing",
+    type: "Antibody-Drug Conjugate",
+    description: `Best-in-Class Potential Biparatopic ADC:
 Targets FRα+ tumors, overcoming resistance in low & medium expressors.
 Biparatopic ADC Advantage:
 Dual-epitope binding enhances internalization and tumor targeting vs. conventional FRα ADCs.
@@ -113,32 +113,32 @@ Superior Payload & Stability:
 Potent TOPO-1 inhibitor, stable linker, and strong bystander effect for maximum impact.
 Development Stage:
 IND-enabling studies; IND filing in November 2025.`,
-	},
-	// {
-	// 	id: "pd1-agonist-mab",
-	// 	name: "PD-1 Agonist mAb",
-	// 	focus: "Immunology",
-	// 	stage: "Phase 1",
-	// 	type: "Antibody",
-	// 	description: `Best-in-Class Potential Antibody:
-// Highly potent PD-1 agonist antibody designed to inhibit and deplete pathogenic T cells in autoimmune diseases.
-// Multi-Mechanism of Action:
-// Selective depletion of PD-1^high^ T cells + functional agonism of PD-1+ pathogenic T cells.
-// Early Human Validation:
-// Phase 1 in progress (Global); favorable safety, tolerability, and full PD-1^high^ cell engagement confirmed.
-// Broad Indication Potential:
-// RA, SLE, UC, pSS, AD—multiple autoimmune diseases with large unmet needs.
-// Robust Preclinical Data:
-// Efficacy in RA, SLE, UC, pSS mouse models with no Treg depletion or serious toxicity.`,
-	// },
-	{
-		id: "cyp11b2-inhibitor",
-		name: "CYP11B2 Inhibitor",
-		target: "CYP11B2",
-		focus: "Cardiovascular",
-		stage: "IND Filing",
-		type: "Small Molecule",
-		description: `Best-in-Class Potential Inhibitor:
+  },
+  // {
+  // 	id: "pd1-agonist-mab",
+  // 	name: "PD-1 Agonist mAb",
+  // 	focus: "Immunology",
+  // 	stage: "Phase 1",
+  // 	type: "Antibody",
+  // 	description: `Best-in-Class Potential Antibody:
+  // Highly potent PD-1 agonist antibody designed to inhibit and deplete pathogenic T cells in autoimmune diseases.
+  // Multi-Mechanism of Action:
+  // Selective depletion of PD-1^high^ T cells + functional agonism of PD-1+ pathogenic T cells.
+  // Early Human Validation:
+  // Phase 1 in progress (Global); favorable safety, tolerability, and full PD-1^high^ cell engagement confirmed.
+  // Broad Indication Potential:
+  // RA, SLE, UC, pSS, AD—multiple autoimmune diseases with large unmet needs.
+  // Robust Preclinical Data:
+  // Efficacy in RA, SLE, UC, pSS mouse models with no Treg depletion or serious toxicity.`,
+  // },
+  {
+    id: "cyp11b2-inhibitor",
+    name: "CYP11B2 Inhibitor",
+    target: "CYP11B2",
+    focus: "Cardiovascular",
+    stage: "IND Filing",
+    type: "Small Molecule",
+    description: `Best-in-Class Potential Inhibitor:
 Highly potent and selective CYP11B2 inhibitor with superior efficacy and safety over Baxdrostat in resistant hypertension.
 Superior Selectivity Profile:
 16x more potent CYP11B2 inhibition and ~2.5x selectivity over CYP11B1 compared to Baxdrostat.
@@ -150,15 +150,15 @@ Clear Differentiation:
 Targets aldosterone synthesis upstream vs mineralocorticoid receptor blockade, offering fewer hormonal side effects.
 Large Market Opportunity:
 Addresses a $51.6B antihypertensive market with ~10M rHTN patients globally.`,
-	},
-	{
-		id: "enpp1-inhibitor",
-		name: "ENPP1 Inhibitor",
-		target: "ENPP1",
-		focus: "Cardiovascular",
-		stage: "IND Approved",
-		type: "Small Molecule",
-		description: `First-in-Class Inhibitor:
+  },
+  {
+    id: "enpp1-inhibitor",
+    name: "ENPP1 Inhibitor",
+    target: "ENPP1",
+    focus: "Cardiovascular",
+    stage: "IND Approved",
+    type: "Small Molecule",
+    description: `First-in-Class Inhibitor:
 Novel ENPP1 inhibitor that enhances cardiac repair post-MI through purinergic signaling modulation.
 Strong Preclinical Efficacy:
 Significant improvements in EF, LVFS, and NT-proBNP in MI-induced heart failure models (rat/mouse).
@@ -170,15 +170,15 @@ Cardiac Tissue Repair Mechanism:
 Differentiated approach vs. neurohormonal antagonists—targets cardiac fibrosis and scar remodeling.
 Large Market Opportunity >$24.9B HF Market:
 Targets underserved post-MI HF population with high unmet need and poor survival outcomes.`,
-	},
-	{
-		id: "b7h3-adc",
-		name: "B7-H3 ADC",
-		target: "B7-H3",
-		focus: "Oncology",
-		stage: "Phase 1",
-		type: "Antibody-Drug Conjugate",
-		description: `Promising Clinical Efficacy:
+  },
+  {
+    id: "b7h3-adc",
+    name: "B7-H3 ADC",
+    target: "B7-H3",
+    focus: "Oncology",
+    stage: "Phase 1",
+    type: "Antibody-Drug Conjugate",
+    description: `Promising Clinical Efficacy:
 50% ORR in SCLC, including 1 CR; 10/24 patients with >30% tumor shrinkage; PRs observed at 4 & 6 mg/kg dose groups.
 
 Favorable Safety Profile:
@@ -194,16 +194,16 @@ Next-Gen Molecular Design:
 Novel TOPO-1 inhibitor payload (JS-1) with higher potency than DXd. Linker is connected to the free sulfhydryls of reduced interchain disulfide bonds.
 
 Preclinical Advantages:
-Outperforms DS-7300a in vitro & in vivo (LUAD, LUSC, EC). Strong dose-dependent tumor regression across CDX models.`
-	},
-	{
-		id: "atm-inhibitor",
-		name: "ATM Inhibitor",
-		target: "ATM",
-		focus: "Oncology",
-		stage: "Phase 1",
-		type: "Small Molecule",
-		description: `First-in-Class Opportunity:
+Outperforms DS-7300a in vitro & in vivo (LUAD, LUSC, EC). Strong dose-dependent tumor regression across CDX models.`,
+  },
+  {
+    id: "atm-inhibitor",
+    name: "ATM Inhibitor",
+    target: "ATM",
+    focus: "Oncology",
+    stage: "Phase 1",
+    type: "Small Molecule",
+    description: `First-in-Class Opportunity:
 Oral, potent, and selective ATM kinase inhibitor (IC₅₀ = 0.42 nM) with >1,000-fold selectivity over other PIKK family members.
 Synergistic Radiosensitizer & Chemosensitizer:
 Enhances efficacy of (1) Radiotherapy in NSCLC, glioma, and colon models;
@@ -213,16 +213,16 @@ Favorable oral bioavailability and brain penetration; No hERG liability (IC₅�
 Development Status:
 Ongoing Phase 1 clinical studies in multiple regions globally.
 Strategic Fit:
-Strategic Fit for DDR, Radiotherapy, ADC & Solid Tumor Developers.`
-	},
-	{
-		id: "kat6-inhibitor",
-		name: "KAT6 Inhibitor",
-		target: "KAT6A / KAT6B",
-		focus: "Oncology",
-		stage: "Phase 1",
-		type: "Small Molecule",
-		description: `Best-in-Class Potential Inhibitor:
+Strategic Fit for DDR, Radiotherapy, ADC & Solid Tumor Developers.`,
+  },
+  {
+    id: "kat6-inhibitor",
+    name: "KAT6 Inhibitor",
+    target: "KAT6A / KAT6B",
+    focus: "Oncology",
+    stage: "Phase 1",
+    type: "Small Molecule",
+    description: `Best-in-Class Potential Inhibitor:
 Highly selective oral KAT6A/6B inhibitor with superior preclinical anti-tumor activity and broader therapeutic window compared with Pfizer's PF-07248144.
 Superior Selectivity & Potency:
 Stronger inhibitory activity, longer target residence time, and excellent selectivity profile with no meaningful off-target activity across 44 safety targets and 400 kinases.
@@ -231,16 +231,16 @@ FDA IND cleared in April 2026 and China IND approved in May 2026, with Phase 1 m
 Clear Differentiation:
 Potential to overcome endocrine and fulvestrant resistance in HR+/HER2− breast cancer with strong rationale for combination use with SERDs and CDK4/6 inhibitors.
 Large Market Opportunity:
-Targets the rapidly growing HR+/HER2− metastatic breast cancer market, including patients progressing after endocrine therapy and CDK4/6 inhibitors, representing a significant unmet need in precision oncology.`
-	},
-	{
-		id: "egfr-adc",
-		name: "EGFR-ADC",
-		target: "EGFR",
-		focus: "Oncology",
-		stage: "Phase 3",
-		type: "Antibody-Drug Conjugate",
-		description: `Best-in-Class Opportunity:
+Targets the rapidly growing HR+/HER2− metastatic breast cancer market, including patients progressing after endocrine therapy and CDK4/6 inhibitors, representing a significant unmet need in precision oncology.`,
+  },
+  {
+    id: "egfr-adc",
+    name: "EGFR-ADC",
+    target: "EGFR",
+    focus: "Oncology",
+    stage: "Phase 3",
+    type: "Antibody-Drug Conjugate",
+    description: `Best-in-Class Opportunity:
 EGFR widely expressed in NSCLC and multiple solid tumors (EGFRwt, EGFRmut, ESCC, NPC, breast, SCLC).
 Differentiated Design:
 Optimized DAR4 ADC with potent topoisomerase I inhibitor payload; favorable PK and therapeutic index.
@@ -251,7 +251,6 @@ Superior efficacy vs other EGFR ADCs; ORR >55% in EGFRwt NSCLC with 100% DCR; du
 Regulatory Momentum:
 3 FDA Fast Track & 1 Breakthrough (CDE) designation; FDA-endorsed accelerated approval in NSCLC (2L EGFRwt, 3L EGFRmut).
 Promising Clinical Development:
-Two pivotal global MRCTs starting Q4 2025; >1000 patients enrolled; launch expected 2027 (China) / 2028 (US/EU).`
-	},
-]
-
+Two pivotal global MRCTs starting Q4 2025; >1000 patients enrolled; launch expected 2027 (China) / 2028 (US/EU).`,
+  },
+];

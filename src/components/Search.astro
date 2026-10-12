@@ -1,0 +1,107 @@
+---
+import Icon from "./Icon";
+import { navigation, transactions, resources } from "../content/site";
+import { tools } from "../tools/catalog";
+import { assets } from "../../data/assets";
+const entries = [
+  {
+    title: "Home",
+    href: "/",
+    description: "Connecting science. Creating value.",
+    group: "Pages",
+  },
+  ...navigation.map((link) => ({
+    title: link.label,
+    href: link.href,
+    description: link.detail,
+    group: "Pages",
+  })),
+  {
+    title: "Track record",
+    href: "/transactions",
+    description: "Partnerships and downloadable deal summaries",
+    group: "Pages",
+  },
+  {
+    title: "Start a conversation",
+    href: "/contact",
+    description: "Discuss an opportunity with John",
+    group: "Pages",
+  },
+  ...resources.map((resource) => ({
+    title: resource.label,
+    href: resource.href,
+    description: "JEA reference library on Google Drive",
+    group: "Transactions",
+  })),
+  ...tools.map((tool) => ({
+    title: tool.title,
+    href: `/tools/${tool.slug}`,
+    description: tool.description,
+    group: "Tools",
+  })),
+  ...assets.map((asset) => ({
+    title: asset.name,
+    href: `/assets/${asset.id}`,
+    description: `${asset.focus} · ${asset.stage} · ${asset.target}`,
+    group: "Assets",
+  })),
+  ...transactions.map((deal) => ({
+    title: `${deal.title} (${deal.year})`,
+    href: `/client-showcase/${deal.pdf}`,
+    description: deal.description,
+    group: "Transactions",
+  })),
+];
+---
+
+<dialog id="site-search" aria-labelledby="search-title">
+  <div class="dialog-heading">
+    <h2 id="search-title">Find your next opportunity.</h2>
+    <button data-search-close aria-label="Close search">
+      <Icon name="close" />
+    </button>
+  </div>
+  <label class="sr-only" for="site-query">
+    Search pages, assets, and tools
+  </label>
+  <input
+    id="site-query"
+    type="search"
+    placeholder="Search partnering, assets, royalties…"
+    autocomplete="off"
+    aria-controls="search-results"
+  />
+  <div class="filter-chips" role="group" aria-label="Search categories">
+    {["All", "Pages", "Tools", "Assets", "Transactions"].map((group) => (
+      <button data-search-group={group} aria-pressed={group === "All"}>
+        {group}
+      </button>
+    ))}
+  </div>
+  <div id="search-results" class="search-results">
+    {entries.map((entry) => (
+      <a
+        href={entry.href}
+        data-search-entry
+        data-group={entry.group}
+        data-text={`${entry.title} ${entry.description}`.toLowerCase()}
+      >
+        <span>
+          <strong>{entry.title}</strong>
+          <small>{entry.description}</small>
+        </span>
+        <span class="badge">{entry.group}</span>
+        <Icon name="right" size={16} />
+      </a>
+    ))}
+  </div>
+  <p data-search-empty hidden>
+    No matches. Try “oncology,” “royalties,” or “contact.”
+  </p>
+  <div class="search-footer">
+    <span role="status" data-search-count></span>
+    <span>↑ ↓ Navigate · Enter Open · Esc Close</span>
+  </div>
+</dialog>
+<script src="../client/search.ts" />

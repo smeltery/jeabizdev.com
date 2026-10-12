@@ -37,3 +37,12 @@ next-env.d.ts
 
 # idea
 .idea
+
+# Astro and local configuration
+/dist/
+/.astro/
+.env
+.env.*
+!.env.example
+/test-results/
+/playwright-report/

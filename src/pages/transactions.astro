@@ -1,0 +1,112 @@
+---
+import YearFilter from "../components/YearFilter";
+import Layout from "../layouts/Layout.astro";
+import Intro from "../components/Intro.astro";
+import Stats from "../components/Stats.astro";
+import Closing from "../components/Closing.astro";
+import TransactionCard from "../components/TransactionCard.astro";
+import { transactions, summaries } from "../content/site";
+---
+
+<Layout title="Selected partnerships & transaction experience">
+  <Intro
+    eyebrow="OUR TRACK RECORD"
+    title="Relationships that create value."
+    description="Selected partnerships supported by JEA as lead business development and transaction advisor, alongside examples of cross-border transaction experience."
+  />
+  <section class="wrap section">
+    <Stats />
+    <div class="section-heading" style="margin-top:65px">
+      <div>
+        <p class="eyebrow">CLIENT SHOWCASE</p>
+        <h2>
+          Partnerships in <em>practice.</em>
+        </h2>
+      </div>
+    </div>
+    <div data-directory>
+      <div class="filters">
+        <label>
+          Search partnerships
+          <input
+            type="search"
+            data-directory-query
+            placeholder="Search company or agreement…"
+          />
+        </label>
+        <YearFilter client:load />
+      </div>
+      <p class="library-status" data-directory-count role="status">
+        5 partnerships
+      </p>
+      <div class="transaction-grid">
+        {transactions.map((deal) => (
+          <div
+            class="transaction-item"
+            data-directory-item
+            data-category={deal.year}
+            data-search={`${deal.title} ${deal.description} ${deal.type}`}
+          >
+            <TransactionCard deal={deal} />
+          </div>
+        ))}
+      </div>
+      <div class="empty" data-directory-empty hidden>
+        <h3>No matching partnerships.</h3>
+        <button class="button" data-directory-reset>
+          Reset filters
+        </button>
+      </div>
+    </div>
+  </section>
+  <section class="tool-spotlight" id="deal-summaries">
+    <div class="wrap section split">
+      <div>
+        <p class="eyebrow">TRANSACTION PRECEDENTS</p>
+        <h2>
+          The detail
+          <br />
+          behind <em>the deal.</em>
+        </h2>
+        <p class="lead">
+          Download deal sheet summaries from the existing JEA library, covering
+          partnerships and cross-border transactions.
+        </p>
+        <p class="micro">
+          Historical summaries are provided for reference. Headline values may
+          include contingent payments.
+        </p>
+      </div>
+      <div class="editorial-list">
+        {summaries.map(([name, year, file]) => (
+          <a
+            href={`/deal-summaries/${encodeURIComponent(file)}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span class="number">{year}</span>
+            <div>
+              <strong>{name}</strong>
+              <p>Deal sheet summary · PDF</p>
+            </div>
+            <span class="arrow" aria-hidden="true">
+              →
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  <Closing />
+</Layout>
+<script>
+  import "../client/directory";
+</script>
+<style>
+  .transaction-item {
+    display: flex;
+  }
+  .transaction-item .transaction-card {
+    width: 100%;
+  }
+</style>

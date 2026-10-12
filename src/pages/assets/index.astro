@@ -1,0 +1,23 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Intro from "../../components/Intro.astro";
+import Closing from "../../components/Closing.astro";
+import AssetLibrary from "../../components/AssetLibrary";
+---
+
+<Layout title="Partnering opportunities">
+  <Intro
+    eyebrow="AVAILABLE ASSETS"
+    title="The science of possibility."
+    description="Strategic partnering opportunities in oncology and cardiovascular disease. Explore assets by target, modality, and development stage."
+  />
+  <section class="wrap section">
+    <AssetLibrary client:load />
+    <p class="note">
+      Development stages and scientific descriptions reflect the existing JEA
+      asset materials. Please contact JEA to confirm current availability, data,
+      and timelines. Overview decks are available upon request.
+    </p>
+  </section>
+  <Closing />
+</Layout>

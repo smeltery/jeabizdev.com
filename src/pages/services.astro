@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Intro from "../components/Intro.astro";
+import Closing from "../components/Closing.astro";
+import { services, engagements } from "../content/site";
+---
+
+<Layout title="Expertise across the BD value chain">
+  <Intro
+    eyebrow="OUR SERVICES"
+    title="The right expertise. At every stage."
+    description="Strategic advice and hands-on execution for biotech and biopharma companies. A focused engagement or a partner for the full journey."
+  />
+  <section class="wrap section">
+    <div class="service-grid">
+      {services.map((service, index) => (
+        <article
+          class="service-card"
+          id={service.title.toLowerCase().replace(/[^a-z]+/g, "-")}
+        >
+          <span class="card-number">
+            0{index + 1}
+            <span>{service.tag}</span>
+          </span>
+          <h2 style="font-size:29px">{service.title}</h2>
+          <p>{service.description}</p>
+          <p style="margin-top:15px">{service.detail}</p>
+        </article>
+      ))}
+    </div>
+    <div class="section-tail">
+      <p class="micro">
+        Explore actual transaction precedents and downloadable deal sheets.
+      </p>
+      <a class="text-link" href="/transactions#deal-summaries">
+        Browse deal summaries
+      </a>
+    </div>
+  </section>
+  <section class="tool-spotlight" id="engagements">
+    <div class="wrap section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">FLEXIBLE ENGAGEMENTS</p>
+          <h2>
+            A working model
+            <br />
+            that fits <em>your needs.</em>
+          </h2>
+        </div>
+        <p>
+          Every engagement begins with a conversation about your priorities,
+          scope, and the support that will make the most difference.
+        </p>
+      </div>
+      <div class="engagement-grid">
+        {engagements.map(([title, subtitle, description]) => (
+          <article>
+            <h3>{title}</h3>
+            <strong>{subtitle}</strong>
+            <p>{description}</p>
+            <a
+              class="text-link"
+              href={`/contact?engagement=${encodeURIComponent(title)}`}
+            >
+              Discuss this model
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  <Closing />
+</Layout>

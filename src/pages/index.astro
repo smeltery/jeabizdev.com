@@ -1,0 +1,293 @@
+---
+import Layout from "../layouts/Layout.astro";
+import World from "../components/World.astro";
+import Stats from "../components/Stats.astro";
+import Faq from "../components/Faq.astro";
+import Closing from "../components/Closing.astro";
+import TransactionCard from "../components/TransactionCard.astro";
+import { transactions, steps } from "../content/site";
+---
+
+<Layout>
+  <section class="wrap hero">
+    <div>
+      <p class="eyebrow">
+        <span class="eyebrow-dot"></span>BIOTECH & BIOPHARMA ADVISORY
+      </p>
+      <h1>
+        Connecting science.
+        <br />
+        Creating <em>value.</em>
+      </h1>
+      <p class="lead">
+        Extraordinary science needs the right partnership. We help biotech and
+        biopharma companies turn opportunity into lasting value—across borders,
+        and at every stage of the deal.
+      </p>
+      <div class="actions">
+        <a class="button" href="/contact">
+          Start a conversation
+        </a>
+        <a class="text-link" href="/services">
+          Explore our expertise →
+        </a>
+      </div>
+      <p class="hero-note">Independent perspective. Experienced execution.</p>
+    </div>
+    <World />
+  </section>
+  <div class="territory-strip">
+    <div class="wrap">
+      <p>BUILT ON RELATIONSHIPS. CONNECTED ACROSS CONTINENTS.</p>
+      <div class="territories">
+        <span>North America</span>
+        <i>✳</i>
+        <span>Europe</span>
+        <i>✳</i>
+        <span>Asia</span>
+      </div>
+    </div>
+  </div>
+  <section class="wrap section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">YOUR AMBITION. OUR EXPERTISE.</p>
+        <h2>
+          From possibility
+          <br />
+          to <em>partnership.</em>
+        </h2>
+      </div>
+      <p>
+        Strategic counsel and hands-on support across the entire business
+        development value chain. The right expertise, exactly where you need it.
+      </p>
+    </div>
+    <div class="service-grid">
+      {[
+        [
+          "01",
+          "Strategy & positioning",
+          "Build a clear path forward with strategic guidance, deal benchmarking, and a focused view of the opportunity.",
+        ],
+        [
+          "02",
+          "Partnering & outreach",
+          "Connect with the right collaborators through a global network and a targeted partnering process.",
+        ],
+        [
+          "03",
+          "Transactions & execution",
+          "Move from shared ambition to signed agreement with diligence, deal structuring, and negotiation support.",
+        ],
+      ].map(([number, title, description]) => (
+        <a class="service-card" href="/services">
+          <span class="card-number">{number}</span>
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </a>
+      ))}
+    </div>
+    <div class="section-tail">
+      <p class="micro">
+        In-licensing · Out-licensing · Strategic collaborations · Asset
+        acquisitions
+      </p>
+      <a class="text-link" href="/services">
+        Explore all services
+      </a>
+    </div>
+  </section>
+  <section class="about-section">
+    <div class="wrap section about-grid">
+      <figure class="portrait">
+        <img
+          src="/avatar.png"
+          alt="John Adamou, President and Managing Director of JEA BizDev Consulting"
+          width="500"
+          height="500"
+          loading="lazy"
+        />
+        <figcaption>
+          John Adamou, MS, MBA<span>PRESIDENT & MANAGING DIRECTOR</span>
+        </figcaption>
+      </figure>
+      <div class="about-copy">
+        <p class="eyebrow">EXPERIENCE THAT MOVES THINGS FORWARD</p>
+        <h2>
+          A global outlook.
+          <br />A personal <em>commitment.</em>
+        </h2>
+        <p>
+          With more than 25 years in biotech and pharma, John brings strategic
+          perspective and transaction experience to every engagement.
+        </p>
+        <p>
+          From search and evaluation to deal structuring and alliance
+          management, you work directly with an advisor who understands the
+          whole journey.
+        </p>
+        <a class="text-link" href="/about">
+          Meet John
+        </a>
+        <Stats />
+      </div>
+    </div>
+  </section>
+  <section class="wrap section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">SELECTED PARTNERSHIPS</p>
+        <h2>
+          Good relationships.
+          <br />
+          <em>Meaningful outcomes.</em>
+        </h2>
+      </div>
+      <a class="text-link" href="/transactions">
+        Explore our track record
+      </a>
+    </div>
+    <div class="transaction-grid">
+      {[transactions[0], transactions[1], transactions[2]].map((deal) => (
+        <TransactionCard deal={deal} />
+      ))}
+    </div>
+  </section>
+  <section class="tool-spotlight">
+    <div class="wrap section split">
+      <div>
+        <p class="eyebrow">THE NEXT OPPORTUNITY</p>
+        <h2>
+          Promising science.
+          <br />
+          <em>Partnership potential.</em>
+        </h2>
+        <p class="lead">
+          Explore available assets in oncology and cardiovascular disease, from
+          small molecules to next-generation antibody-drug conjugates.
+        </p>
+        <a class="button" href="/assets">
+          Explore partnering opportunities
+        </a>
+        <p class="micro" style="margin-top:20px">
+          Overview decks available on request.
+        </p>
+      </div>
+      <div class="editorial-list">
+        <a href="/assets/her2-biparatopic-adc">
+          <span class="number">01</span>
+          <div>
+            <strong>HER2 Biparatopic ADC</strong>
+            <p>Oncology · Antibody-Drug Conjugate</p>
+          </div>
+          <span class="arrow" aria-hidden="true">
+            →
+          </span>
+        </a>
+        <a href="/assets/kat6-inhibitor">
+          <span class="number">02</span>
+          <div>
+            <strong>KAT6 Inhibitor</strong>
+            <p>Oncology · Small Molecule</p>
+          </div>
+          <span class="arrow" aria-hidden="true">
+            →
+          </span>
+        </a>
+        <a href="/assets/enpp1-inhibitor">
+          <span class="number">03</span>
+          <div>
+            <strong>ENPP1 Inhibitor</strong>
+            <p>Cardiovascular · Small Molecule</p>
+          </div>
+          <span class="arrow" aria-hidden="true">
+            →
+          </span>
+        </a>
+        <p class="micro" style="margin-top:25px">
+          Browse by target, modality, and development stage. Confirm current
+          status and availability directly with JEA.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="wrap section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">A CLEAR PROCESS. A SHARED PURPOSE.</p>
+        <h2>
+          Progress, <em>by design.</em>
+        </h2>
+      </div>
+      <a class="text-link" href="/approach">
+        How we work together
+      </a>
+    </div>
+    <div class="steps">
+      {steps.map(([title, description], index) => (
+        <article class="step">
+          <span class="step-number">0{index + 1}</span>
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+  <section class="tool-spotlight">
+    <div class="wrap section split">
+      <div>
+        <p class="eyebrow">CLARITY BEFORE THE CONVERSATION</p>
+        <h2>
+          Put your next deal
+          <br />
+          in <em>perspective.</em>
+        </h2>
+        <p class="lead">
+          Practical tools to explore deal economics, compare scenarios, and
+          prepare for a more productive partnering discussion.
+        </p>
+        <a class="button" href="/tools">
+          Explore the BD toolkit
+        </a>
+        <p class="micro" style="margin-top:20px">
+          Free to use. No account. Calculations stay in your browser.
+        </p>
+      </div>
+      <div class="editorial-list">
+        <a href="/tools/deal-value">
+          <span class="number">01</span>
+          <div>
+            <strong>Deal value breakdown</strong>
+            <p>Separate upfront value from contingent payments.</p>
+          </div>
+          <span class="arrow" aria-hidden="true">
+            →
+          </span>
+        </a>
+        <a href="/tools/royalty-revenue">
+          <span class="number">02</span>
+          <div>
+            <strong>Royalty revenue</strong>
+            <p>Explore sales and royalty-rate scenarios.</p>
+          </div>
+          <span class="arrow" aria-hidden="true">
+            →
+          </span>
+        </a>
+        <a href="/tools/cash-runway">
+          <span class="number">03</span>
+          <div>
+            <strong>Cash runway</strong>
+            <p>Connect available cash with monthly net burn.</p>
+          </div>
+          <span class="arrow" aria-hidden="true">
+            →
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <Faq />
+  <Closing />
+</Layout>

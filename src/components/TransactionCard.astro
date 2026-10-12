@@ -1,0 +1,45 @@
+---
+import Icon from "./Icon";
+import type { transactions } from "../content/site";
+interface Props {
+  deal: (typeof transactions)[number];
+}
+const { deal } = Astro.props;
+---
+
+<article class="transaction-card">
+  <p class="micro">
+    <span>{deal.type}</span>
+    <span>{deal.year}</span>
+  </p>
+  <div class="transaction-logos">
+    <img
+      src={`/logos/${deal.from}`}
+      alt={deal.title.split(" × ")[0]}
+      loading="lazy"
+      width="180"
+      height="70"
+    />
+    <span aria-hidden="true">×</span>
+    <img
+      src={`/logos/${deal.to}`}
+      alt={deal.title.split(" × ")[1]}
+      loading="lazy"
+      width="180"
+      height="70"
+    />
+  </div>
+  <h3>{deal.title}</h3>
+  <p>{deal.description}</p>
+  <p class="micro">Lead business development & transaction advisor</p>
+  <a
+    class="document-link"
+    href={`/client-showcase/${deal.pdf}`}
+    target="_blank"
+    rel="noreferrer"
+  >
+    <Icon name="file" size={17} />
+    <span>Read announcement</span>
+    <span class="document-type">PDF</span>
+  </a>
+</article>
