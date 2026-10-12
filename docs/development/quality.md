@@ -10,7 +10,7 @@ flowchart TD
   Docs --> Budget[File, directory, and total LOC budgets]
   Budget --> Workflow[actionlint and ShellCheck]
   Workflow --> Types[Astro and TypeScript]
-  Types --> Unit[Calculator and inquiry unit tests]
+  Types --> Unit[Inquiry unit tests]
   Unit --> Dev[Fresh-browser development hydration]
   Dev --> Build[Production build with preview running]
   Build --> Reload[Recheck development hydration]
@@ -38,13 +38,13 @@ paths, and Markdown heading anchors without depending on external website uptime
 
 ## Browser and server checks
 
-`test:dev` verifies the asset library, calculator, and inquiry form in fresh
+`test:dev` verifies the asset library and inquiry form in fresh
 browser contexts before and after a production build while the dev server stays
 running. Separate Vite caches prevent development and production JSX runtimes
 from interfering. Build output is excluded from preview file watching.
 
 Playwright exercises the built site at desktop and phone sizes, including
-navigation, search, dropdowns, forms, filtering, calculators, and downloads.
+navigation, search, dropdowns, forms, filtering, and downloads.
 It starts its own server on port 4323 and leaves a running development preview
 alone. `PLAYWRIGHT_BASE_URL` can target an existing preview deliberately.
 

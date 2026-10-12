@@ -10,8 +10,7 @@
 [![License](https://img.shields.io/badge/License-PolyForm_Shield-blue)](LICENSE)
 
 A fast, accessible website for JEA’s biotech and biopharma advisory practice.
-Explore partnering assets, transaction announcements, sixteen business development
-tools, and a guided inquiry flow. Astro serves the pages; React powers the
+Explore partnering assets, transaction announcements, and a guided inquiry flow. Astro serves the pages; React powers the
 interactive features. The original blue DNA identity and source documents remain.
 
 [Visit JEA](https://www.jeabizdev.com) · [User guides](docs/README.md) · [Development](docs/development/setup.md)

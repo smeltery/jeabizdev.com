@@ -14,11 +14,6 @@ async function verifyIslands(browser: Browser) {
     await expect(page.locator(".library-card")).toHaveCount(9);
     await page.getByLabel("Search opportunities").fill("CYP11B2");
     await expect(page.locator(".library-card")).toHaveCount(1);
-    await page.goto("http://127.0.0.1:4324/tools/deal-value");
-    await expect(page.locator("astro-island[ssr]")).toHaveCount(0);
-    await expect(page.locator(".result-value")).toHaveText("$500M");
-    await page.getByLabel("Upfront payment ($M)").fill("50");
-    await expect(page.locator(".result-value")).toHaveText("$525M");
     await page.goto("http://127.0.0.1:4324/contact");
     await expect(page.locator("astro-island[ssr]")).toHaveCount(0);
     await expect(page.getByLabel("Full name *", { exact: true })).toBeVisible();

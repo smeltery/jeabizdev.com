@@ -4,14 +4,12 @@ The references were inspected from the local `bold-performance` and `adamou-fina
 
 | Reference capability                          | JEA implementation                                                                                                       |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| Astro static pages, React where interactive   | Prerendered marketing, asset, and tool pages; focused React island components                                            |
-| Sticky navigation and current-page indicator  | Shared responsive header with services, advisor, approach, assets, tools, and resource menu                              |
+| Astro static pages, React where interactive   | Prerendered marketing and asset pages; focused React island components                                                   |
+| Sticky navigation and current-page indicator  | Shared responsive header with services, advisor, approach, assets, and resource menu                                     |
 | Full mobile navigation                        | Native modal drawer with descriptive links, search, resources, and inquiry CTA                                           |
 | Keyboard site search                          | Cmd/Ctrl+K; category filters; arrow navigation; Enter to open; Escape and focus restoration                              |
 | Dedicated services, about, and approach pages | JEA-specific content and four engagement models                                                                          |
 | Professional footer                           | Identity, navigation, direct contact, external resources, legal pages, brand downloads, back-to-top                      |
-| Searchable categorized tool library           | All-in-one workspace and sixteen JEA-specific tools across deal economics, capital planning, and process planning        |
-| Dedicated calculator guides                   | Live calculations, validation, examples, assumptions, related tools, reset, print, text export                           |
 | Detailed intake and review                    | Company, role, priorities, asset, territory, timeline, engagement preference, consent, review                            |
 | Delivery and fallback                         | Existing Formcarry endpoint, status feedback, retained draft on error, email draft, download                             |
 | FAQs                                          | Native accessible disclosures on home and approach pages                                                                 |
@@ -31,8 +29,8 @@ The references were inspected from the local `bold-performance` and `adamou-fina
 
 ## Deliberate adaptations
 
-Fitness and household-finance calculators are replaced with relevant biotech business development tools. JEA’s scientific content and historical data are preserved with source-context notes; current clinical status has not been independently updated. No testimonials, booking availability, prices, clients, or transaction claims were invented.
+JEA’s scientific content and historical data are preserved with source-context notes; current clinical status has not been independently updated. No testimonials, booking availability, prices, clients, or transaction claims were invented.
 
-Calculations run in the browser and use user assumptions. Financial inputs are not persisted. The tools page includes an all-in-one workspace with a keyboard-accessible tool selector, alongside individual calculator pages. The original JEA inline asset dialog has become a linkable detail page with the full material and a contextual inquiry link.
+The original JEA inline asset dialog has become a linkable detail page with the full material and a contextual inquiry link.
 
 No third-party accounts, private client management, or public hosting project has been provisioned. Existing hosting remains under the repository’s deployment workflow.

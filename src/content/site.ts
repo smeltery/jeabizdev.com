@@ -25,11 +25,6 @@ export const navigation = [
     label: "Opportunities",
     detail: "Explore assets for partnering",
   },
-  {
-    href: "/tools",
-    label: "Tools",
-    detail: "Put your next deal in perspective",
-  },
 ];
 export const services = [
   {

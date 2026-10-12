@@ -1,14 +1,14 @@
 # Find your way around
 
 Use the main navigation to explore services, John’s background, JEA’s approach,
-partnering opportunities, and the business development toolkit. On a phone, open
+partnering opportunities, and transaction experience. On a phone, open
 **Menu** for the same links and a contact action at the bottom of the screen.
 
 ## Search
 
 Choose the search icon or press **Cmd+K** on macOS or **Ctrl+K** elsewhere.
-Search by topic, target, asset name, or tool name. Category buttons narrow the
-results to pages, tools, assets, or transactions.
+Search by topic, target, asset name, or partnership name. Category buttons narrow the
+results to pages, assets, or transactions.
 
 - Type a phrase such as “KAT6,” “royalties,” or “partnering.”
 - Use the up/down arrow keys to move through results, then Enter to open one.

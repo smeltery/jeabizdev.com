@@ -111,12 +111,6 @@
   .asset-aside {
     padding: 22px;
   }
-  .tool-workspace {
-    grid-template-columns: 1fr;
-  }
-  .tool-guide {
-    gap: 35px;
-  }
   .swatches {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -128,5 +122,12 @@
   }
   .values-grid h3 {
     font-size: 24px;
+  }
+}
+
+@media (max-width: 800px) {
+  .brand-guide {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 }

@@ -2,22 +2,11 @@
   .site-header,
   footer,
   .closing,
-  .tool-actions,
   .skip-link {
     display: none;
   }
   .wrap {
     width: 100%;
-  }
-  .tool-workspace {
-    display: block;
-  }
-  .tool-results {
-    background: white;
-    color: black;
-  }
-  .tool-results * {
-    color: black !important;
   }
   .page-intro {
     padding: 20px 0;

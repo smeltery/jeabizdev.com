@@ -4,13 +4,7 @@ import Icon, { type IconName } from "./Icon";
 import { navigation, resources, site } from "../content/site";
 const current = (href: string) =>
   Astro.url.pathname.replace(/\/$/, "") === href;
-const menuIcons: IconName[] = [
-  "briefcase",
-  "user",
-  "route",
-  "science",
-  "calculator",
-];
+const menuIcons: IconName[] = ["briefcase", "user", "route", "science"];
 ---
 
 <header class="site-header">
@@ -100,7 +94,7 @@ const menuIcons: IconName[] = [
   <div class="menu-body">
     <button class="mobile-search" data-search-open>
       <Icon name="search" />
-      <span>Search pages, assets & tools</span>
+      <span>Search pages, assets & deals</span>
       <kbd>⌘ K</kbd>
     </button>
     <p class="menu-intro">

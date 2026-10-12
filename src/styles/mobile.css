@@ -63,8 +63,7 @@
   .about-grid,
   .values-grid,
   .content-grid,
-  .asset-details,
-  .tool-guide {
+  .asset-details {
     grid-template-columns: 1fr;
   }
   .service-card .card-number {
@@ -190,10 +189,6 @@
   legend {
     font-size: 24px;
   }
-  .tool-inputs,
-  .tool-results {
-    padding: 25px;
-  }
   .filters {
     gap: 12px;
   }
@@ -246,5 +241,12 @@
 @media (max-width: 540px) {
   .hero h1 {
     font-size: clamp(28px, 7.8vw, 42px);
+  }
+}
+
+@media (max-width: 800px) {
+  .brand-guide {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 }
