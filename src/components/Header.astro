@@ -9,7 +9,7 @@ const menuIcons: IconName[] = ["briefcase", "user", "route", "science"];
 
 <header class="site-header">
   <div class="header-inner">
-    <Mark />
+    <Mark legalName />
     <nav aria-label="Main navigation">
       {navigation.map((link) => (
         <a
@@ -86,7 +86,7 @@ const menuIcons: IconName[] = ["briefcase", "user", "route", "science"];
 </header>
 <dialog id="mobile-menu" aria-label="Main menu">
   <div class="dialog-heading">
-    <Mark />
+    <Mark legalName />
     <button data-menu-close aria-label="Close menu" autofocus>
       <Icon name="close" size={20} />
     </button>
