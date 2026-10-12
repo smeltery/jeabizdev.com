@@ -90,7 +90,8 @@
   display: flex;
   flex-direction: column;
   border: 1px solid var(--line);
-  padding: 25px;
+  padding: 22px;
+  background: var(--paper);
 }
 .engagement-grid .text-link {
   margin-top: auto;

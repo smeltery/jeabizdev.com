@@ -86,14 +86,6 @@ footer em {
 .hero .button {
   background: var(--accent);
 }
-.world-panel {
-  background: #172b50;
-}
-.world-panel:before {
-  background-image:
-    linear-gradient(#b6d8ff09 1px, transparent 1px),
-    linear-gradient(90deg, #b6d8ff09 1px, transparent 1px);
-}
 @media (max-width: 540px) {
   .brand-name {
     font-size: 14px;

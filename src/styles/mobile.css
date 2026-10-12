@@ -50,20 +50,6 @@
   .hero-note {
     font-size: 10px;
   }
-  .world-panel {
-    min-height: 360px;
-    padding: 25px 22px;
-  }
-  .world-art {
-    width: 115%;
-    margin: -30px -7.5% -15px;
-  }
-  .world-caption strong {
-    font-size: 25px;
-  }
-  .world-caption p {
-    font-size: 10px;
-  }
   .territory-strip p {
     font-size: 8px;
   }

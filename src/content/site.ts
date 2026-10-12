@@ -122,23 +122,23 @@ export const steps = [
 export const engagements = [
   [
     "Hourly",
-    "Focused expertise, as you need it.",
-    "Pay for the time spent on your project. A flexible option for targeted advice or a changing scope.",
+    "For targeted advice",
+    "Pay by the hour. Get expert input on a specific question or a changing scope.",
   ],
   [
     "Retainer",
-    "A consistent partner for your team.",
-    "Secure expertise for an agreed number of hours each month, with continuity and priority service.",
+    "For ongoing BD support",
+    "Reserve agreed hours each month. Add continuity and priority access to your team.",
   ],
   [
     "Project-based",
-    "A defined scope. A clear outcome.",
-    "Structure the engagement around a specific project, set of deliverables, and agreed fee.",
+    "For a defined deliverable",
+    "Agree a project fee upfront. Set clear deliverables, scope, and milestones together.",
   ],
   [
     "Blended",
-    "Shared goals. Aligned incentives.",
-    "Combine fixed fees with performance-based incentives that align our success with yours.",
+    "For shared incentives",
+    "Combine a fixed fee with performance-based incentives tied to agreed outcomes.",
   ],
 ];
 export const faqs = [

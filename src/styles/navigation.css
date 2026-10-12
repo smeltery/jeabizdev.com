@@ -43,7 +43,7 @@ kbd {
   display: grid;
   grid-template-columns: 1.06fr 1fr;
   gap: 55px;
-  padding: 75px 0 68px;
+  padding: 48px 0;
   align-items: center;
 }
 .hero h1 {
@@ -80,58 +80,6 @@ kbd {
   height: 1px;
   width: 28px;
   background: var(--accent);
-}
-.world-panel {
-  position: relative;
-  min-height: 520px;
-  color: var(--paper);
-  overflow: hidden;
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.world-panel:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-size: 32px 32px;
-}
-.world-panel .eyebrow {
-  position: relative;
-  color: #cbd5e1;
-  font-size: 9px;
-  letter-spacing: 0.2em;
-}
-.world-art {
-  width: 110%;
-  max-width: none;
-  margin-left: -5%;
-  margin-top: -50px;
-  margin-bottom: -35px;
-}
-.world-caption {
-  position: relative;
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  border-top: 1px solid #ffffff25;
-  padding-top: 22px;
-}
-.world-caption p {
-  margin: 0;
-  font-size: 11px;
-  color: #cbd5e1;
-}
-.world-caption strong {
-  display: block;
-  font: 26px/1.2 var(--serif);
-  color: var(--paper);
-  margin-bottom: 8px;
-}
-.world-caption > span {
-  font-size: 32px;
-  color: var(--accent-light);
 }
 .territory-strip {
   border-top: 1px solid var(--line);

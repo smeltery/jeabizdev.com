@@ -15,3 +15,7 @@ Source: [JEA BizDev Consulting](https://www.jeabizdev.com), inspected October 12
 LinkedIn links use the filled [Simple Icons LinkedIn mark](https://github.com/simple-icons/simple-icons/blob/13.21.0/icons/linkedin.svg), distributed under [CC0](https://github.com/simple-icons/simple-icons/blob/13.21.0/LICENSE.md). The shared icon component preserves its original geometry and uses a monochrome fill for contrast. Email uses a standard envelope icon.
 
 [Back to documentation](README.md)
+
+## Hero photography
+
+The homepage handshake photograph was supplied by the site owner on October 12, 2026. It is stored as an optimized WebP at `public/images/partnership.webp` and illustrates partnership, rather than a particular transaction. The adjacent figures describe John’s career track record from the existing site.

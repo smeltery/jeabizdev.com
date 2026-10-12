@@ -46,19 +46,17 @@ import { services, engagements } from "../content/site";
     </aside>
   </section>
   <section class="tool-spotlight" id="engagements">
-    <div class="wrap section">
+    <div class="wrap section engagement-section">
       <div class="section-heading">
         <div>
           <p class="eyebrow">FLEXIBLE ENGAGEMENTS</p>
           <h2>
-            A working model
-            <br />
-            that fits <em>your needs.</em>
+            Choose the support <em>you need.</em>
           </h2>
         </div>
         <p>
-          Every engagement begins with a conversation about your priorities,
-          scope, and the support that will make the most difference.
+          One-off advice, ongoing support, or a defined project. Agree the scope
+          and fee structure directly with John.
         </p>
       </div>
       <div class="engagement-grid">
@@ -71,7 +69,7 @@ import { services, engagements } from "../content/site";
               class="text-link"
               href={`/contact?engagement=${encodeURIComponent(title)}`}
             >
-              Discuss this model
+              Discuss {title.toLowerCase()} support
             </a>
           </article>
         ))}
@@ -82,6 +80,15 @@ import { services, engagements } from "../content/site";
 </Layout>
 
 <style>
+  .engagement-section {
+    padding-block: 48px;
+  }
+  .engagement-section .section-heading {
+    margin-bottom: 28px;
+  }
+  .engagement-section h2 {
+    font-size: clamp(30px, 3.5vw, 46px);
+  }
   .services-overview {
     padding-bottom: 40px;
   }
