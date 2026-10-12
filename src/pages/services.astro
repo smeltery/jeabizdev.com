@@ -1,4 +1,5 @@
 ---
+import Icon from "../components/Icon";
 import EditorialImage from "../components/EditorialImage.astro";
 import Layout from "../layouts/Layout.astro";
 import Intro from "../components/Intro.astro";
@@ -30,14 +31,19 @@ import { services, engagements } from "../content/site";
       ))}
     </div>
     <EditorialImage subject="laboratory" />
-    <div class="section-tail">
-      <p class="micro">
-        Explore actual transaction precedents and downloadable deal sheets.
-      </p>
-      <a class="text-link" href="/transactions#deal-summaries">
-        Browse deal summaries
+    <aside class="deal-callout" aria-labelledby="deal-callout-title">
+      <div>
+        <p class="eyebrow">THE TRANSACTION LIBRARY</p>
+        <h2 id="deal-callout-title">See the detail behind the deals.</h2>
+        <p>
+          Explore eight transaction summaries covering strategic partnerships
+          and cross-border agreements.
+        </p>
+      </div>
+      <a class="button" href="/transactions#deal-summaries">
+        <Icon name="file" /> Browse deal summaries
       </a>
-    </div>
+    </aside>
   </section>
   <section class="tool-spotlight" id="engagements">
     <div class="wrap section">
@@ -74,3 +80,50 @@ import { services, engagements } from "../content/site";
   </section>
   <Closing />
 </Layout>
+
+<style>
+  .deal-callout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    margin-top: 32px;
+    padding: 30px 32px;
+    background: var(--wash);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+  }
+  .deal-callout .eyebrow {
+    margin-bottom: 10px;
+    color: var(--accent);
+    font-size: 10px;
+  }
+  .deal-callout h2 {
+    font-size: clamp(26px, 2.5vw, 34px);
+    margin-bottom: 12px;
+  }
+  .deal-callout p:last-child {
+    margin: 0;
+    color: var(--muted);
+    max-width: 60ch;
+    font-size: 14px;
+  }
+  .deal-callout .button {
+    flex-shrink: 0;
+    gap: 10px;
+  }
+  @media (max-width: 800px) {
+    .deal-callout {
+      align-items: start;
+      flex-direction: column;
+      gap: 22px;
+      padding: 24px;
+    }
+  }
+  @media (max-width: 540px) {
+    .deal-callout .button {
+      width: 100%;
+    }
+  }
+</style>
