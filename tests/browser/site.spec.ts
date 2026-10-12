@@ -263,7 +263,7 @@ test("all-in-one workspace switches calculators", async ({ page }) => {
   await expect(workspace.locator(".result-value")).toHaveText("10 months");
 });
 
-test("FAQ accordion, full-width search, and navigation alignment", async ({
+test("FAQ accordion, contained search, and navigation alignment", async ({
   page,
   isMobile,
 }) => {
@@ -304,6 +304,8 @@ test("FAQ accordion, full-width search, and navigation alignment", async ({
   }
   await page.getByRole("button", { name: "Search site", exact: true }).click();
   const search = await page.locator("#site-search").boundingBox();
-  expect(search!.width).toBe(page.viewportSize()!.width);
+  expect(search!.width).toBe(isMobile ? page.viewportSize()!.width : 960);
+  const results = await page.locator(".search-results").boundingBox();
+  expect(Math.abs(results!.width - search!.width)).toBeLessThanOrEqual(2);
   await expect(page.locator(".search-footer")).toBeInViewport();
 });

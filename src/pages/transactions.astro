@@ -1,4 +1,5 @@
 ---
+import Icon from "../components/Icon";
 import YearFilter from "../components/YearFilter";
 import Layout from "../layouts/Layout.astro";
 import Intro from "../components/Intro.astro";
@@ -60,41 +61,44 @@ import { transactions, summaries } from "../content/site";
     </div>
   </section>
   <section class="tool-spotlight" id="deal-summaries">
-    <div class="wrap section split">
-      <div>
-        <p class="eyebrow">TRANSACTION PRECEDENTS</p>
-        <h2>
-          The detail
-          <br />
-          behind <em>the deal.</em>
-        </h2>
-        <p class="lead">
-          Download deal sheet summaries from the existing JEA library, covering
-          partnerships and cross-border transactions.
-        </p>
-        <p class="micro">
-          Historical summaries are provided for reference. Headline values may
-          include contingent payments.
+    <div class="wrap section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">TRANSACTION PRECEDENTS</p>
+          <h2>
+            The detail behind <em>the deal.</em>
+          </h2>
+        </div>
+        <p>
+          Explore eight deal sheet summaries covering partnerships and
+          cross-border transactions.
         </p>
       </div>
-      <div class="editorial-list">
+      <ul class="deal-grid">
         {summaries.map(([name, year, file]) => (
-          <a
-            href={`/deal-summaries/${encodeURIComponent(file)}`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span class="number">{year}</span>
-            <div>
-              <strong>{name}</strong>
-              <p>Deal sheet summary · PDF</p>
-            </div>
-            <span class="arrow" aria-hidden="true">
-              →
-            </span>
-          </a>
+          <li>
+            <a
+              href={`/deal-summaries/${encodeURIComponent(file)}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="deal-meta">
+                <span>{year}</span>
+                <Icon name="file" size={22} />
+              </span>
+              <h3>{name}</h3>
+              <span class="micro">
+                Read deal summary · PDF
+                <span class="sr-only"> (opens in a new tab)</span>
+              </span>
+            </a>
+          </li>
         ))}
-      </div>
+      </ul>
+      <p class="micro deal-note">
+        Historical summaries are provided for reference. Headline values may
+        include contingent payments.
+      </p>
     </div>
   </section>
   <Closing />
@@ -108,5 +112,60 @@ import { transactions, summaries } from "../content/site";
   }
   .transaction-item .transaction-card {
     width: 100%;
+  }
+  .deal-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .deal-grid a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 24px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    transition:
+      border-color 0.2s,
+      box-shadow 0.2s;
+  }
+  .deal-grid a:hover {
+    border-color: var(--accent);
+    box-shadow: 0 6px 20px #172b5008;
+  }
+  .deal-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--accent);
+    font-size: 12px;
+    margin-bottom: 26px;
+  }
+  .deal-grid h3 {
+    font: 550 17px/1.4 var(--sans);
+    margin-bottom: 20px;
+  }
+  .deal-grid .micro {
+    margin-top: auto;
+  }
+  .deal-note {
+    margin: 24px 0 0;
+  }
+  @media (max-width: 1100px) {
+    .deal-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 540px) {
+    .deal-grid {
+      grid-template-columns: 1fr;
+    }
+    .deal-meta {
+      margin-bottom: 16px;
+    }
   }
 </style>

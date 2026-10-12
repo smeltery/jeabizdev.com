@@ -14,7 +14,6 @@
     <text x="56" y="405">Strategic perspective. Global relationships.</text>
     <text x="56" y="435">The right partner for your next chapter.</text>
   </g>
-  <text x="56" y="484" font-family="Arial,sans-serif" font-size="13" fill="#2563eb">jeabizdev.com</text>
   <g clip-path="url(#panel)"><svg x="728" y="50" width="490" height="400" viewBox="0 0 600 490" fill="none">
     <defs>
       <radialGradient id="glow">
@@ -85,7 +84,7 @@
       stroke-opacity=".6"
     />
   </svg></g>
-  <text x="790" y="61" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.7" fill="#bfdbfe">CONNECTED ACROSS CONTINENTS</text>
+  <text x="790" y="34" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.7" fill="#bfdbfe">CONNECTED ACROSS CONTINENTS</text>
   <text x="790" y="470" font-family="Georgia,serif" font-size="23" fill="#ffffff">Opportunity knows no borders.</text>
   <rect y="526" width="1200" height="104" fill="#eff6ff"/>
   <path d="M0 526h1200M405 553v48M803 553v48" stroke="#d2e1f7"/>

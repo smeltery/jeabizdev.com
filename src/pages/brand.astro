@@ -44,6 +44,31 @@ import Intro from "../components/Intro.astro";
         </a>
       </div>
     </div>
+    <section class="favicon-section" aria-labelledby="favicon-title">
+      <div>
+        <p class="eyebrow">IN THE BROWSER</p>
+        <h2 id="favicon-title">A small, familiar signature.</h2>
+        <p>The DNA mark stays recognizable in browser tabs and bookmarks.</p>
+        <a class="text-link" href="/brand/mark.svg" download="jea-favicon.svg">
+          Download favicon SVG
+        </a>
+      </div>
+      <div class="favicon-preview">
+        <div class="browser-tab">
+          <img src="/brand/mark.svg" width="16" height="16" alt="JEA favicon" />
+          <span>JEA BizDev Consulting</span>
+          <span aria-hidden="true">×</span>
+        </div>
+        <div class="favicon-sizes">
+          {[16, 32, 48].map((size) => (
+            <div>
+              <img src="/brand/mark.svg" width={size} height={size} alt="" />
+              <span>{size} px</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
     <div class="section-heading" style="margin-top:70px">
       <div>
         <p class="eyebrow">COLOR PALETTE</p>
@@ -88,3 +113,53 @@ import Intro from "../components/Intro.astro";
     </div>
   </section>
 </Layout>
+
+<style>
+  .favicon-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 80px;
+    align-items: center;
+  }
+  .favicon-section h2 {
+    font-size: clamp(30px, 3vw, 44px);
+  }
+  .favicon-preview {
+    background: var(--wash);
+    padding: 30px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+  .browser-tab {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: white;
+    border-radius: 10px 10px 0 0;
+    font-size: 12px;
+  }
+  .browser-tab span:last-child {
+    margin-left: auto;
+  }
+  .favicon-sizes {
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+    padding-top: 36px;
+  }
+  .favicon-sizes div {
+    display: grid;
+    justify-items: center;
+    gap: 12px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  @media (max-width: 800px) {
+    .favicon-section {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+  }
+</style>

@@ -1,0 +1,65 @@
+---
+interface Props {
+  subject: "laboratory" | "collaboration";
+  compact?: boolean;
+}
+const { subject, compact = false } = Astro.props;
+const photos = {
+  laboratory: {
+    alt: "Gloved researcher preparing genetic samples in a laboratory",
+    credit: "National Cancer Institute / Daniel Sone",
+    source: "https://unsplash.com/photos/1fvqUP-xaYQ",
+  },
+  collaboration: {
+    alt: "Participants sharing ideas around a meeting table",
+    credit: "Dylan Gillis",
+    source: "https://unsplash.com/photos/KdeqA3aTnBY",
+  },
+};
+const photo = photos[subject];
+---
+
+<figure class:list={["editorial-photo", { compact }]}>
+  <img
+    src={`/images/${subject}.webp`}
+    alt={photo.alt}
+    width="1400"
+    height="900"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>
+    Photo:{" "}
+    <a href={photo.source} target="_blank" rel="noreferrer">
+      {photo.credit} / Unsplash
+    </a>
+  </figcaption>
+</figure>
+<style>
+  .editorial-photo {
+    margin: 48px 0 0;
+  }
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  .compact img {
+    aspect-ratio: 16 / 10;
+  }
+  figcaption {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 10px;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 540px) {
+    img {
+      aspect-ratio: 16 / 10;
+    }
+  }
+</style>

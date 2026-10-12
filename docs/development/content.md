@@ -44,3 +44,15 @@ regenerate on the same design workstation for matching typography. CI verifies
 the committed dimensions and references rather than rewriting the image.
 
 [Back to documentation](../README.md)
+
+## Editorial photographs
+
+Two locally hosted, lazy-loaded WebP photographs add context on Services and
+Approach. These are illustrative stock images, not photographs of JEA’s team or
+clients. Their original sources and credits are preserved in the captions:
+
+- [Laboratory research](https://unsplash.com/photos/1fvqUP-xaYQ): National Cancer Institute / Daniel Sone.
+- [Collaboration](https://unsplash.com/photos/KdeqA3aTnBY): Dylan Gillis.
+
+Both are provided under the [Unsplash License](https://unsplash.com/license).
+Use `EditorialImage.astro` for consistent proportions, alt text, and credits.

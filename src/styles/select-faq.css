@@ -205,14 +205,16 @@
   max-width: 65ch;
 }
 #site-search {
-  inset: 24px 0 auto;
-  width: 100%;
+  --dialog-gutter: clamp(20px, 3vw, 40px);
+  inset: 0;
+  width: min(960px, calc(100% - 48px));
   max-width: none;
   height: min(760px, calc(100dvh - 48px));
   max-height: none;
-  margin: 0;
-  padding: 30px clamp(22px, 4vw, 64px);
-  border-inline: 0;
+  margin: auto;
+  padding: 30px var(--dialog-gutter);
+  border: 1px solid var(--line);
+  border-radius: 10px;
   overflow: hidden;
 }
 #site-search[open] {
@@ -233,7 +235,8 @@
   scrollbar-width: thin;
   scrollbar-color: #a5b9d9 transparent;
   scrollbar-gutter: stable;
-  padding-right: 10px;
+  margin-inline: calc(-1 * var(--dialog-gutter));
+  padding-inline: var(--dialog-gutter);
 }
 .search-results::-webkit-scrollbar {
   width: 6px;

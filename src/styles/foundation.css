@@ -96,11 +96,19 @@ em {
   color: var(--accent);
 }
 :focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 5px;
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+input:not([type="checkbox"]):not([type="radio"]):focus,
+textarea:focus,
+select:focus,
+.select-trigger:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px #2563eb20;
 }
 ::selection {
-  background: var(--accent-light);
+  background: #dbeafe;
   color: var(--ink);
 }
 [hidden] {
