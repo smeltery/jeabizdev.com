@@ -9,7 +9,7 @@ actionlint
 shellcheck scripts/*.sh .githooks/pre-commit
 bun run typecheck
 bun run test
-bun run build
+bun run test:dev
 bun scripts/check-links.mjs
 bun run test:e2e
 git diff --check

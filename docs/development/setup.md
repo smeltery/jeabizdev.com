@@ -23,17 +23,18 @@ is available at `/brand/social.png`.
 
 ## Commands
 
-| Command                       | Purpose                                               |
-| ----------------------------- | ----------------------------------------------------- |
-| `bun run dev`                 | Local Astro preview with live updates                 |
-| `bun run check`               | Complete CI and pre-commit gate                       |
-| `bun run format`              | Format source and documentation                       |
-| `bun run typecheck`           | Astro and TypeScript diagnostics                      |
-| `bun run test`                | Unit tests with mocked inquiry delivery               |
-| `bun run build`               | Prerender pages and bundle the Vercel endpoint        |
-| `bun run test:e2e`            | Start an isolated built-site server and test browsers |
-| `bun run og`                  | Regenerate SVG and PNG social images                  |
-| `flox services start preview` | Run the development preview as a Flox service         |
+| Command                       | Purpose                                                       |
+| ----------------------------- | ------------------------------------------------------------- |
+| `bun run dev`                 | Local Astro preview with live updates                         |
+| `bun run check`               | Complete CI and pre-commit gate                               |
+| `bun run format`              | Format source and documentation                               |
+| `bun run typecheck`           | Astro and TypeScript diagnostics                              |
+| `bun run test`                | Unit tests with mocked inquiry delivery                       |
+| `bun run test:dev`            | Check live React sections before and after a production build |
+| `bun run build`               | Prerender pages and bundle the Vercel endpoint                |
+| `bun run test:e2e`            | Start an isolated built-site server and test browsers         |
+| `bun run og`                  | Regenerate SVG and PNG social images                          |
+| `flox services start preview` | Run the development preview as a Flox service                 |
 
 ## Hooks and environment variables
 

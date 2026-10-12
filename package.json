@@ -16,7 +16,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "docs:check": "markdownlint-cli2 && bun scripts/check-docs.ts",
-    "budget": "bun scripts/check-budgets.ts"
+    "budget": "bun scripts/check-budgets.ts",
+    "test:dev": "playwright test --config playwright.dev.config.ts"
   },
   "dependencies": {
     "@astrojs/react": "7.0.1",

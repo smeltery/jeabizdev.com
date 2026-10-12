@@ -6,4 +6,16 @@ export default defineConfig({
   integrations: [react()],
   devToolbar: { enabled: false },
   adapter: vercel(),
+  vite: {
+    plugins: [
+      {
+        name: "separate-development-cache",
+        config: (_, { command, mode }) => ({
+          // A build must not replace the JSX runtime used by an open preview.
+          cacheDir: `node_modules/.vite/${command}-${mode}`,
+        }),
+      },
+    ],
+    server: { watch: { ignored: ["**/.vercel/**", "**/dist/**"] } },
+  },
 });
