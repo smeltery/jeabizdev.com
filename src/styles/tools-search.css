@@ -20,9 +20,6 @@
   .hero {
     gap: 100px;
   }
-  .hero h1 {
-    font-size: 4.4rem;
-  }
 }
 @media (max-width: 1200px) {
   .header-inner {
@@ -44,9 +41,6 @@
   }
   .hero {
     gap: 35px;
-  }
-  .hero h1 {
-    font-size: 3.9vw;
   }
   .footer-top {
     gap: 25px;
@@ -73,9 +67,6 @@
   }
   .header-actions {
     margin-left: auto;
-  }
-  .hero h1 {
-    font-size: 3.9vw;
   }
   .hero {
     padding-block: 55px;

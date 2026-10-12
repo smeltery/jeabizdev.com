@@ -175,10 +175,7 @@ export default function InquiryForm() {
           <input name="consent" type="checkbox" required />
           <span>
             I agree that JEA may use these details to respond to my inquiry.{" "}
-            <a className="text-link" href="/privacy">
-              Privacy policy
-            </a>
-            .
+            <a href="/privacy">Privacy policy</a>.
           </span>
         </label>
         <div className="form-actions">

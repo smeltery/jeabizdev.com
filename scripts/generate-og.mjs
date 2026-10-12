@@ -1,5 +1,8 @@
 import { readFile, writeFile } from "node:fs/promises";
 import sharp from "sharp";
+import { createElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import Icon from "../src/components/Icon.tsx";
 import { Resvg } from "@resvg/resvg-js";
 
 const mark = await readFile(
@@ -14,6 +17,8 @@ const photo = await sharp(
 const markPaths = mark.match(/<svg[^>]*>([\s\S]*?)<\/svg>/)?.[1];
 if (!markPaths) throw new Error("The JEA mark must contain valid SVG artwork.");
 
+const icon = (name, x, y) =>
+  `<g transform="translate(${x} ${y})" color="#2563eb">${renderToStaticMarkup(createElement(Icon, { name, size: 24 }))}</g>`;
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="#ffffff"/>
   <image x="750" width="450" height="526" href="data:image/jpeg;base64,${photo.toString("base64")}" preserveAspectRatio="xMidYMid slice"/>
@@ -25,12 +30,14 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" v
     <text x="52" y="266" fill="#172b50">Cross-border deals.</text>
     <text x="52" y="348" fill="#2563eb" font-style="italic">Lasting value.</text>
   </g>
-  <g font-family="Arial,sans-serif" font-size="19" fill="#4b5563">
-    <text x="56" y="405">John Adamou · Biotech partnering expertise</text>
-    <text x="56" y="435">North America · Europe · Asia</text>
+  ${icon("briefcase", 56, 388)}${icon("globe", 56, 430)}
+  <g font-family="Arial,sans-serif" font-size="17" fill="#4b5563">
+    <text x="92" y="407">From partnering strategy to signed agreements.</text>
+    <text x="92" y="449">Connecting biotech across North America, Europe &amp; Asia.</text>
   </g>
   <rect y="526" width="1200" height="104" fill="#eff6ff"/>
   <path d="M0 526h1200M405 553v48M803 553v48" stroke="#d2e1f7"/>
+  ${icon("user", 24, 566)}${icon("briefcase", 413, 566)}${icon("chart", 811, 566)}
   <g font-family="Georgia,serif" font-size="37" fill="#2563eb">
     <text x="56" y="590">25+</text><text x="445" y="590">85</text><text x="843" y="590">$25B+</text>
   </g>

@@ -9,12 +9,14 @@
     <text x="52" y="266" fill="#172b50">Cross-border deals.</text>
     <text x="52" y="348" fill="#2563eb" font-style="italic">Lasting value.</text>
   </g>
-  <g font-family="Arial,sans-serif" font-size="19" fill="#4b5563">
-    <text x="56" y="405">John Adamou · Biotech partnering expertise</text>
-    <text x="56" y="435">North America · Europe · Asia</text>
+  <g transform="translate(56 388)" color="#2563eb"><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"></path><path d="M3 6h18v14H3ZM3 11a20 20 0 0 0 18 0M10 12h4"></path></svg></g><g transform="translate(56 430)" color="#2563eb"><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M3 12h18"></path><path d="M12 3c5 5 5 13 0 18-5-5-5-13 0-18"></path></svg></g>
+  <g font-family="Arial,sans-serif" font-size="17" fill="#4b5563">
+    <text x="92" y="407">From partnering strategy to signed agreements.</text>
+    <text x="92" y="449">Connecting biotech across North America, Europe &amp; Asia.</text>
   </g>
   <rect y="526" width="1200" height="104" fill="#eff6ff"/>
   <path d="M0 526h1200M405 553v48M803 553v48" stroke="#d2e1f7"/>
+  <g transform="translate(24 566)" color="#2563eb"><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0"></path><path d="M4 21v-2a7 7 0 0 1 7-7h2a7 7 0 0 1 7 7v2"></path></svg></g><g transform="translate(413 566)" color="#2563eb"><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"></path><path d="M3 6h18v14H3ZM3 11a20 20 0 0 0 18 0M10 12h4"></path></svg></g><g transform="translate(811 566)" color="#2563eb"><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v17h17M8 15v-4M13 15V7M18 15v-6"></path></svg></g>
   <g font-family="Georgia,serif" font-size="37" fill="#2563eb">
     <text x="56" y="590">25+</text><text x="445" y="590">85</text><text x="843" y="590">$25B+</text>
   </g>
