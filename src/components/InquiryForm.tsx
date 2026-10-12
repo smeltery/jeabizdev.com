@@ -2,12 +2,16 @@ import { celebrate } from "../client/confetti";
 import OpportunityFields from "./OpportunityFields";
 import Icon from "./Icon";
 import { useEffect, useRef, useState, type SubmitEvent } from "react";
-import { inquiryText, validateInquiry, type Inquiry } from "../server/inquiry";
-import { site } from "../content/site";
+import { validateInquiry } from "../server/inquiry";
 export default function InquiryForm() {
   const form = useRef<HTMLFormElement>(null);
-  const review = useRef<HTMLElement>(null);
-  const [draft, setDraft] = useState<Inquiry | null>(null);
+  const confirmationTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(
+    () => () => {
+      if (confirmationTimer.current) clearTimeout(confirmationTimer.current);
+    },
+    [],
+  );
   const [status, setStatus] = useState("");
   const [busy, setBusy] = useState(false);
   const [sent, setSent] = useState(false);
@@ -15,6 +19,11 @@ export default function InquiryForm() {
   const [isValid, setIsValid] = useState(false);
   function updateValidity() {
     if (!form.current) return;
+    if (sent) {
+      if (confirmationTimer.current) clearTimeout(confirmationTimer.current);
+      setSent(false);
+      setStatus("");
+    }
     const values = new FormData(form.current);
     try {
       validateInquiry({
@@ -45,86 +54,54 @@ export default function InquiryForm() {
       }
     }
   }, []);
-  function prepare(event: SubmitEvent<HTMLFormElement>) {
+  async function send(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus("");
-    setFailed(false);
-    try {
-      const data = new FormData(event.currentTarget);
-      setDraft(
-        validateInquiry({
-          ...Object.fromEntries(data),
-          consent: data.get("consent") === "on",
-        }),
-      );
-      setSent(false);
-      requestAnimationFrame(() => review.current?.focus());
-    } catch (error) {
-      setStatus(
-        error instanceof Error ? error.message : "Please check your details.",
-      );
-      setFailed(true);
-    }
-  }
-  async function send() {
-    if (!draft || busy || sent) return;
+    if (busy) return;
+    const values = new FormData(event.currentTarget);
     setBusy(true);
     setFailed(false);
     setStatus("Sending your introduction…");
     try {
+      const inquiry = validateInquiry({
+        ...Object.fromEntries(values),
+        consent: values.get("consent") === "on",
+      });
       const response = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(draft),
+        body: JSON.stringify(inquiry),
         signal: AbortSignal.timeout(20000),
       });
       const body = await response.json();
       if (!response.ok)
-        throw new Error(
-          body.message || "Delivery failed. Please use the email draft.",
-        );
+        throw new Error(body.message || "Delivery failed. Please try again.");
+      form.current?.reset();
+      setIsValid(false);
       setSent(true);
-      setStatus(body.message);
+      setStatus(
+        "Thank you. Your inquiry has been sent to JEA BizDev Consulting, LLC®. We’ll respond by email within a few business days.",
+      );
+      if (confirmationTimer.current) clearTimeout(confirmationTimer.current);
+      confirmationTimer.current = setTimeout(() => {
+        setStatus("");
+        setSent(false);
+        confirmationTimer.current = null;
+      }, 10000);
       celebrate();
     } catch (error) {
       setFailed(true);
       setStatus(
         error instanceof Error && error.name !== "TimeoutError"
           ? error.message
-          : "Delivery could not be confirmed. Your draft is preserved below.",
+          : "Delivery could not be confirmed. Your details are preserved; please try again.",
       );
     } finally {
       setBusy(false);
     }
   }
-  function download() {
-    if (!draft) return;
-    const url = URL.createObjectURL(
-      new Blob([inquiryText(draft)], { type: "text/plain" }),
-    );
-    const anchor = document.createElement("a");
-    anchor.href = url;
-    anchor.download = "jea-introduction.txt";
-    anchor.click();
-    URL.revokeObjectURL(url);
-    setStatus("Introduction downloaded. Send it to JEA when you are ready.");
-  }
-  const text = draft ? inquiryText(draft) : "";
   return (
     <div className="form-panel">
-      <form
-        ref={form}
-        onSubmit={prepare}
-        onInput={updateValidity}
-        onChange={() => {
-          updateValidity();
-          if (draft) {
-            setDraft(null);
-            setStatus("");
-            setSent(false);
-          }
-        }}
-      >
+      <form ref={form} onSubmit={send} onInput={updateValidity}>
         <fieldset>
           <legend>
             <span>01</span>Let’s get acquainted
@@ -174,8 +151,8 @@ export default function InquiryForm() {
         <label className="check-field">
           <input name="consent" type="checkbox" required />
           <span>
-            I agree that JEA may use these details to respond to my inquiry.{" "}
-            <a href="/privacy">Privacy policy</a>.
+            I agree that JEA BizDev Consulting, LLC® may use these details to
+            respond to my inquiry. <a href="/privacy">Privacy policy</a>.
           </span>
         </label>
         <div className="form-actions">
@@ -183,70 +160,25 @@ export default function InquiryForm() {
             className="button"
             type="submit"
             disabled={!isValid || busy}
-            aria-describedby="inquiry-required"
+            aria-describedby={sent ? undefined : "inquiry-required"}
           >
-            <Icon name="file" /> Review my introduction
+            <Icon name="mail" />
+            {busy ? "Sending…" : failed ? "Try again" : "Send inquiry"}
           </button>
         </div>
-        <p
-          id="inquiry-required"
-          className="micro"
-          role="status"
-          style={{ marginTop: 12 }}
-        >
-          {isValid
-            ? "Your introduction is ready to review."
-            : "Complete your name, valid email, company, and priorities, then check the consent box to continue."}
-        </p>
-        <p className="micro" style={{ marginTop: 15 }}>
-          Review your details before sending. You can also open an email draft
-          or download a copy.
-        </p>
-      </form>
-      {draft && (
-        <section
-          ref={review}
-          tabIndex={-1}
-          className="review"
-          aria-labelledby="review-title"
-        >
-          <p className="eyebrow">READY WHEN YOU ARE</p>
-          <h2 id="review-title" style={{ fontSize: 32 }}>
-            {sent
-              ? "Thank you for the introduction."
-              : "Your introduction, ready to review."}
-          </h2>
-          <pre>{text}</pre>
-          <div className="form-actions">
-            <button className="button" onClick={send} disabled={busy || sent}>
-              <Icon name={sent ? "check" : "mail"} />
-              {sent ? "Inquiry sent" : busy ? "Sending…" : "Send to JEA"}
-            </button>
-            <a
-              className="button secondary"
-              href={`mailto:${site.email}?subject=${encodeURIComponent(draft.subject || "JEA business development inquiry")}&body=${encodeURIComponent(text)}`}
-            >
-              <Icon name="mail" /> Open email draft
-            </a>
-            <button
-              className="text-link"
-              style={{
-                background: "none",
-                borderTop: 0,
-                borderLeft: 0,
-                borderRight: 0,
-              }}
-              onClick={download}
-            >
-              <Icon name="download" /> Download introduction
-            </button>
-          </div>
-          <p className="micro" style={{ marginTop: 15 }}>
-            Opening an email draft does not send it. Send the message from your
-            email app to complete your inquiry.
+        {!sent && (
+          <p
+            id="inquiry-required"
+            className="micro"
+            role="status"
+            style={{ marginTop: 12 }}
+          >
+            {isValid
+              ? "We’ll respond by email within a few business days."
+              : "Complete your name, valid email, company, and priorities, then check the consent box to continue."}
           </p>
-        </section>
-      )}
+        )}
+      </form>
       <p className={`form-status ${failed ? "error" : ""}`} role="status">
         {status}
       </p>

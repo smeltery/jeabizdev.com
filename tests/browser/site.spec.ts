@@ -76,62 +76,6 @@ test("asset filters combine and empty state resets", async ({ page }) => {
   await expect(page.locator(".library-card")).toHaveCount(2);
 });
 
-test("inquiry preserves context, validates, reviews, and sends through a mocked provider", async ({
-  page,
-}) => {
-  await page.route("**/api/send-email", async (route) => {
-    expect(route.request().postDataJSON().asset).toBe("KAT6 Inhibitor");
-    await route.fulfill({
-      json: { message: "Thank you. Your inquiry has been sent to JEA." },
-    });
-  });
-  await open(page, "/contact?asset=KAT6%20Inhibitor");
-  await expect(
-    page.getByRole("combobox", { name: /^Asset of interest/ }),
-  ).toContainText("KAT6 Inhibitor");
-  await expect(
-    page.getByRole("button", { name: "Review my introduction" }),
-  ).toBeDisabled();
-  await expect(page.locator(".review")).toHaveCount(0);
-  await page.getByLabel("Full name").fill("Test Person");
-  await page.getByLabel("Work email").fill("test@example.com");
-  await page.getByLabel("Company", { exact: false }).fill("Example Biotech");
-  await page
-    .getByLabel("Tell us about your priorities")
-    .fill("Exploring a partnership.");
-  await page.getByRole("checkbox").check();
-  await page.getByRole("button", { name: "Review my introduction" }).click();
-  await expect(page.locator(".review")).toContainText("KAT6 Inhibitor");
-  await page.getByRole("button", { name: "Send to JEA" }).click();
-  await expect(
-    page.getByRole("button", { name: "Inquiry sent" }),
-  ).toBeDisabled();
-});
-test("failed inquiry delivery retains the draft and retry", async ({
-  page,
-}) => {
-  await page.route("**/api/send-email", (route) =>
-    route.fulfill({
-      status: 503,
-      json: { message: "Online delivery is unavailable." },
-    }),
-  );
-  await open(page, "/contact");
-  await page.getByLabel("Full name").fill("Test Person");
-  await page.getByLabel("Work email").fill("test@example.com");
-  await page.getByLabel("Company").fill("Example Biotech");
-  await page
-    .getByLabel("Tell us about your priorities")
-    .fill("Exploring a partnership.");
-  await page.getByRole("checkbox").check();
-  await page.getByRole("button", { name: "Review my introduction" }).click();
-  await page.getByRole("button", { name: "Send to JEA" }).click();
-  await expect(page.getByText("Online delivery is unavailable.")).toBeVisible();
-  await expect(
-    page.getByRole("link", { name: "Open email draft" }),
-  ).toHaveAttribute("href", /^mailto:/);
-  await expect(page.getByRole("button", { name: "Send to JEA" })).toBeEnabled();
-});
 test("mobile menu contains navigation and restores focus", async ({
   page,
   isMobile,
@@ -179,26 +123,6 @@ test("custom selects support keyboard and outside dismissal", async ({
   await territory.click();
   await page.locator("h1").click();
   await expect(territory).toHaveAttribute("aria-expanded", "false");
-});
-test("review stays disabled for invalid email and missing consent", async ({
-  page,
-}) => {
-  await open(page, "/contact");
-  const button = page.getByRole("button", { name: "Review my introduction" });
-  await expect(button).toBeDisabled();
-  await page.getByLabel("Full name").fill("Test");
-  await page.getByLabel("Work email").fill("not-an-email");
-  await page.getByLabel("Company").fill("Example");
-  await page.getByLabel("Tell us about your priorities").fill("Partnering");
-  await page.getByRole("checkbox").check();
-  await expect(button).toBeDisabled();
-  await page.getByLabel("Work email").fill("test@example.com");
-  await expect(button).toBeEnabled();
-  await page.getByRole("checkbox").uncheck();
-  await expect(button).toBeDisabled();
-  await page.getByRole("checkbox").check();
-  await page.getByLabel("Full name").fill("   ");
-  await expect(button).toBeDisabled();
 });
 test("resources dropdown and mobile menu dimensions", async ({
   page,

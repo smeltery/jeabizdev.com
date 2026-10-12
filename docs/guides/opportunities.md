@@ -11,8 +11,8 @@ flowchart TD
   Browse[Open Opportunities] --> Filter[Search and filter]
   Filter --> Detail[Read the asset overview]
   Detail --> Request[Request overview deck]
-  Request --> Form[Review an inquiry with the asset selected]
-  Form --> Send[Send to JEA or use an email draft]
+  Request --> Form[Send an inquiry with the asset selected]
+  Form --> Send[Send inquiry]
 ```
 
 Each detail page shows the target, therapeutic area, modality, listed stage, and

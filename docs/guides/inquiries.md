@@ -11,36 +11,29 @@ priorities. You can also select an asset, territories, timeline, and preferred
 engagement model. The dropdowns support mouse, touch, arrow keys, type-to-find,
 Enter, and Escape.
 
-The review button remains disabled until all required details are valid and the
+The send button remains disabled until all required details are valid and the
 consent box is checked. The note below the button explains what is needed.
 
 ```mermaid
 stateDiagram-v2
   [*] --> Draft
   Draft --> Ready: Required details and consent complete
-  Ready --> Review: Review my introduction
-  Review --> Draft: Edit details
-  Review --> Sending: Send to JEA
+  Ready --> Sending: Send inquiry
   Sending --> Sent: Delivery accepted
-  Sending --> Review: Delivery fails; draft retained
-  Review --> Email: Open email draft
-  Review --> Download: Download introduction
+  Sending --> Ready: Delivery fails; details retained
 ```
 
-## Send or save
+## Send your inquiry
 
-Review the text before choosing a delivery option:
+Review the text, then send your inquiry:
 
-- **Send to JEA** submits through the website’s configured delivery service.
-  A confirmation and brief blue confetti celebration appear only after the service
+- **Send inquiry** submits through the website’s configured delivery service.
+  The form resets, and a single confirmation and blue confetti from both sides
+  appear only after the service
   accepts the request. Confetti is skipped when reduced motion is enabled.
-- **Open email draft** opens your email application. You must send the message
-  there; opening a draft does not complete the inquiry.
-- **Download introduction** saves a text copy to your device.
-
-If delivery fails, your introduction stays visible. Retry or use the email draft.
-For an uncertain delivery result, check your email or contact JEA before repeating
-sensitive details. Refreshing the page clears the unsaved draft.
+  If delivery fails, your introduction stays visible. You can retry directly from the form.
+  For an uncertain delivery result, check your email or contact JEA before repeating
+  sensitive details. Refreshing the page clears the unsaved draft.
 
 Submitting an inquiry starts a conversation; engagement scope, fees, and terms
 are agreed separately. The website links to JEA’s existing privacy policy and

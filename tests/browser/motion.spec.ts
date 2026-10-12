@@ -25,17 +25,25 @@ for (const reduced of [false, true]) {
       .getByLabel("Tell us about your priorities")
       .fill("Exploring a partnership.");
     await page.getByRole("checkbox").check();
-    await page.getByRole("button", { name: "Review my introduction" }).click();
     await expect(page.locator(".celebration")).toHaveCount(0);
-    await page.getByRole("button", { name: "Send to JEA" }).click();
+    await page.getByRole("button", { name: "Send inquiry" }).click();
     await expect(page.getByText("Please try again.")).toBeVisible();
     await expect(page.locator(".celebration")).toHaveCount(0);
-    await page.getByRole("button", { name: "Send to JEA" }).click();
+    await page.getByRole("button", { name: "Try again" }).click();
     await expect(
-      page.getByRole("button", { name: "Inquiry sent" }),
+      page.getByRole("button", { name: "Send inquiry" }),
     ).toBeDisabled();
     if (!reduced) {
       await expect(page.locator(".celebration")).toBeVisible();
+      await expect(page.locator(".celebration > span")).toHaveCount(180);
+      await expect(page.locator(".celebration > span").nth(0)).toHaveCSS(
+        "left",
+        "0px",
+      );
+      await expect(page.locator(".celebration > span").nth(1)).toHaveCSS(
+        "left",
+        `${page.viewportSize()!.width}px`,
+      );
       await expect(page.locator(".celebration")).toHaveCSS(
         "pointer-events",
         "none",

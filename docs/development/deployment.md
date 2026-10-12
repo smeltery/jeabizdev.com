@@ -13,8 +13,8 @@ Set `FORMCARRY_URL` to the existing HTTPS Formcarry endpoint in Vercel’s serve
 configuration. For local development, use `.env` as shown in `.env.example`.
 Do not expose the value under a `PUBLIC_` prefix or place it in client code.
 
-If delivery is unavailable, visitors retain their draft and can retry, download,
-or open an email draft. Formcarry’s acceptance confirms submission to the provider,
+If delivery is unavailable, visitors retain their details and can retry from
+the form. Formcarry’s acceptance confirms submission to the provider,
 not delivery to a recipient’s inbox.
 
 ```mermaid

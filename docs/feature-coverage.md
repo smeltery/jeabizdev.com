@@ -10,8 +10,8 @@ The references were inspected from the local `bold-performance` and `adamou-fina
 | Keyboard site search                          | Cmd/Ctrl+K; category filters; arrow navigation; Enter to open; Escape and focus restoration                              |
 | Dedicated services, about, and approach pages | JEA-specific content and four engagement models                                                                          |
 | Professional footer                           | Identity, navigation, direct contact, external resources, legal pages, brand downloads, back-to-top                      |
-| Detailed intake and review                    | Company, role, priorities, asset, territory, timeline, engagement preference, consent, review                            |
-| Delivery and fallback                         | Existing Formcarry endpoint, status feedback, retained draft on error, email draft, download                             |
+| Detailed intake and submission                | Company, role, priorities, asset, territory, timeline, engagement preference, consent, direct submission                 |
+| Inquiry delivery                              | Existing Formcarry endpoint, status feedback, retained details on error, in-form retry                                   |
 | FAQs                                          | Native accessible disclosures on home and approach pages                                                                 |
 | Brand resources                               | Original DNA mark, full wordmark, palette, typography, downloadable SVGs                                                 |
 | SEO and discovery                             | Canonical metadata, social card, JSON-LD, sitemap, robots, llms.txt, 404                                                 |

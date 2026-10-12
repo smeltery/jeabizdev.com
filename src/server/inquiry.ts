@@ -102,14 +102,14 @@ export async function deliverInquiry(
   if (!endpoint)
     return reply(
       503,
-      "Online delivery is unavailable. Download your introduction or email jeabizdev@gmail.com.",
+      "Online delivery is unavailable. Your details are still here; please try again later.",
     );
   try {
     const target = new URL(endpoint);
     if (target.protocol !== "https:")
       return reply(
         503,
-        "Online delivery is unavailable. Please email jeabizdev@gmail.com.",
+        "Online delivery is unavailable. Please try again later.",
       );
     const response = await fetcher(target, {
       method: "POST",
@@ -129,13 +129,13 @@ export async function deliverInquiry(
     if (!response.ok)
       return reply(
         502,
-        "Delivery failed. Your details are still here; retry or use the email draft.",
+        "Delivery failed. Your details are still here; please try again.",
       );
-    return reply(200, "Thank you. Your inquiry has been sent to JEA.");
-  } catch {
     return reply(
-      502,
-      "Delivery could not be confirmed. Please try again or use the email draft.",
+      200,
+      "Thank you. Your inquiry has been sent to JEA BizDev Consulting, LLC®.",
     );
+  } catch {
+    return reply(502, "Delivery could not be confirmed. Please try again.");
   }
 }
