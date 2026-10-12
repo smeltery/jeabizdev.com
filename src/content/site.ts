@@ -190,6 +190,7 @@ export const transactions = [
   },
   {
     title: "CSPC × Radiance Biopharma",
+    headlineMillions: 1240,
     year: 2025,
     type: "Strategic partnership",
     from: "cspc-pharma.png",
@@ -199,6 +200,7 @@ export const transactions = [
   },
   {
     title: "CSPC × Cipla",
+    headlineMillions: 1065,
     year: 2025,
     type: "Strategic partnership",
     from: "cspc-pharma.png",

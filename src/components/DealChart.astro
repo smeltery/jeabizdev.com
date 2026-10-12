@@ -1,0 +1,125 @@
+---
+import { transactions } from "../content/site";
+const deals = transactions.flatMap(
+  ({ title, pdf, headlineMillions: amount }) =>
+    amount ? [{ title, pdf, amount }] : [],
+);
+const total = deals.reduce((sum, deal) => sum + deal.amount, 0);
+const scale = 1500;
+---
+
+<deal-chart class="deal-chart note">
+  <header class="section-heading">
+    <div>
+      <p class="eyebrow">SELECTED DISCLOSED DEAL VALUES · 2025</p>
+      <h2>
+        Partnerships with <em>measurable scale.</em>
+      </h2>
+    </div>
+    <p class="lead">
+      <strong>${(total / 1000).toFixed(3)}B</strong> combined headline value
+      across {deals.length} selected deals.
+    </p>
+  </header>
+  <p class="micro">
+    Headline transaction value, USD billions. Both bars use the same scale.
+  </p>
+  <ol>
+    {deals.map((deal) => (
+      <li>
+        <div class="bar-label">
+          <a
+            class="text-link"
+            href={`/client-showcase/${deal.pdf}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {deal.title}
+            <span class="sr-only"> — announcement PDF, opens in a new tab</span>
+          </a>
+          <strong>${(deal.amount / 1000).toFixed(3)}B</strong>
+        </div>
+        <div class="bar-track" aria-hidden="true">
+          <span style={`width:${(deal.amount / scale) * 100}%`}></span>
+        </div>
+      </li>
+    ))}
+  </ol>
+  <div class="chart-axis" aria-hidden="true">
+    <span>$0</span>
+    <span>$0.5B</span>
+    <span>$1B</span>
+    <span>$1.5B</span>
+  </div>
+  <p class="micro">
+    Selected partnerships within John’s $25B+ career total. Headline values
+    include potential milestone payments, rather than cash received or JEA fees.
+    Select a partnership to read the announcement.
+  </p>
+</deal-chart>
+<script>
+  class DealChart extends HTMLElement {
+    observer?: IntersectionObserver;
+    connectedCallback() {
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      this.observer = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry.isIntersecting) return;
+          this.querySelectorAll(".bar-track span").forEach((bar, index) => {
+            bar.animate(
+              [{ transform: "scaleX(0)" }, { transform: "scaleX(1)" }],
+              {
+                duration: 900,
+                delay: index * 120,
+                easing: "cubic-bezier(.22,1,.36,1)",
+                fill: "backwards",
+              },
+            );
+          });
+          this.observer?.disconnect();
+        },
+        { threshold: 0.25 },
+      );
+      this.observer.observe(this);
+    }
+    disconnectedCallback() {
+      this.observer?.disconnect();
+    }
+  }
+  if (!customElements.get("deal-chart"))
+    customElements.define("deal-chart", DealChart);
+</script>
+<style>
+  .deal-chart {
+    display: block;
+  }
+  h2 {
+    font-size: clamp(28px, 3vw, 40px);
+  }
+  ol {
+    list-style: none;
+    padding: 0;
+    margin: 26px 0 12px;
+  }
+  li + li {
+    margin-top: 24px;
+  }
+  .bar-label {
+    display: flex;
+    justify-content: space-between;
+  }
+  .bar-track {
+    height: 28px;
+    background: #dbe6f5;
+  }
+  .bar-track span {
+    display: block;
+    height: 100%;
+    background: var(--accent);
+    transform-origin: left;
+  }
+  .chart-axis {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
