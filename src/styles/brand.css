@@ -112,9 +112,6 @@ footer em {
     font-size: 17px;
   }
 }
-@view-transition {
-  navigation: auto;
-}
 .resource-menu {
   position: relative;
   border: 0 !important;

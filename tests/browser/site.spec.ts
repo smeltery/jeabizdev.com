@@ -232,6 +232,7 @@ test("resources dropdown and mobile menu dimensions", async ({
   await open(page, "/");
   if (isMobile) {
     await page.getByRole("button", { name: "Menu", exact: true }).click();
+    await expect(page.locator("#mobile-menu")).toHaveCSS("transform", "none");
     const box = await page.locator("#mobile-menu").boundingBox();
     const viewport = page.viewportSize()!;
     expect(box!.height).toBe(viewport.height);
@@ -303,6 +304,8 @@ test("FAQ accordion, contained search, and navigation alignment", async ({
     ).toBeLessThan(1);
   }
   await page.getByRole("button", { name: "Search site", exact: true }).click();
+  await expect(page.locator("#site-search")).toBeVisible();
+  await expect(page.locator("#site-search")).toHaveCSS("transform", "none");
   const search = await page.locator("#site-search").boundingBox();
   expect(search!.width).toBe(isMobile ? page.viewportSize()!.width : 960);
   const results = await page.locator(".search-results").boundingBox();

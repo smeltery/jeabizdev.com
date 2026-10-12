@@ -1,3 +1,4 @@
+import { celebrate } from "../client/confetti";
 import OpportunityFields from "./OpportunityFields";
 import Icon from "./Icon";
 import { useEffect, useRef, useState, type SubmitEvent } from "react";
@@ -84,6 +85,7 @@ export default function InquiryForm() {
         );
       setSent(true);
       setStatus(body.message);
+      celebrate();
     } catch (error) {
       setFailed(true);
       setStatus(

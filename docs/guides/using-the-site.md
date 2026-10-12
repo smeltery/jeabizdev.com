@@ -30,3 +30,10 @@ The footer contains direct contact links, privacy information, the disclaimer,
 brand downloads, and a back-to-top action.
 
 [Back to documentation](../README.md)
+
+## Motion and accessibility
+
+Pages use a brief fade and blur transition, and search and mobile navigation ease
+in and out while preserving keyboard focus. Back to top uses a short eased scroll
+that stops when you scroll, touch, or press a key. Reduced-motion preferences
+disable these effects and the contact-form celebration.

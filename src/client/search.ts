@@ -1,3 +1,4 @@
+import { closeDialog } from "./dialog";
 const dialog = document.querySelector<HTMLDialogElement>("#site-search")!;
 const input = dialog.querySelector<HTMLInputElement>("#site-query")!;
 const entries = [
@@ -26,24 +27,29 @@ function filter() {
     ),
   );
 }
-function open() {
-  if (dialog.open) return;
+let opening = false;
+async function open() {
+  if (dialog.open || opening) return;
+  opening = true;
   returnFocus = document.activeElement as HTMLElement;
   const menu = document.querySelector<HTMLDialogElement>("#mobile-menu");
   if (menu?.open) {
-    menu.close();
+    await closeDialog(menu);
     returnFocus = document.querySelector(".menu-trigger");
   }
-  dialog.showModal();
-  input.focus();
-  filter();
+  requestAnimationFrame(() => {
+    dialog.showModal();
+    input.focus();
+    filter();
+    opening = false;
+  });
 }
 document
   .querySelectorAll("[data-search-open]")
   .forEach((button) => button.addEventListener("click", open));
 dialog
   .querySelector("[data-search-close]")!
-  .addEventListener("click", () => dialog.close());
+  .addEventListener("click", () => void closeDialog(dialog));
 dialog.addEventListener("close", () => returnFocus?.focus());
 input.addEventListener("input", filter);
 groups.forEach((button) =>
@@ -55,13 +61,14 @@ groups.forEach((button) =>
 document.addEventListener("keydown", (event) => {
   if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
     event.preventDefault();
-    dialog.open ? dialog.close() : open();
+    if (dialog.open) void closeDialog(dialog);
+    else void open();
   }
 });
 dialog.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     event.preventDefault();
-    dialog.close();
+    void closeDialog(dialog);
     return;
   }
   const visible = entries.filter((entry) => !entry.hidden);
@@ -91,6 +98,6 @@ dialog.addEventListener("click", (event) => {
       event.clientY < box.top ||
       event.clientY > box.bottom
     )
-      dialog.close();
+      void closeDialog(dialog);
   }
 });

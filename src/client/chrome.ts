@@ -1,3 +1,4 @@
+import { closeDialog } from "./dialog";
 const menu = document.querySelector<HTMLDialogElement>("#mobile-menu")!;
 const trigger = document.querySelector<HTMLButtonElement>(".menu-trigger")!;
 trigger.addEventListener("click", () => {
@@ -6,25 +7,19 @@ trigger.addEventListener("click", () => {
 });
 menu
   .querySelector("[data-menu-close]")!
-  .addEventListener("click", () => menu.close());
+  .addEventListener("click", () => void closeDialog(menu));
 menu.addEventListener("close", () => {
   trigger.setAttribute("aria-expanded", "false");
   trigger.focus();
 });
 menu
   .querySelectorAll("a")
-  .forEach((link) => link.addEventListener("click", () => menu.close()));
+  .forEach((link) =>
+    link.addEventListener("click", () => void closeDialog(menu)),
+  );
 matchMedia("(min-width: 1101px)").addEventListener("change", (event) => {
-  if (event.matches && menu.open) menu.close();
+  if (event.matches && menu.open) void closeDialog(menu);
 });
-document.querySelector("[data-top]")!.addEventListener("click", () =>
-  window.scrollTo({
-    top: 0,
-    behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
-      ? "instant"
-      : "smooth",
-  }),
-);
 // Preserve inbound links from the previous single-page site.
 const legacy: Record<string, string> = {
   services: "/services",

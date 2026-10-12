@@ -32,7 +32,8 @@ stateDiagram-v2
 Review the text before choosing a delivery option:
 
 - **Send to JEA** submits through the website’s configured delivery service.
-  A confirmation appears only after the service accepts the request.
+  A confirmation and brief blue confetti celebration appear only after the service
+  accepts the request. Confetti is skipped when reduced motion is enabled.
 - **Open email draft** opens your email application. You must send the message
   there; opening a draft does not complete the inquiry.
 - **Download introduction** saves a text copy to your device.
