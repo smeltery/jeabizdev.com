@@ -74,7 +74,10 @@ export async function deliverInquiry(
     Response.json({ message }, { status });
   const origin = request.headers.get("origin");
   if (origin && origin !== new URL(request.url).origin)
-    return reply(403, "This request must come from the JEA website.");
+    return reply(
+      403,
+      "This request must come from the JEA BizDev Consulting, LLC® website.",
+    );
   if (!request.headers.get("content-type")?.includes("application/json"))
     return reply(415, "Please submit the form as JSON.");
   let input: unknown;
@@ -121,7 +124,7 @@ export async function deliverInquiry(
         name: data.name,
         email: data.email,
         company: data.company,
-        subject: data.subject || "JEA website inquiry",
+        subject: data.subject || "JEA BizDev Consulting, LLC® website inquiry",
         message: inquiryText(data),
       }),
       signal: AbortSignal.timeout(15000),

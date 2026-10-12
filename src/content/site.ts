@@ -138,12 +138,12 @@ export const engagements = [
 ];
 export const faqs = [
   [
-    "Who does JEA work with?",
+    "Who does JEA BizDev Consulting, LLC® work with?",
     "Biotech and biopharma companies seeking strategic guidance, in- or out-licensing opportunities, and support across the business development value chain.",
   ],
   [
     "Do you support cross-border partnerships?",
-    "Yes. JEA specializes in identifying, structuring, negotiating, and executing partnerships across North America, Europe, and Asia.",
+    "Yes. JEA BizDev Consulting, LLC® specializes in identifying, structuring, negotiating, and executing partnerships across North America, Europe, and Asia.",
   ],
   [
     "Can we engage you for one part of a transaction?",
@@ -155,7 +155,7 @@ export const faqs = [
   ],
   [
     "How can I learn more about an available asset?",
-    "Browse the opportunities library and request an overview deck from an asset page. Current availability and development status should be confirmed directly with JEA.",
+    "Browse the opportunities library and request an overview deck from an asset page. Current availability and development status should be confirmed directly with JEA BizDev Consulting, LLC®.",
   ],
   [
     "What should I share in an initial inquiry?",
