@@ -45,12 +45,11 @@ the committed dimensions and references rather than rewriting the image.
 
 ## Editorial photographs
 
-Two locally hosted, lazy-loaded WebP photographs add context on Services and
-Approach. These are illustrative stock images, not photographs of JEA’s team or
-clients. Their original sources and credits are preserved in the captions:
+Services uses the owner-supplied handshake photograph also featured on the
+homepage and social preview. See [brand provenance](../brand.md).
 
-- [Laboratory research](https://unsplash.com/photos/1fvqUP-xaYQ): National Cancer Institute / Daniel Sone.
-- [Collaboration](https://unsplash.com/photos/KdeqA3aTnBY): Dylan Gillis.
-
-Both are provided under the [Unsplash License](https://unsplash.com/license).
+Approach uses a locally hosted, lazy-loaded [collaboration photograph](https://unsplash.com/photos/KdeqA3aTnBY)
+by Dylan Gillis, provided under the [Unsplash License](https://unsplash.com/license).
+Its source credit is preserved in the caption. Both photographs illustrate
+partnership and are not presented as pictures of JEA’s clients or specific deals.
 Use `EditorialImage.astro` for consistent proportions, alt text, and credits.

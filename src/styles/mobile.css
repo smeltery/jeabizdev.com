@@ -243,10 +243,3 @@
     font-size: clamp(28px, 7.8vw, 42px);
   }
 }
-
-@media (max-width: 800px) {
-  .brand-guide {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-}
