@@ -183,18 +183,19 @@ details > p {
 .closing {
   background: var(--ink);
   color: var(--paper);
-  padding: 75px 0;
+  padding: 48px 0;
 }
 .closing-inner {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 70px;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 48px;
   align-items: center;
 }
 .closing em {
   color: var(--accent-light);
 }
 .closing h2 {
+  font-size: clamp(2.2rem, 3.3vw, 3.5rem);
   margin: 0;
 }
 .closing .eyebrow {
@@ -202,14 +203,14 @@ details > p {
   font-size: 10px;
 }
 .closing-inner > div:last-child {
-  justify-self: end;
+  justify-self: start;
 }
 .closing-inner > div:last-child > p {
   color: #cbd5e1;
   font-size: 14px;
 }
 .closing .micro {
-  margin: 20px 0 0 !important;
+  margin: 14px 0 0 !important;
   font-size: 11px !important;
 }
 footer {
@@ -240,7 +241,7 @@ footer em {
   margin: 0 0 11px;
   color: #cbd5e1;
 }
-.footer-top a:hover {
+.footer-top a:not(.button):hover {
   color: var(--accent-light);
 }
 .footer-top .eyebrow {

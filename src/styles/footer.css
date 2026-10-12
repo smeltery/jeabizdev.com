@@ -87,8 +87,14 @@
   gap: 20px;
 }
 .engagement-grid article {
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--line);
   padding: 25px;
+}
+.engagement-grid .text-link {
+  margin-top: auto;
+  align-self: flex-start;
 }
 .engagement-grid h3 {
   font: 29px var(--serif);

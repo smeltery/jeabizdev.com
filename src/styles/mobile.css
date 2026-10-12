@@ -144,16 +144,16 @@
     max-width: 135px;
   }
   .closing {
-    padding-block: 55px;
+    padding-block: 38px;
   }
   .closing h2 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
   }
   .closing .eyebrow {
     font-size: 9px;
   }
   .closing-inner {
-    gap: 30px;
+    gap: 24px;
   }
   .footer-top {
     gap: 28px;

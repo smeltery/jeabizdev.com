@@ -45,6 +45,18 @@
 .outline-light {
   background: transparent;
   border-color: #647895;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
+}
+.footer-invitation .outline-light:hover {
+  background: white;
+  color: var(--ink);
+  border-color: white;
+  box-shadow: 0 4px 16px #00000018;
 }
 .brand-name {
   font-size: 19px;
