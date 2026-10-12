@@ -10,4 +10,8 @@ Source: [JEA BizDev Consulting](https://www.jeabizdev.com), inspected October 12
 - Supporting navy `#172B50` and dark navy `#111F38` provide contrast in the globe, contact band, and footer. Light-blue accents are `#93C5FD`.
 - Georgia headlines and locally hosted Geist body text establish the redesigned editorial layout while retaining JEA’s name, icon, and blue identity.
 
+## Social brand marks
+
+LinkedIn links use the filled [Simple Icons LinkedIn mark](https://github.com/simple-icons/simple-icons/blob/13.21.0/icons/linkedin.svg), distributed under [CC0](https://github.com/simple-icons/simple-icons/blob/13.21.0/LICENSE.md). The shared icon component preserves its original geometry and uses a monochrome fill for contrast. Email uses a standard envelope icon.
+
 [Back to documentation](README.md)
