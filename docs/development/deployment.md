@@ -1,7 +1,9 @@
 # Deployment
 
-Vercel hosts the site. Select the Astro framework preset and Node 24. Use
-`bun install --frozen-lockfile` for installation and `bun run build` for the build.
+Vercel hosts the site. The committed `vercel.json` selects Astro, clears any
+legacy output-directory override, and sets locked Bun installation and the build
+command. This overrides the previous Next.js project preset. Node 24 is selected
+through `package.json`.
 The Astro Vercel adapter emits `.vercel/output/` with static pages and the inquiry
 server function; a static-only host cannot run the inquiry endpoint.
 
