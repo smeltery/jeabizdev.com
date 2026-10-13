@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import World from "../components/World.astro";
+import Partnership from "../components/Partnership.astro";
 import Stats from "../components/Stats.astro";
 import Faq from "../components/Faq.astro";
 import Closing from "../components/Closing.astro";
@@ -15,26 +15,26 @@ import { transactions, steps } from "../content/site";
         <span class="eyebrow-dot"></span>BIOTECH & BIOPHARMA ADVISORY
       </p>
       <h1>
-        Connecting science.
+        <span class="hero-headline">Cross-border deals.</span>
         <br />
         Creating <em>value.</em>
       </h1>
       <p class="lead">
-        Extraordinary science needs the right partnership. We help biotech and
-        biopharma companies turn opportunity into lasting value—across borders,
-        and at every stage of the deal.
+        JEA BizDev Consulting helps biotech and biopharma companies find the
+        right partners, structure agreements, and close deals across North
+        America, Europe, and Asia.
       </p>
       <div class="actions">
         <a class="button" href="/contact">
           Start a conversation
         </a>
-        <a class="text-link" href="/services">
-          Explore our expertise →
+        <a class="text-link" href="/transactions">
+          Explore John’s track record
         </a>
       </div>
       <p class="hero-note">Independent perspective. Experienced execution.</p>
     </div>
-    <World />
+    <Partnership />
   </section>
   <div class="territory-strip">
     <div class="wrap">
@@ -154,7 +154,7 @@ import { transactions, steps } from "../content/site";
       ))}
     </div>
   </section>
-  <section class="tool-spotlight">
+  <section class="highlight-section">
     <div class="wrap section split">
       <div>
         <p class="eyebrow">THE NEXT OPPORTUNITY</p>
@@ -207,7 +207,7 @@ import { transactions, steps } from "../content/site";
         </a>
         <p class="micro" style="margin-top:25px">
           Browse by target, modality, and development stage. Confirm current
-          status and availability directly with JEA.
+          status and availability directly with JEA BizDev Consulting, LLC®.
         </p>
       </div>
     </div>
@@ -232,60 +232,6 @@ import { transactions, steps } from "../content/site";
           <p>{description}</p>
         </article>
       ))}
-    </div>
-  </section>
-  <section class="tool-spotlight">
-    <div class="wrap section split">
-      <div>
-        <p class="eyebrow">CLARITY BEFORE THE CONVERSATION</p>
-        <h2>
-          Put your next deal
-          <br />
-          in <em>perspective.</em>
-        </h2>
-        <p class="lead">
-          Practical tools to explore deal economics, compare scenarios, and
-          prepare for a more productive partnering discussion.
-        </p>
-        <a class="button" href="/tools">
-          Explore the BD toolkit
-        </a>
-        <p class="micro" style="margin-top:20px">
-          Free to use. No account. Calculations stay in your browser.
-        </p>
-      </div>
-      <div class="editorial-list">
-        <a href="/tools/deal-value">
-          <span class="number">01</span>
-          <div>
-            <strong>Deal value breakdown</strong>
-            <p>Separate upfront value from contingent payments.</p>
-          </div>
-          <span class="arrow" aria-hidden="true">
-            →
-          </span>
-        </a>
-        <a href="/tools/royalty-revenue">
-          <span class="number">02</span>
-          <div>
-            <strong>Royalty revenue</strong>
-            <p>Explore sales and royalty-rate scenarios.</p>
-          </div>
-          <span class="arrow" aria-hidden="true">
-            →
-          </span>
-        </a>
-        <a href="/tools/cash-runway">
-          <span class="number">03</span>
-          <div>
-            <strong>Cash runway</strong>
-            <p>Connect available cash with monthly net burn.</p>
-          </div>
-          <span class="arrow" aria-hidden="true">
-            →
-          </span>
-        </a>
-      </div>
     </div>
   </section>
   <Faq />

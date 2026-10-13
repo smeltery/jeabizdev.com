@@ -74,7 +74,10 @@ export async function deliverInquiry(
     Response.json({ message }, { status });
   const origin = request.headers.get("origin");
   if (origin && origin !== new URL(request.url).origin)
-    return reply(403, "This request must come from the JEA website.");
+    return reply(
+      403,
+      "This request must come from the JEA BizDev Consulting, LLC® website.",
+    );
   if (!request.headers.get("content-type")?.includes("application/json"))
     return reply(415, "Please submit the form as JSON.");
   let input: unknown;
@@ -102,14 +105,14 @@ export async function deliverInquiry(
   if (!endpoint)
     return reply(
       503,
-      "Online delivery is unavailable. Download your introduction or email jeabizdev@gmail.com.",
+      "Online delivery is unavailable. Your details are still here; please try again later.",
     );
   try {
     const target = new URL(endpoint);
     if (target.protocol !== "https:")
       return reply(
         503,
-        "Online delivery is unavailable. Please email jeabizdev@gmail.com.",
+        "Online delivery is unavailable. Please try again later.",
       );
     const response = await fetcher(target, {
       method: "POST",
@@ -121,7 +124,7 @@ export async function deliverInquiry(
         name: data.name,
         email: data.email,
         company: data.company,
-        subject: data.subject || "JEA website inquiry",
+        subject: data.subject || "JEA BizDev Consulting, LLC® website inquiry",
         message: inquiryText(data),
       }),
       signal: AbortSignal.timeout(15000),
@@ -129,13 +132,13 @@ export async function deliverInquiry(
     if (!response.ok)
       return reply(
         502,
-        "Delivery failed. Your details are still here; retry or use the email draft.",
+        "Delivery failed. Your details are still here; please try again.",
       );
-    return reply(200, "Thank you. Your inquiry has been sent to JEA.");
-  } catch {
     return reply(
-      502,
-      "Delivery could not be confirmed. Please try again or use the email draft.",
+      200,
+      "Thank you. Your inquiry has been sent to JEA BizDev Consulting, LLC®.",
     );
+  } catch {
+    return reply(502, "Delivery could not be confirmed. Please try again.");
   }
 }

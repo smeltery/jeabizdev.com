@@ -97,76 +97,6 @@ legend span {
   position: absolute;
   left: -9999px;
 }
-.tool-workspace {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border: 1px solid var(--line);
-  background: var(--white);
-}
-.tool-inputs {
-  padding: 35px;
-}
-.tool-inputs label {
-  display: block;
-  font-size: 13px;
-  margin-bottom: 20px;
-}
-.tool-results {
-  background: var(--ink);
-  color: var(--paper);
-  padding: 35px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.tool-results .eyebrow {
-  color: var(--accent-light);
-}
-.result-value {
-  font: clamp(36px, 5vw, 65px) / 1.1 var(--serif);
-  overflow-wrap: anywhere;
-  margin-bottom: 15px;
-}
-.result-label {
-  font-size: 14px;
-  color: #cbd5e1;
-}
-.result-rows > div {
-  padding: 14px 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  font-size: 13px;
-  border-top: 1px solid #ffffff25;
-}
-.tool-results .micro {
-  color: #cbd5e1;
-  margin-top: 25px;
-}
-.tool-guide {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  margin-top: 60px;
-}
-.tool-guide h2 {
-  font-size: 32px;
-}
-.tool-guide p,
-.tool-guide li {
-  font-size: 14px;
-  color: var(--muted);
-}
-.tool-guide ul {
-  padding-left: 20px;
-}
-.tool-actions {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
 .swatches {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -266,4 +196,28 @@ dialog::backdrop {
   align-items: center;
   font-size: 20px;
   font-family: var(--serif);
+}
+
+.check-field a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.brand-guide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-top: 60px;
+}
+.brand-guide h2 {
+  font-size: 32px;
+}
+.brand-guide p,
+.brand-guide li {
+  font-size: 14px;
+  color: var(--muted);
+}
+.brand-guide ul {
+  padding-left: 20px;
 }

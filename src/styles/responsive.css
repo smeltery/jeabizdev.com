@@ -20,12 +20,6 @@
   .hero {
     gap: 100px;
   }
-  .world-panel {
-    min-height: 580px;
-  }
-  .hero h1 {
-    font-size: 6.2rem;
-  }
 }
 @media (max-width: 1200px) {
   .header-inner {
@@ -47,12 +41,6 @@
   }
   .hero {
     gap: 35px;
-  }
-  .hero h1 {
-    font-size: 4.25rem;
-  }
-  .world-panel {
-    min-height: 490px;
   }
   .footer-top {
     gap: 25px;
@@ -79,13 +67,6 @@
   }
   .header-actions {
     margin-left: auto;
-  }
-  .hero h1 {
-    font-size: 3.8rem;
-  }
-  .world-panel {
-    min-height: 470px;
-    padding: 25px;
   }
   .hero {
     padding-block: 55px;

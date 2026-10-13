@@ -90,10 +90,6 @@
 .workspace-selector .micro {
   margin: 0 0 10px;
 }
-.all-tools-workspace > h3 {
-  font: 30px var(--serif);
-  margin-bottom: 25px;
-}
 .workspace-guide {
   margin-top: 25px;
 }

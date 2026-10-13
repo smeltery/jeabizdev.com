@@ -3,10 +3,11 @@
 @import "./sections.css";
 @import "./footer.css";
 @import "./forms.css";
-@import "./tools-search.css";
+@import "./responsive.css";
 @import "./tablet.css";
 @import "./mobile.css";
 @import "./brand.css";
 @import "./navigation-controls.css";
 @import "./select-faq.css";
 @import "./search-layout.css";
+@import "./transitions.css";

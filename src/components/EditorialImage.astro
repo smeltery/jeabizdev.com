@@ -1,16 +1,19 @@
 ---
 interface Props {
-  subject: "laboratory" | "collaboration";
+  subject: "partnership" | "collaboration";
   compact?: boolean;
+  embedded?: boolean;
 }
-const { subject, compact = false } = Astro.props;
+const { subject, compact = false, embedded = false } = Astro.props;
 const photos = {
-  laboratory: {
-    alt: "Gloved researcher preparing genetic samples in a laboratory",
-    credit: "National Cancer Institute / Daniel Sone",
-    source: "https://unsplash.com/photos/1fvqUP-xaYQ",
+  partnership: {
+    src: "/images/services-handshake.webp",
+    alt: "Two business partners shaking hands",
+    credit: "Cytonn Photography",
+    source: "https://unsplash.com/photos/n95VMLxqM2I",
   },
   collaboration: {
+    src: "/images/collaboration.webp",
     alt: "Participants sharing ideas around a meeting table",
     credit: "Dylan Gillis",
     source: "https://unsplash.com/photos/KdeqA3aTnBY",
@@ -19,21 +22,23 @@ const photos = {
 const photo = photos[subject];
 ---
 
-<figure class:list={["editorial-photo", { compact }]}>
+<figure class:list={["editorial-photo", { compact, embedded }]}>
   <img
-    src={`/images/${subject}.webp`}
+    src={photo.src}
     alt={photo.alt}
     width="1400"
     height="900"
     loading="lazy"
     decoding="async"
   />
-  <figcaption>
-    Photo:{" "}
-    <a href={photo.source} target="_blank" rel="noreferrer">
-      {photo.credit} / Unsplash
-    </a>
-  </figcaption>
+  {photo.source && (
+    <figcaption>
+      Photo:{" "}
+      <a href={photo.source} target="_blank" rel="noreferrer">
+        {photo.credit} / Unsplash
+      </a>
+    </figcaption>
+  )}
 </figure>
 <style>
   .editorial-photo {
@@ -61,5 +66,13 @@ const photo = photos[subject];
     img {
       aspect-ratio: 16 / 10;
     }
+  }
+  .embedded {
+    margin: 0;
+    min-width: 0;
+  }
+  .embedded img {
+    height: 190px;
+    aspect-ratio: auto;
   }
 </style>

@@ -2,22 +2,11 @@
   .site-header,
   footer,
   .closing,
-  .tool-actions,
   .skip-link {
     display: none;
   }
   .wrap {
     width: 100%;
-  }
-  .tool-workspace {
-    display: block;
-  }
-  .tool-results {
-    background: white;
-    color: black;
-  }
-  .tool-results * {
-    color: black !important;
   }
   .page-intro {
     padding: 20px 0;
@@ -86,14 +75,6 @@ footer em {
 .hero .button {
   background: var(--accent);
 }
-.world-panel {
-  background: #172b50;
-}
-.world-panel:before {
-  background-image:
-    linear-gradient(#b6d8ff09 1px, transparent 1px),
-    linear-gradient(90deg, #b6d8ff09 1px, transparent 1px);
-}
 @media (max-width: 540px) {
   .brand-name {
     font-size: 14px;
@@ -111,9 +92,6 @@ footer em {
     max-width: none;
     font-size: 17px;
   }
-}
-@view-transition {
-  navigation: auto;
 }
 .resource-menu {
   position: relative;

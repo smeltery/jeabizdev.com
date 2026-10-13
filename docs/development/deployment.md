@@ -1,7 +1,9 @@
 # Deployment
 
-Vercel hosts the site. Select the Astro framework preset and Node 24. Use
-`bun install --frozen-lockfile` for installation and `bun run build` for the build.
+Vercel hosts the site. The committed `vercel.json` selects Astro, clears any
+legacy output-directory override, and sets locked Bun installation and the build
+command. This overrides the previous Next.js project preset. Node 24 is selected
+through `package.json`.
 The Astro Vercel adapter emits `.vercel/output/` with static pages and the inquiry
 server function; a static-only host cannot run the inquiry endpoint.
 
@@ -11,8 +13,8 @@ Set `FORMCARRY_URL` to the existing HTTPS Formcarry endpoint in Vercel’s serve
 configuration. For local development, use `.env` as shown in `.env.example`.
 Do not expose the value under a `PUBLIC_` prefix or place it in client code.
 
-If delivery is unavailable, visitors retain their draft and can retry, download,
-or open an email draft. Formcarry’s acceptance confirms submission to the provider,
+If delivery is unavailable, visitors retain their details and can retry from
+the form. Formcarry’s acceptance confirms submission to the provider,
 not delivery to a recipient’s inbox.
 
 ```mermaid

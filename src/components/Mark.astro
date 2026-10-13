@@ -1,12 +1,27 @@
 ---
-const { light = false } = Astro.props;
+const { light = false, legalName = false } = Astro.props;
 ---
 
 <a
   href="/"
   class:list={["brand", { light }]}
-  aria-label="JEA BizDev Consulting home"
+  aria-label={`JEA BizDev Consulting${legalName ? ", LLC®" : ""} home`}
 >
   <img src="/brand/mark.svg" alt="" width="35" height="35" />
-  <span class="brand-name">JEA BizDev Consulting</span>
+  <span class="brand-name">
+    JEA BizDev Consulting
+    {legalName && (
+      <>
+        , LLC<sup>®</sup>
+      </>
+    )}
+  </span>
 </a>
+
+<style>
+  sup {
+    font-size: 0.6em;
+    line-height: 0;
+    margin-left: 0.1em;
+  }
+</style>

@@ -30,9 +30,6 @@
   .search-trigger {
     padding: 6px;
   }
-  .hero h1 {
-    font-size: 3.35rem;
-  }
   .hero .eyebrow {
     font-size: 9px;
     letter-spacing: 0.13em;
@@ -48,20 +45,6 @@
     gap: 20px;
   }
   .hero-note {
-    font-size: 10px;
-  }
-  .world-panel {
-    min-height: 360px;
-    padding: 25px 22px;
-  }
-  .world-art {
-    width: 115%;
-    margin: -30px -7.5% -15px;
-  }
-  .world-caption strong {
-    font-size: 25px;
-  }
-  .world-caption p {
     font-size: 10px;
   }
   .territory-strip p {
@@ -80,8 +63,7 @@
   .about-grid,
   .values-grid,
   .content-grid,
-  .asset-details,
-  .tool-guide {
+  .asset-details {
     grid-template-columns: 1fr;
   }
   .service-card .card-number {
@@ -207,10 +189,6 @@
   legend {
     font-size: 24px;
   }
-  .tool-inputs,
-  .tool-results {
-    padding: 25px;
-  }
   .filters {
     gap: 12px;
   }
@@ -257,5 +235,11 @@
   .button:hover,
   .library-card:hover {
     transform: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .hero h1 {
+    font-size: clamp(28px, 7.8vw, 42px);
   }
 }

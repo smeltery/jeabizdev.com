@@ -11,7 +11,7 @@ import { services, engagements } from "../content/site";
   <Intro
     eyebrow="OUR SERVICES"
     title="The right expertise. At every stage."
-    description="Strategic advice and hands-on execution for biotech and biopharma companies. A focused engagement or a partner for the full journey."
+    description="Strategic advice and hands-on execution for biotech and biopharma companies. A focused engagement or a partner for the entire partnering process."
   />
   <section class="wrap section services-overview">
     <div class="service-grid">
@@ -30,36 +30,30 @@ import { services, engagements } from "../content/site";
         </article>
       ))}
     </div>
-    <EditorialImage subject="laboratory" />
     <aside class="deal-callout" aria-labelledby="deal-callout-title">
-      <div>
+      <EditorialImage subject="partnership" embedded />
+      <div class="deal-callout-content">
         <p class="eyebrow">THE TRANSACTION LIBRARY</p>
         <h2 id="deal-callout-title">See the detail behind the deals.</h2>
-        <p>
-          Explore eight transaction summaries covering strategic partnerships
-          and cross-border agreements.
+        <p class="deal-description">
+          Explore transaction summaries covering strategic partnerships and
+          cross-border agreements.
         </p>
+        <a class="button" href="/transactions#deal-summaries">
+          <Icon name="file" /> Browse deal summaries
+        </a>
       </div>
-      <a class="button" href="/transactions#deal-summaries">
-        <Icon name="file" /> Browse deal summaries
-      </a>
     </aside>
   </section>
-  <section class="tool-spotlight" id="engagements">
-    <div class="wrap section">
+  <section class="highlight-section" id="engagements">
+    <div class="wrap section engagement-section">
       <div class="section-heading">
         <div>
           <p class="eyebrow">FLEXIBLE ENGAGEMENTS</p>
           <h2>
-            A working model
-            <br />
-            that fits <em>your needs.</em>
+            Choose the support <em>you need.</em>
           </h2>
         </div>
-        <p>
-          Every engagement begins with a conversation about your priorities,
-          scope, and the support that will make the most difference.
-        </p>
       </div>
       <div class="engagement-grid">
         {engagements.map(([title, subtitle, description]) => (
@@ -71,7 +65,7 @@ import { services, engagements } from "../content/site";
               class="text-link"
               href={`/contact?engagement=${encodeURIComponent(title)}`}
             >
-              Discuss this model
+              Discuss {title.toLowerCase()} support
             </a>
           </article>
         ))}
@@ -82,13 +76,22 @@ import { services, engagements } from "../content/site";
 </Layout>
 
 <style>
+  .engagement-section {
+    padding-block: 48px;
+  }
+  .engagement-section .section-heading {
+    margin-bottom: 28px;
+  }
+  .engagement-section h2 {
+    font-size: clamp(30px, 3.5vw, 46px);
+  }
   .services-overview {
     padding-bottom: 40px;
   }
   .deal-callout {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
     align-items: center;
-    justify-content: space-between;
     gap: 32px;
     margin-top: 32px;
     padding: 30px 32px;
@@ -106,20 +109,19 @@ import { services, engagements } from "../content/site";
     font-size: clamp(26px, 2.5vw, 34px);
     margin-bottom: 12px;
   }
-  .deal-callout p:last-child {
-    margin: 0;
+  .deal-description {
+    margin: 0 0 20px;
     color: var(--muted);
     max-width: 60ch;
     font-size: 14px;
   }
   .deal-callout .button {
-    flex-shrink: 0;
     gap: 10px;
   }
-  @media (max-width: 800px) {
+  @media (max-width: 640px) {
     .deal-callout {
       align-items: start;
-      flex-direction: column;
+      grid-template-columns: minmax(0, 1fr);
       gap: 22px;
       padding: 24px;
     }

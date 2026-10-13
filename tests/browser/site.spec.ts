@@ -16,7 +16,6 @@ test("pages render with no horizontal overflow or runtime errors", async ({
     "/approach",
     "/assets",
     "/transactions",
-    "/tools",
     "/contact",
     "/brand",
     "/privacy",
@@ -76,87 +75,7 @@ test("asset filters combine and empty state resets", async ({ page }) => {
   await page.getByRole("option", { name: "Phase 3", exact: true }).click();
   await expect(page.locator(".library-card")).toHaveCount(2);
 });
-test("tool categories, calculation, errors, and download work", async ({
-  page,
-}) => {
-  await open(page, "/tools");
-  await page
-    .getByRole("button", { name: "Capital planning", exact: true })
-    .click();
-  await expect(page.locator(".library-card:visible")).toHaveCount(5);
-  await open(page, "/tools/cash-runway");
-  await expect(page.locator(".result-value")).toHaveText("15 months");
-  await page.getByLabel("Monthly net burn ($M)").fill("3");
-  await expect(page.locator(".result-value")).toHaveText("10 months");
-  await page.getByLabel("Monthly net burn ($M)").fill("0");
-  await expect(
-    page.getByText("Monthly net burn must be greater than zero."),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("button", { name: "Download scenario" }),
-  ).toBeDisabled();
-  await page.getByRole("button", { name: "Reset to example" }).click();
-  await expect(page.locator(".result-value")).toHaveText("15 months");
-  const download = page.waitForEvent("download");
-  await page.getByRole("button", { name: "Download scenario" }).click();
-  expect((await download).suggestedFilename()).toBe("jea-cash-runway.txt");
-});
-test("inquiry preserves context, validates, reviews, and sends through a mocked provider", async ({
-  page,
-}) => {
-  await page.route("**/api/send-email", async (route) => {
-    expect(route.request().postDataJSON().asset).toBe("KAT6 Inhibitor");
-    await route.fulfill({
-      json: { message: "Thank you. Your inquiry has been sent to JEA." },
-    });
-  });
-  await open(page, "/contact?asset=KAT6%20Inhibitor");
-  await expect(
-    page.getByRole("combobox", { name: /^Asset of interest/ }),
-  ).toContainText("KAT6 Inhibitor");
-  await expect(
-    page.getByRole("button", { name: "Review my introduction" }),
-  ).toBeDisabled();
-  await expect(page.locator(".review")).toHaveCount(0);
-  await page.getByLabel("Full name").fill("Test Person");
-  await page.getByLabel("Work email").fill("test@example.com");
-  await page.getByLabel("Company", { exact: false }).fill("Example Biotech");
-  await page
-    .getByLabel("Tell us about your priorities")
-    .fill("Exploring a partnership.");
-  await page.getByRole("checkbox").check();
-  await page.getByRole("button", { name: "Review my introduction" }).click();
-  await expect(page.locator(".review")).toContainText("KAT6 Inhibitor");
-  await page.getByRole("button", { name: "Send to JEA" }).click();
-  await expect(
-    page.getByRole("button", { name: "Inquiry sent" }),
-  ).toBeDisabled();
-});
-test("failed inquiry delivery retains the draft and retry", async ({
-  page,
-}) => {
-  await page.route("**/api/send-email", (route) =>
-    route.fulfill({
-      status: 503,
-      json: { message: "Online delivery is unavailable." },
-    }),
-  );
-  await open(page, "/contact");
-  await page.getByLabel("Full name").fill("Test Person");
-  await page.getByLabel("Work email").fill("test@example.com");
-  await page.getByLabel("Company").fill("Example Biotech");
-  await page
-    .getByLabel("Tell us about your priorities")
-    .fill("Exploring a partnership.");
-  await page.getByRole("checkbox").check();
-  await page.getByRole("button", { name: "Review my introduction" }).click();
-  await page.getByRole("button", { name: "Send to JEA" }).click();
-  await expect(page.getByText("Online delivery is unavailable.")).toBeVisible();
-  await expect(
-    page.getByRole("link", { name: "Open email draft" }),
-  ).toHaveAttribute("href", /^mailto:/);
-  await expect(page.getByRole("button", { name: "Send to JEA" })).toBeEnabled();
-});
+
 test("mobile menu contains navigation and restores focus", async ({
   page,
   isMobile,
@@ -205,26 +124,6 @@ test("custom selects support keyboard and outside dismissal", async ({
   await page.locator("h1").click();
   await expect(territory).toHaveAttribute("aria-expanded", "false");
 });
-test("review stays disabled for invalid email and missing consent", async ({
-  page,
-}) => {
-  await open(page, "/contact");
-  const button = page.getByRole("button", { name: "Review my introduction" });
-  await expect(button).toBeDisabled();
-  await page.getByLabel("Full name").fill("Test");
-  await page.getByLabel("Work email").fill("not-an-email");
-  await page.getByLabel("Company").fill("Example");
-  await page.getByLabel("Tell us about your priorities").fill("Partnering");
-  await page.getByRole("checkbox").check();
-  await expect(button).toBeDisabled();
-  await page.getByLabel("Work email").fill("test@example.com");
-  await expect(button).toBeEnabled();
-  await page.getByRole("checkbox").uncheck();
-  await expect(button).toBeDisabled();
-  await page.getByRole("checkbox").check();
-  await page.getByLabel("Full name").fill("   ");
-  await expect(button).toBeDisabled();
-});
 test("resources dropdown and mobile menu dimensions", async ({
   page,
   isMobile,
@@ -232,6 +131,7 @@ test("resources dropdown and mobile menu dimensions", async ({
   await open(page, "/");
   if (isMobile) {
     await page.getByRole("button", { name: "Menu", exact: true }).click();
+    await expect(page.locator("#mobile-menu")).toHaveCSS("transform", "none");
     const box = await page.locator("#mobile-menu").boundingBox();
     const viewport = page.viewportSize()!;
     expect(box!.height).toBe(viewport.height);
@@ -248,19 +148,6 @@ test("resources dropdown and mobile menu dimensions", async ({
     await expect(page.locator(".resource-panel")).not.toBeVisible();
     await expect(summary).toBeFocused();
   }
-});
-
-test("all-in-one workspace switches calculators", async ({ page }) => {
-  await open(page, "/tools#workspace");
-  const workspace = page.locator(".all-tools-workspace");
-  await expect(workspace.locator(".result-value")).toHaveText("$500M");
-  await workspace.getByRole("combobox", { name: /^Choose a tool/ }).click();
-  await page
-    .getByRole("option", { name: "Cash runway Capital planning", exact: true })
-    .click();
-  await expect(workspace.locator(".result-value")).toHaveText("15 months");
-  await workspace.getByLabel("Monthly net burn ($M)").fill("3");
-  await expect(workspace.locator(".result-value")).toHaveText("10 months");
 });
 
 test("FAQ accordion, contained search, and navigation alignment", async ({
@@ -303,9 +190,26 @@ test("FAQ accordion, contained search, and navigation alignment", async ({
     ).toBeLessThan(1);
   }
   await page.getByRole("button", { name: "Search site", exact: true }).click();
+  await expect(page.locator("#site-search")).toBeVisible();
+  await expect(page.locator("#site-search")).toHaveCSS("transform", "none");
   const search = await page.locator("#site-search").boundingBox();
   expect(search!.width).toBe(isMobile ? page.viewportSize()!.width : 960);
   const results = await page.locator(".search-results").boundingBox();
   expect(Math.abs(results!.width - search!.width)).toBeLessThanOrEqual(2);
   await expect(page.locator(".search-footer")).toBeInViewport();
+});
+
+test("retired toolkit routes and links are absent", async ({
+  page,
+  request,
+}) => {
+  await open(page, "/");
+  await expect(page.locator('a[href^="/tools"]')).toHaveCount(0);
+  await page.getByRole("button", { name: "Search site", exact: true }).click();
+  await expect(page.locator('[data-search-group="Tools"]')).toHaveCount(0);
+  expect(await (await request.get("/sitemap.xml")).text()).not.toContain(
+    "/tools",
+  );
+  for (const route of ["/tools", "/tools/deal-value", "/tools/cash-runway"])
+    expect((await request.get(route)).status()).toBe(404);
 });

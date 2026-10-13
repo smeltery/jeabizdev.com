@@ -25,11 +25,6 @@ export const navigation = [
     label: "Opportunities",
     detail: "Explore assets for partnering",
   },
-  {
-    href: "/tools",
-    label: "Tools",
-    detail: "Put your next deal in perspective",
-  },
 ];
 export const services = [
   {
@@ -122,33 +117,33 @@ export const steps = [
 export const engagements = [
   [
     "Hourly",
-    "Focused expertise, as you need it.",
-    "Pay for the time spent on your project. A flexible option for targeted advice or a changing scope.",
+    "For targeted advice",
+    "Pay by the hour. Get expert input on a specific question or a changing scope.",
   ],
   [
     "Retainer",
-    "A consistent partner for your team.",
-    "Secure expertise for an agreed number of hours each month, with continuity and priority service.",
+    "For ongoing BD support",
+    "Reserve agreed hours each month. Add continuity and priority access to your team.",
   ],
   [
     "Project-based",
-    "A defined scope. A clear outcome.",
-    "Structure the engagement around a specific project, set of deliverables, and agreed fee.",
+    "For a defined deliverable",
+    "Agree a project fee upfront. Set clear deliverables, scope, and milestones together.",
   ],
   [
     "Blended",
-    "Shared goals. Aligned incentives.",
-    "Combine fixed fees with performance-based incentives that align our success with yours.",
+    "For shared incentives",
+    "Combine a fixed fee with performance-based incentives tied to agreed outcomes.",
   ],
 ];
 export const faqs = [
   [
-    "Who does JEA work with?",
+    "Who does JEA BizDev Consulting, LLC® work with?",
     "Biotech and biopharma companies seeking strategic guidance, in- or out-licensing opportunities, and support across the business development value chain.",
   ],
   [
     "Do you support cross-border partnerships?",
-    "Yes. JEA specializes in identifying, structuring, negotiating, and executing partnerships across North America, Europe, and Asia.",
+    "Yes. JEA BizDev Consulting, LLC® specializes in identifying, structuring, negotiating, and executing partnerships across North America, Europe, and Asia.",
   ],
   [
     "Can we engage you for one part of a transaction?",
@@ -160,7 +155,7 @@ export const faqs = [
   ],
   [
     "How can I learn more about an available asset?",
-    "Browse the opportunities library and request an overview deck from an asset page. Current availability and development status should be confirmed directly with JEA.",
+    "Browse the opportunities library and request an overview deck from an asset page. Current availability and development status should be confirmed directly with JEA BizDev Consulting, LLC®.",
   ],
   [
     "What should I share in an initial inquiry?",
@@ -190,6 +185,7 @@ export const transactions = [
   },
   {
     title: "CSPC × Radiance Biopharma",
+    headlineMillions: 1240,
     year: 2025,
     type: "Strategic partnership",
     from: "cspc-pharma.png",
@@ -199,6 +195,7 @@ export const transactions = [
   },
   {
     title: "CSPC × Cipla",
+    headlineMillions: 1065,
     year: 2025,
     type: "Strategic partnership",
     from: "cspc-pharma.png",

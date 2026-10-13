@@ -4,18 +4,12 @@ import Icon, { type IconName } from "./Icon";
 import { navigation, resources, site } from "../content/site";
 const current = (href: string) =>
   Astro.url.pathname.replace(/\/$/, "") === href;
-const menuIcons: IconName[] = [
-  "briefcase",
-  "user",
-  "route",
-  "science",
-  "calculator",
-];
+const menuIcons: IconName[] = ["briefcase", "user", "route", "science"];
 ---
 
 <header class="site-header">
   <div class="header-inner">
-    <Mark />
+    <Mark legalName />
     <nav aria-label="Main navigation">
       {navigation.map((link) => (
         <a
@@ -92,7 +86,7 @@ const menuIcons: IconName[] = [
 </header>
 <dialog id="mobile-menu" aria-label="Main menu">
   <div class="dialog-heading">
-    <Mark />
+    <Mark legalName />
     <button data-menu-close aria-label="Close menu" autofocus>
       <Icon name="close" size={20} />
     </button>
@@ -100,7 +94,7 @@ const menuIcons: IconName[] = [
   <div class="menu-body">
     <button class="mobile-search" data-search-open>
       <Icon name="search" />
-      <span>Search pages, assets & tools</span>
+      <span>Search pages, assets & deals</span>
       <kbd>⌘ K</kbd>
     </button>
     <p class="menu-intro">
@@ -160,7 +154,7 @@ const menuIcons: IconName[] = [
         href={site.linkedin}
         target="_blank"
         rel="noreferrer"
-        aria-label="JEA on LinkedIn"
+        aria-label="JEA BizDev Consulting, LLC® on LinkedIn"
       >
         <Icon name="linkedin" size={18} />
       </a>

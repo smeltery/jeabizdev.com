@@ -3,6 +3,7 @@ import Icon from "../components/Icon";
 import YearFilter from "../components/YearFilter";
 import Layout from "../layouts/Layout.astro";
 import Intro from "../components/Intro.astro";
+import DealChart from "../components/DealChart.astro";
 import Stats from "../components/Stats.astro";
 import Closing from "../components/Closing.astro";
 import TransactionCard from "../components/TransactionCard.astro";
@@ -13,10 +14,11 @@ import { transactions, summaries } from "../content/site";
   <Intro
     eyebrow="OUR TRACK RECORD"
     title="Relationships that create value."
-    description="Selected partnerships supported by JEA as lead business development and transaction advisor, alongside examples of cross-border transaction experience."
+    description="Selected partnerships supported by JEA BizDev Consulting as lead business development and transaction advisor, alongside examples of cross-border transaction experience."
   />
   <section class="wrap section">
     <Stats />
+    <DealChart />
     <div class="section-heading" style="margin-top:65px">
       <div>
         <p class="eyebrow">CLIENT SHOWCASE</p>
@@ -60,7 +62,7 @@ import { transactions, summaries } from "../content/site";
       </div>
     </div>
   </section>
-  <section class="tool-spotlight" id="deal-summaries">
+  <section class="highlight-section" id="deal-summaries">
     <div class="wrap section">
       <div class="section-heading">
         <div>

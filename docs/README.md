@@ -7,17 +7,14 @@ advice and partnering support across North America, Europe, and Asia.
 
 - [Find your way around](guides/using-the-site.md): navigation, search, and resources.
 - [Explore opportunities](guides/opportunities.md): assets, filters, announcements, and PDFs.
-- [Use the BD toolkit](guides/tools.md): calculations, assumptions, and downloads.
 - [Contact JEA](guides/inquiries.md): introduction, consent, review, and delivery.
 
 ```mermaid
 flowchart LR
   Start[Visit JEA] --> Explore[Services and approach]
   Start --> Assets[Partnering opportunities]
-  Start --> Tools[BD toolkit]
   Explore --> Contact[Start a conversation]
   Assets --> Contact
-  Tools --> Contact
 ```
 
 ## Maintaining the website

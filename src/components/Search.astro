@@ -1,7 +1,6 @@
 ---
 import Icon from "./Icon";
 import { navigation, transactions, resources } from "../content/site";
-import { tools } from "../tools/catalog";
 import { assets } from "../../data/assets";
 const entries = [
   {
@@ -31,14 +30,9 @@ const entries = [
   ...resources.map((resource) => ({
     title: resource.label,
     href: resource.href,
-    description: "JEA reference library on Google Drive",
+    description:
+      "JEA BizDev Consulting, LLC® reference library on Google Drive",
     group: "Transactions",
-  })),
-  ...tools.map((tool) => ({
-    title: tool.title,
-    href: `/tools/${tool.slug}`,
-    description: tool.description,
-    group: "Tools",
   })),
   ...assets.map((asset) => ({
     title: asset.name,
@@ -63,17 +57,17 @@ const entries = [
     </button>
   </div>
   <label class="sr-only" for="site-query">
-    Search pages, assets, and tools
+    Search pages, assets, and transactions
   </label>
   <input
     id="site-query"
     type="search"
-    placeholder="Search partnering, assets, royalties…"
+    placeholder="Search partnering, assets, partnerships…"
     autocomplete="off"
     aria-controls="search-results"
   />
   <div class="filter-chips" role="group" aria-label="Search categories">
-    {["All", "Pages", "Tools", "Assets", "Transactions"].map((group) => (
+    {["All", "Pages", "Assets", "Transactions"].map((group) => (
       <button data-search-group={group} aria-pressed={group === "All"}>
         {group}
       </button>
@@ -97,7 +91,7 @@ const entries = [
     ))}
   </div>
   <p data-search-empty hidden>
-    No matches. Try “oncology,” “royalties,” or “contact.”
+    No matches. Try “oncology,” “partnerships,” or “contact.”
   </p>
   <div class="search-footer">
     <span role="status" data-search-count></span>

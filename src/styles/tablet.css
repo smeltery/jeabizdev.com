@@ -8,22 +8,11 @@
     padding: 50px 0 35px;
   }
   .hero h1 {
-    font-size: clamp(3.5rem, 9vw, 5rem);
+    font-size: clamp(2.5rem, 7vw, 3.5rem);
     max-width: 630px;
   }
   .hero .lead {
     max-width: 550px;
-  }
-  .world-panel {
-    min-height: 440px;
-    max-height: 500px;
-  }
-  .world-art {
-    width: 85%;
-    margin: -75px auto -55px;
-  }
-  .world-panel .eyebrow {
-    z-index: 1;
   }
   .territory-strip .wrap {
     flex-direction: column;
@@ -122,12 +111,6 @@
   .asset-aside {
     padding: 22px;
   }
-  .tool-workspace {
-    grid-template-columns: 1fr;
-  }
-  .tool-guide {
-    gap: 35px;
-  }
   .swatches {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -139,5 +122,12 @@
   }
   .values-grid h3 {
     font-size: 24px;
+  }
+}
+
+@media (max-width: 800px) {
+  .brand-guide {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 }

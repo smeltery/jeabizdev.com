@@ -86,7 +86,7 @@ export default function AssetLibrary() {
       <p className="library-status" role="status">
         {results.length}{" "}
         {results.length === 1 ? "opportunity" : "opportunities"} · Overview
-        decks available on request
+        decks available upon request
       </p>
       <div className="library-grid">
         {results.map((asset) => (

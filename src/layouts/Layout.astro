@@ -8,7 +8,7 @@ import Search from "../components/Search.astro";
 import { navigation, site, resources } from "../content/site";
 const {
   title = "Connecting science. Creating value.",
-  description = "Strategic business development advisory for biotech and biopharma. JEA helps build high-value partnerships across North America, Europe, and Asia.",
+  description = "Strategic business development advisory for biotech and biopharma. JEA BizDev Consulting, LLC® helps build high-value partnerships across North America, Europe, and Asia.",
   noindex = false,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -75,7 +75,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <footer>
       <div class="wrap footer-top">
         <div class="footer-identity">
-          <Mark light />
+          <Mark light legalName />
           <p>
             Connecting science.
             <br />
@@ -134,6 +134,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       </div>
     </footer>
     <script src="../client/chrome.ts" />
+    <script src="../client/transitions.ts" />
+    <script src="../client/scroll-top.ts" />
     {import.meta.env.PROD && <Analytics />}
   </body>
 </html>

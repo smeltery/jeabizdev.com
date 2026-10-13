@@ -42,6 +42,16 @@ export default function Select({
     }
   }, []);
   useEffect(() => {
+    const form = native.current?.form;
+    function reset() {
+      setInternal(options[0]?.value || "");
+      setOpen(false);
+      setActive(0);
+    }
+    form?.addEventListener("reset", reset);
+    return () => form?.removeEventListener("reset", reset);
+  }, []);
+  useEffect(() => {
     if (!open) return;
     function outside(event: PointerEvent) {
       if (!root.current?.contains(event.target as Node)) setOpen(false);

@@ -60,7 +60,7 @@
   color: var(--muted);
   font-size: 13px;
 }
-.tool-spotlight {
+.highlight-section {
   background: var(--wash);
 }
 .split {
