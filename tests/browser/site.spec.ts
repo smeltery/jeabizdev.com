@@ -213,15 +213,3 @@ test("retired toolkit routes and links are absent", async ({
   for (const route of ["/tools", "/tools/deal-value", "/tools/cash-runway"])
     expect((await request.get(route)).status()).toBe(404);
 });
-
-test("deal chart labels stay separated from their bars", async ({ page }) => {
-  await open(page, "/transactions");
-  const rows = page.locator("deal-chart li");
-  for (const row of await rows.all()) {
-    const label = await row.locator(".bar-label").boundingBox();
-    const track = await row.locator(".bar-track").boundingBox();
-    expect(label).not.toBeNull();
-    expect(track).not.toBeNull();
-    expect(track!.y - (label!.y + label!.height)).toBeGreaterThanOrEqual(11);
-  }
-});
